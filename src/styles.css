@@ -1298,3 +1298,12 @@ ul {
 .band + .who {
   margin-top: 0;
 }
+
+/* Facts strip: keep its spacing even above and below, instead of the section's big top margin. */
+.facts-wrap + .band--pad {
+  margin-top: 0;
+}
+.facts-wrap + .section,
+.facts-wrap + .band {
+  margin-top: 0;
+}

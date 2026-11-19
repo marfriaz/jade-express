@@ -35,7 +35,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="container">
+      <div className="container facts-wrap">
         <div className="facts">
           {site.facts.map((f) => (
             <div key={f.title} className="fact">
