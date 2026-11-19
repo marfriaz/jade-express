@@ -57,7 +57,7 @@ const site = {
       cta: "Explore events & productions",
       to: "/spaces?use=events",
       image: "/images/home/plan-something.jpg",
-      alt: "Guests mingling at an evening event in the loft",
+      alt: "Friends gathered around a lounge area at an evening event",
     },
   ],
 
