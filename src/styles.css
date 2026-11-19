@@ -499,7 +499,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 22% 50%; /* lower % shows more of the photo's left side, shifting the picture right */
+  object-position: 55% 50%; /* higher % pans the view right: more tables, red curtain and kitchen */
 }
 .hero__shade {
   position: absolute;
