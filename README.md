@@ -6,6 +6,8 @@ Built with Vite + React + React Router. No backend; it builds to plain static fi
 
 ## Run it
 
+Needs Node 20 or newer (tested versions of the tooling: Vite 6, React 19).
+
 ```bash
 npm install
 npm run dev        # local site at http://localhost:5173
