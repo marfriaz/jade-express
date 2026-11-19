@@ -122,6 +122,25 @@ export default function Home() {
 
       <Leasing />
 
+      <section className="section" id="contact">
+        <div className="container">
+          <div className="panel">
+            <div className="stack">
+              <h2 className="h2 h2--xl">let's make something happen.</h2>
+              <p className="light-muted lead">
+                Looking for a space? Tell us what you have in mind and we'll be in touch.
+              </p>
+              {site.email && (
+                <a className="text-link" href={`mailto:${site.email}`}>
+                  {site.email}
+                </a>
+              )}
+            </div>
+            <InquiryForm dark />
+          </div>
+        </div>
+      </section>
+
       {site.instagram && site.instagramPosts?.length > 0 && (
         <section className="section insta">
           <div className="container stack stack--xl">
@@ -148,25 +167,6 @@ export default function Home() {
           </div>
         </section>
       )}
-
-      <section className="section" id="contact">
-        <div className="container">
-          <div className="panel">
-            <div className="stack">
-              <h2 className="h2 h2--xl">let's make something happen.</h2>
-              <p className="light-muted lead">
-                Looking for a space? Tell us what you have in mind and we'll be in touch.
-              </p>
-              {site.email && (
-                <a className="text-link" href={`mailto:${site.email}`}>
-                  {site.email}
-                </a>
-              )}
-            </div>
-            <InquiryForm dark />
-          </div>
-        </div>
-      </section>
     </>
   );
 }
