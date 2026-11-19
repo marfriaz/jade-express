@@ -21,6 +21,11 @@ export default function Contact() {
                 {site.phone}
               </a>
             )}
+            {site.address && (
+              <a className="text-link" href={site.mapUrl} target="_blank" rel="noreferrer">
+                {site.address}
+              </a>
+            )}
             {site.instagram && (
               <a className="text-link" href={site.instagram} target="_blank" rel="noreferrer">
                 {site.instagramHandle || "Instagram"}
@@ -29,6 +34,17 @@ export default function Contact() {
           </div>
           <InquiryForm dark />
         </div>
+        {site.mapEmbed && (
+          <div className="map">
+            <iframe
+              title="Map of Wilson & Bay"
+              src={site.mapEmbed}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
+        )}
       </div>
     </section>
   );

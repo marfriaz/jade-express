@@ -57,7 +57,9 @@ export default function InquiryForm({ dark = false }) {
       String(data.get("message") || ""),
     ].filter((l, i, arr) => l !== "" || i === arr.length - 2);
     window.location.href =
-      `mailto:${site.email}?subject=${encodeURIComponent("Inquiry from the website")}` +
+      `mailto:${site.email}?subject=${encodeURIComponent(
+        `Inquiry for ${data.get("space") || "Wilson & Bay"} - ${data.get("first_name")} ${data.get("last_name")}`
+      )}` +
       `&body=${encodeURIComponent(lines.join("\n"))}`;
     setStatus("mailto");
   }

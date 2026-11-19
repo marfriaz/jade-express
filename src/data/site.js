@@ -3,6 +3,10 @@ const site = {
   name: "Wilson & Bay",
   email: "932wilson@gmail.com",
   phone: "",
+  // Location (same address and map link as the previous site).
+  address: "932 Wilson Street, Los Angeles, CA 90021",
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=932+Wilson+Street,+Los+Angeles,+CA+90021",
+  mapEmbed: "https://www.google.com/maps?q=932+Wilson+Street,+Los+Angeles,+CA+90021&output=embed",
   instagram: "https://www.instagram.com/wilsonbay.dtla", // full URL. Leave empty to hide the links.
   instagramHandle: "@wilsonbay.dtla",
 

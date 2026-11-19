@@ -83,6 +83,11 @@ export default function Layout() {
                 Instagram
               </a>
             )}
+            {site.address && (
+              <a href={site.mapUrl} target="_blank" rel="noreferrer">
+                {site.address}
+              </a>
+            )}
             {site.phone && <a href={`tel:${site.phone}`}>{site.phone}</a>}
             {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
           </div>
