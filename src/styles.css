@@ -1283,3 +1283,8 @@ ul {
 .map { margin-top: 32px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--card); }
 .map iframe { display: block; width: 100%; height: 360px; border: 0; }
 @media (max-width: 640px) { .map iframe { height: 280px; } }
+
+/* The "life at wilson & bay" band sits flush under the full-width photo (no cream gap between them). */
+.who + .band--pad {
+  margin-top: 0;
+}
