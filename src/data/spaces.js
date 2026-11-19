@@ -116,33 +116,37 @@ export const spaces = [
     images: photos("courtyard", 17, "The Courtyard"),
   },
 
-  // PHOTOS NEEDED: no Studio photos were in the Jade Express folder, so this space uses a
-  // placeholder image. Add photos to public/images/the-studio/ (01.jpg, 01-sm.jpg, ...),
-  // then replace the `images` line with: photos("the-studio", <count>, "The Studio")
-  // and delete the `placeholder: true` line. Also fill in size, capacity and a description.
   {
     slug: "the-studio",
     name: "The Studio",
     featured: true,
-    placeholder: true,
     uses: ["workspace", "events"],
-    sqft: "",
+    sqft: "5,000",
     location: "Arts District, Los Angeles",
-    summary: "An open studio space for creative work, productions and gatherings. Photos and details coming soon.",
-    description: [],
+    summary:
+      "5,000 sq ft of open, light-filled space with high ceilings and a flexible layout.",
+    description: [
+      "5,000 sq ft of open, light-filled space with high ceilings and a flexible layout. A blank canvas that can be transformed for creative work, photo and video productions, intimate gatherings, and celebrations.",
+    ],
     basics: [
-      { label: "Size", value: "" },
+      { label: "Size", value: "5,000 sq ft" },
       { label: "Capacity", value: "" },
       { label: "Hours", value: "" },
       { label: "Parking", value: "Gated on-site parking available" },
     ],
-    features: [],
+    features: ["High ceilings", "Flexible layout", "Natural light"],
     included: [],
-    popularFor: [],
+    popularFor: ["Creative work", "Photo + video", "Gatherings", "Celebrations"],
     price: "",
     faq: [],
-    cover: 1,
-    images: [{ src: "/images/placeholder.svg", alt: "Photo coming soon", area: null }],
+    cover: 2,
+    images: photos("the-studio", 11, "The Studio", {
+      ...range(1, 4, "Studio"),
+      5: "Exterior",
+      ...range(6, 8, "Studio"),
+      ...range(9, 10, "Exterior"),
+      11: "Studio",
+    }),
   },
 
   // Leasable studio and office suites. Details come from the building's LoopNet listing.
