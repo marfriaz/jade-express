@@ -45,6 +45,12 @@ To add a space: add photos to `public/images/<slug>/`, then add an entry to `spa
 - Image folders keep their old names (`suite-2g` = Studio 2G, `unit-3` = 2D, `unit-4` = 1A, `unit-5` = 2H).
 - Optional: a floor plan for the Loft.
 
+## Instagram
+
+The handle and link are in `src/data/site.js`. The home page "From Instagram" grid uses saved copies of 12 photos in
+`public/images/instagram/` (Instagram doesn't allow a free live feed without an app token). Swap the images any time,
+and give a tile an `href` to link to the exact post.
+
 ## Inquiry form
 
 Right now the form opens the visitor's email app addressed to the email in `site.js`.

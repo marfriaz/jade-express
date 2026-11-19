@@ -21,6 +21,11 @@ export default function Contact() {
                 {site.phone}
               </a>
             )}
+            {site.instagram && (
+              <a className="text-link" href={site.instagram} target="_blank" rel="noreferrer">
+                {site.instagramHandle || "Instagram"}
+              </a>
+            )}
           </div>
           <InquiryForm dark />
         </div>

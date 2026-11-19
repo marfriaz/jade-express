@@ -3,7 +3,26 @@ const site = {
   name: "Wilson & Bay",
   email: "932wilson@gmail.com",
   phone: "",
-  instagram: "", // full URL, e.g. "https://www.instagram.com/yourhandle". Leave empty to hide.
+  instagram: "https://www.instagram.com/wilsonbay.dtla", // full URL. Leave empty to hide the links.
+  instagramHandle: "@wilsonbay.dtla",
+
+  // The "From Instagram" grid on the home page. These are saved copies of photos from the
+  // feed, so refresh them by dropping new images into public/images/instagram/.
+  // `href` can be a link to the exact post (instagram.com/p/...); it falls back to the profile.
+  instagramPosts: [
+    { src: "/images/instagram/01.jpg", alt: "Photo shoot in the loft with natural light" },
+    { src: "/images/instagram/02.jpg", alt: "Pop-up clothing market in the loft" },
+    { src: "/images/instagram/03.jpg", alt: "Crowd browsing racks at a pop-up market" },
+    { src: "/images/instagram/04.jpg", alt: "Brunch gathering with set tables" },
+    { src: "/images/instagram/05.jpg", alt: "Couple in wedding attire in front of white drapes" },
+    { src: "/images/instagram/06.jpg", alt: "Pink striped tent and pony rides in the courtyard" },
+    { src: "/images/instagram/07.jpg", alt: "Pink balloon installation and tent in the courtyard" },
+    { src: "/images/instagram/08.jpg", alt: "Blue-themed baby shower setup" },
+    { src: "/images/instagram/09.jpg", alt: "Paint-and-sip event with easels" },
+    { src: "/images/instagram/10.jpg", alt: "Blue balloon arch with neon sign" },
+    { src: "/images/instagram/11.jpg", alt: "Guests mingling at an event", href: "https://www.instagram.com/p/DKfZOMwS0Yw/" },
+    { src: "/images/instagram/12.jpg", alt: "DJ playing at an event" },
+  ],
 
   // Inquiry form. Paste a form endpoint here (for example a Formspree URL like
   // "https://formspree.io/f/xxxxxxx") and submissions are emailed to you.

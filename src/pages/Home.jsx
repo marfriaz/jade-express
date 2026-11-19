@@ -137,6 +137,33 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {site.instagram && site.instagramPosts?.length > 0 && (
+        <section className="section insta">
+          <div className="container stack stack--xl">
+            <div className="section__head section__head--end">
+              <h2 className="h2 h2--xl">from instagram</h2>
+              <a className="text-link text-link--caps" href={site.instagram} target="_blank" rel="noreferrer">
+                Follow {site.instagramHandle || "us"} &rarr;
+              </a>
+            </div>
+            <div className="insta__grid">
+              {site.instagramPosts.map((p) => (
+                <a
+                  key={p.src}
+                  href={p.href || site.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="insta__tile"
+                  aria-label={`${p.alt} (opens Instagram)`}
+                >
+                  <img src={p.src} alt={p.alt} loading="lazy" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }
