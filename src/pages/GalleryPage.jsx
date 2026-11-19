@@ -1,6 +1,3 @@
-              {img.space && (filter === "All" || img.space !== img.group) && (
-                <span className="tile__tag">{img.space}</span>
-              )}
 import { useMemo, useState } from "react";
 import site from "../data/site.js";
 import { spaces } from "../data/spaces.js";
