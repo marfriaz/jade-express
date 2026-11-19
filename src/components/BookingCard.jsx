@@ -1,0 +1,44 @@
+import { Link, useNavigate } from "react-router-dom";
+
+export default function BookingCard({ space }) {
+  const navigate = useNavigate();
+
+  function onSubmit(e) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const q = new URLSearchParams({ space: space.slug });
+    const date = data.get("date");
+    const guests = data.get("guests");
+    if (date) q.set("date", String(date));
+    if (guests) q.set("guests", String(guests));
+    navigate(`/contact?${q.toString()}`);
+  }
+
+  return (
+    <aside className="booking" aria-label="Booking">
+      <div className="booking__price">
+        <span className="muted small-strong">{space.price ? "Starting at" : "Pricing"}</span>
+        <span className="booking__amount">{space.price || "Request a quote"}</span>
+      </div>
+      <form className="form" onSubmit={onSubmit}>
+        <label>
+          Date
+          <input name="date" type="date" />
+        </label>
+        <label>
+          Guests
+          <input name="guests" type="number" min="1" placeholder="How many people?" />
+        </label>
+        <button type="submit" className="btn btn--primary btn--block">
+          Check availability
+        </button>
+      </form>
+      <Link
+        to={`/contact?type=visit&space=${space.slug}`}
+        className="btn btn--block"
+      >
+        Book a visit
+      </Link>
+    </aside>
+  );
+}
