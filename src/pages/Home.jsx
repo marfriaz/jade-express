@@ -32,16 +32,19 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="facts facts--hero">
-            {site.facts.map((f) => (
-              <div key={f.title} className="fact">
-                <span className="fact__title">{f.title}</span>
-                <span className="fact__text">{f.text}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
+
+      <div className="container">
+        <div className="facts">
+          {site.facts.map((f) => (
+            <div key={f.title} className="fact">
+              <span className="fact__title">{f.title}</span>
+              <span className="fact__text">{f.text}</span>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <section className="band band--pad">
         <div className="container stack stack--xl">
