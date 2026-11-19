@@ -80,15 +80,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="who">
-        <img src="/images/home/who-we-are.webp" alt="" className="who__img" loading="lazy" />
-        <div className="who__shade" />
-        <div className="container who__content">
-          <span className="label label--light">Who we are</span>
-          <p className="who__text">{site.whoWeAre}</p>
-        </div>
-      </section>
-
       <section className="band band--pad">
         <div className="container stack stack--xl">
           <div className="section__head section__head--end">
@@ -114,6 +105,15 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="who">
+        <img src="/images/home/who-we-are.webp" alt="" className="who__img" loading="lazy" />
+        <div className="who__shade" />
+        <div className="container who__content">
+          <span className="label label--light">Who we are</span>
+          <p className="who__text">{site.whoWeAre}</p>
         </div>
       </section>
 

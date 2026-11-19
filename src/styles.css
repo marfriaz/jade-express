@@ -1310,3 +1310,8 @@ ul {
   .facts--hero .fact { padding: 22px 0 0; }
   .facts--hero .fact__title { font-size: 22px; }
 }
+
+/* "Who we are" photo sits flush under the life band (no cream gap), replacing the earlier reverse rule. */
+.band + .who {
+  margin-top: 0;
+}
