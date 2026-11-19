@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import site from "../data/site.js";
 
@@ -16,15 +16,18 @@ export default function Layout() {
     setOpen(false);
   }, [pathname]);
 
-  useEffect(() => {
-    if (hash) {
-      const el = document.getElementById(hash.slice(1));
-      if (el) {
-        el.scrollIntoView();
-        return;
-      }
-    }
-    window.scrollTo(0, 0);
+  // On every page change, jump straight to the top (or to the #section). The site's CSS uses smooth
+  // scrolling, and on phones (iOS Safari especially) a smooth scroll gets cut short when the new
+  // page's images load in, leaving the visitor stuck partway down. So switch smooth scrolling off
+  // for this one jump; setting it directly works even where behavior: "instant" isn't supported.
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    const previous = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    const el = hash ? document.getElementById(hash.slice(1)) : null;
+    if (el) el.scrollIntoView();
+    else window.scrollTo(0, 0);
+    root.style.scrollBehavior = previous;
   }, [pathname, hash]);
 
   return (
