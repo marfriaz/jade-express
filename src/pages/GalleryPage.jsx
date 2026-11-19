@@ -74,8 +74,7 @@ export default function GalleryPage() {
               onClick={() => setActive(i)}
             >
               <img src={img.thumb || img.src} alt={img.alt} loading="lazy" />
-              {img.space && filter === "All" && <span className="tile__tag">{img.space}</span>}
-              {img.space && filter !== "All" && groups.length > 0 && img.space !== filter && (
+              {img.space && (filter === "All" || img.space !== img.group) && (
                 <span className="tile__tag">{img.space}</span>
               )}
             </button>
