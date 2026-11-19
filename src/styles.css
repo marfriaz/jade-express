@@ -499,7 +499,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 55% 50%; /* higher % pans the view right: more tables, red curtain and kitchen */
+  object-position: 48% 50%; /* higher % pans the view right; kept just short of the fridge on phones */
 }
 .hero__shade {
   position: absolute;
