@@ -75,15 +75,15 @@ const site = {
     };
   }),
 
-  // Courtyard event photos (public/images/courtyard/NN.jpg + NN-sm.jpg): one each from the
+  // Courtyard event photos (public/images/courtyard-events/NN.jpg + NN-sm.jpg): one each from the
   // birthday party and the two pop-up markets. Shown at the end of the Courtyard gallery tab.
   courtyardEvents: [
-    { n: "02", alt: "Pink striped tent and balloon backdrop at a birthday party in the courtyard" },
-    { n: "19", alt: "Vendor booths at a pop-up market in the courtyard" },
-    { n: "29", alt: "Shoppers browsing racks at a pop-up market in the courtyard" },
+    { n: "01", alt: "Pink striped tent and balloon backdrop at a birthday party in the courtyard" },
+    { n: "02", alt: "Vendor booths at a pop-up market in the courtyard" },
+    { n: "03", alt: "Shoppers browsing racks at a pop-up market in the courtyard" },
   ].map(({ n, alt }) => ({
-    src: `/images/courtyard/${n}.jpg`,
-    thumb: `/images/courtyard/${n}-sm.jpg`,
+    src: `/images/courtyard-events/${n}.jpg`,
+    thumb: `/images/courtyard-events/${n}-sm.jpg`,
     alt,
   })),
 

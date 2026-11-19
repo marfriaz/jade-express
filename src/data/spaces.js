@@ -113,7 +113,10 @@ export const spaces = [
     price: "",
     faq: [],
     cover: 3,
-    images: photos("courtyard", 17, "The Courtyard"),
+    // Best 9 of the 17 courtyard photos (the rest are near-duplicates), keeping their original numbers.
+    images: photos("courtyard", 17, "The Courtyard").filter((_, i) =>
+      [1, 2, 3, 5, 7, 9, 10, 12, 14].includes(i + 1)
+    ),
   },
 
   {
