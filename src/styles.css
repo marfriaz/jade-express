@@ -1288,3 +1288,25 @@ ul {
 .who + .band--pad {
   margin-top: 0;
 }
+
+/* Facts strip lives inside the hero, over the photo. */
+.facts--hero {
+  margin-top: 40px;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.facts--hero .fact {
+  padding: 18px 0 0;
+  border-bottom: 0;
+}
+.facts--hero .fact__title {
+  font-size: 18px;
+}
+.facts--hero .fact__text {
+  color: rgba(255, 255, 255, 0.78);
+}
+@media (min-width: 900px) {
+  .facts--hero { margin-top: 56px; }
+  .facts--hero .fact { padding: 22px 0 0; }
+  .facts--hero .fact__title { font-size: 22px; }
+}
