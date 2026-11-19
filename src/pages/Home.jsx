@@ -103,15 +103,18 @@ export default function Home() {
               Explore the gallery &raquo;
             </Link>
           </div>
-          <div className="mosaic">
-            {site.life.images.map((img, i) => (
-              <img
-                key={img.src}
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-                className={i === 0 ? "mosaic__lead" : ""}
-              />
+          <div className="justified">
+            {site.life.rows.map((row, r) => (
+              <div className="justified__row" key={r}>
+                {row.map((n) => {
+                  const img = site.life.images[n - 1];
+                  return (
+                    <div className="justified__item" key={img.src} style={{ "--ratio": img.ratio }}>
+                      <img src={img.src} alt={img.alt} loading="lazy" />
+                    </div>
+                  );
+                })}
+              </div>
             ))}
           </div>
         </div>

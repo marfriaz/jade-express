@@ -67,13 +67,19 @@ const site = {
   life: {
     title: "life at wilson & bay",
     text: "Workdays, shoots, markets, dinners, and everything in between.",
+    // Photos shown in rows of equal height, like the Squarespace page. `ratio` is width / height.
+    // `rows` lists photo numbers (1 = life-1.webp) left to right. Add a photo to a row, or start a new row.
     images: [
-      { src: "/images/home/life-1.webp", alt: "Life at Wilson & Bay" },
-      { src: "/images/home/life-2.webp", alt: "Life at Wilson & Bay" },
-      { src: "/images/home/life-3.webp", alt: "Life at Wilson & Bay" },
-      { src: "/images/home/life-4.webp", alt: "Life at Wilson & Bay" },
-      { src: "/images/home/life-5.webp", alt: "Life at Wilson & Bay" },
-      { src: "/images/home/life-6.webp", alt: "Life at Wilson & Bay" },
+      { src: "/images/home/life-1.webp", alt: "Pop-up market in the courtyard", ratio: 1.5 },
+      { src: "/images/home/life-2.webp", alt: "Event in the loft under timber beams", ratio: 0.75 },
+      { src: "/images/home/life-3.webp", alt: "Guests gathered on couches at an evening event", ratio: 1.294 },
+      { src: "/images/home/life-4.webp", alt: "Wedding portrait in front of white drapes", ratio: 1.5 },
+      { src: "/images/home/life-5.webp", alt: "Sunlit loft with a photo shoot below", ratio: 0.75 },
+      { src: "/images/home/life-6.webp", alt: "Long dinner tables seen from above", ratio: 0.75 },
+    ],
+    rows: [
+      [5, 2, 1, 6],
+      [3, 4],
     ],
   },
 
