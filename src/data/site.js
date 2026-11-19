@@ -75,6 +75,16 @@ const site = {
     };
   }),
 
+  // Courtyard event photos (public/images/courtyard/NN.jpg + NN-sm.jpg): birthday party and pop-up markets.
+  courtyardEvents: Array.from({ length: 38 }, (_, i) => {
+    const n = String(i + 1).padStart(2, "0");
+    return {
+      src: `/images/courtyard/${n}.jpg`,
+      thumb: `/images/courtyard/${n}-sm.jpg`,
+      alt: `Event in the courtyard, photo ${i + 1}`,
+    };
+  }),
+
   life: {
     title: "life at wilson & bay",
     text: "Workdays, shoots, markets, dinners, and everything in between.",
