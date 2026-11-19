@@ -99,10 +99,6 @@ const site = {
     ],
   },
 
-  about: [
-    "Wilson & Bay is a creative campus where people work, make things, and bring people together.",
-    "The historic building sits between the Arts District, Fashion District, Little Tokyo and the Central Industrial District, with high ceilings, exposed structural elements, an oversized freight elevator, controlled access and gated parking. Easy access to the 10, 5, 101 and 60 freeways, near Soho House, ROW DTLA and Warner Music Group.",
-  ],
 };
 
 export default site;

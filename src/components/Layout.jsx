@@ -5,7 +5,6 @@ import site from "../data/site.js";
 const links = [
   { to: "/spaces", label: "Spaces" },
   { to: "/gallery", label: "Gallery" },
-  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ];
 

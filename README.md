@@ -1,6 +1,6 @@
 # jade-express
 
-React site for Wilson & Bay: home, spaces, one page per space, gallery, about, and a contact / inquiry form.
+React site for Wilson & Bay: home, spaces, one page per space, gallery, and a contact / inquiry form.
 
 Built with Vite + React + React Router. No backend; it builds to plain static files.
 
