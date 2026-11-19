@@ -802,6 +802,13 @@ ul {
   font-size: 16px;
   line-height: 1.5;
   color: #3f362d;
+  flex: 1 0 auto; /* soaks up spare height so chips + link line up across cards */
+}
+.card {
+  min-width: 0;
+}
+.card .text-link {
+  align-self: flex-start;
 }
 
 /* ---------- space page ---------- */
