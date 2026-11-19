@@ -19,8 +19,8 @@ const site = {
   facts: [
     { title: "Since 1985", text: "Family-owned and operated" },
     { title: "Arts District", text: "Downtown Los Angeles" },
-    { title: "From 1,000 sq ft", text: "Move-in-ready and raw spaces" },
-    { title: "Gated parking", text: "On-site, available" },
+    { title: "From 1,100 sq ft", text: "Move-in-ready offices and studios" },
+    { title: "Gated parking", text: "16 on-site spaces" },
   ],
 
   paths: [
@@ -62,20 +62,21 @@ const site = {
     title: "Flexible spaces for creative businesses, teams, and independent practices.",
     text: "From move-in-ready offices to larger studios with room to make your own.",
     facts: [
-      { label: "Leasing", text: "Flexible short- and long-term options." },
-      { label: "Spaces", text: "Move-in-ready and raw spaces, starting as small as 1,000 sq ft." },
-      { label: "Parking", text: "Gated on-site parking available." },
+      { label: "Leasing", text: "Modified gross leases with negotiable terms. Move in now." },
+      { label: "Spaces", text: "Move-in-ready suites from 1,100 to 4,800 sq ft, with offices, conference rooms and kitchens." },
+      { label: "Parking", text: "Gated on-site parking, 16 surface spaces, plus a freight elevator." },
     ],
     images: [
-      { src: "/images/suite-2g/01-sm.jpg", alt: "Suite with glass partitions" },
-      { src: "/images/unit-3/07-sm.jpg", alt: "Open suite with timber ceiling" },
-      { src: "/images/unit-4/08-sm.jpg", alt: "Industrial unit with tall columns" },
-      { src: "/images/unit-5/01-sm.jpg", alt: "Bright studio with tall windows" },
+      { src: "/images/suite-2g/01-sm.jpg", alt: "Studio 2G with glass partitions" },
+      { src: "/images/unit-3/07-sm.jpg", alt: "Studio 2D with timber ceiling" },
+      { src: "/images/unit-4/08-sm.jpg", alt: "Studio 1A with glass partitions and columns" },
+      { src: "/images/unit-5/01-sm.jpg", alt: "Studio 2H with tall windows" },
     ],
   },
 
   about: [
     "Wilson & Bay is a creative campus where people work, make things, and bring people together.",
+    "The historic building sits between the Arts District, Fashion District, Little Tokyo and the Central Industrial District, with high ceilings, exposed structural elements, an oversized freight elevator, controlled access and gated parking. Easy access to the 10, 5, 101 and 60 freeways, near Soho House, ROW DTLA and Warner Music Group.",
   ],
 };
 

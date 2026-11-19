@@ -40,7 +40,9 @@ To add a space: add photos to `public/images/<slug>/`, then add an entry to `spa
 ### Photos still needed
 
 - **The Studio**: no photos were in the Jade Express folder. It uses a placeholder for now.
-- Real names, sizes and descriptions for **Suite 2G** and **Units 3, 4 and 5** (the folder names were the only clue).
+- **Studio 1D**: on the LoopNet listing but no photos yet, so it uses a placeholder.
+- Size, capacity and a description for **The Studio**.
+- Image folders keep their old names (`suite-2g` = Studio 2G, `unit-3` = 2D, `unit-4` = 1A, `unit-5` = 2H).
 - Optional: a floor plan for the Loft.
 
 ## Inquiry form
