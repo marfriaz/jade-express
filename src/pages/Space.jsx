@@ -139,7 +139,7 @@ export default function Space() {
         </div>
       </section>
 
-      {!space.placeholder && <Gallery images={space.images} />}
+      {!space.placeholder && <Gallery images={space.images} limit={space.slug === "the-courtyard" ? space.images.length : undefined} />}
 
       <section className="section">
         <div className="container split">

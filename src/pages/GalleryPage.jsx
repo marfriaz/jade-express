@@ -25,13 +25,7 @@ export default function GalleryPage() {
     return [
       ["Events", events],
       ["The Loft", spacePhotos("The Loft", by("the-loft"))],
-      [
-        "The Courtyard",
-        [
-          ...spacePhotos("The Courtyard", by("the-courtyard")),
-          ...site.courtyardEvents.map((i) => ({ ...i, space: "The Courtyard", group: "The Courtyard" })),
-        ],
-      ],
+      ["The Courtyard", spacePhotos("The Courtyard", by("the-courtyard"))],
       ["The Studio", spacePhotos("The Studio", by("the-studio"))],
       ["Suites", spacePhotos("Suites", spaces.filter(isSuite))],
     ].filter(([, list]) => list.length > 0);

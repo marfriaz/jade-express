@@ -114,9 +114,21 @@ export const spaces = [
     faq: [],
     cover: 3,
     // Best 9 of the 17 courtyard photos (the rest are near-duplicates), keeping their original numbers.
-    images: photos("courtyard", 17, "The Courtyard").filter((_, i) =>
-      [1, 2, 3, 5, 7, 9, 10, 12, 14].includes(i + 1)
-    ),
+    images: [
+      ...photos("courtyard", 17, "The Courtyard").filter((_, i) =>
+        [1, 2, 3, 5, 7, 9, 10, 12, 14].includes(i + 1)
+      ),
+      // Last: one best photo from each event (birthday party, April and June pop-up markets).
+      ...[
+        ["01", "Birthday party under a pink striped tent in the courtyard"],
+        ["02", "Vendor booths at a pop-up market in the courtyard"],
+        ["03", "Shoppers browsing racks at a pop-up market in the courtyard"],
+      ].map(([n, alt]) => ({
+        src: `/images/courtyard-events/${n}.jpg`,
+        thumb: `/images/courtyard-events/${n}-sm.jpg`,
+        alt,
+      })),
+    ],
   },
 
   {

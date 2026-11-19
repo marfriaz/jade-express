@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
 import Lightbox from "./Lightbox.jsx";
 
-const LIMIT = 7;
+const DEFAULT_LIMIT = 7;
 
-export default function Gallery({ images, title = "Photos", id }) {
+export default function Gallery({ images, title = "Photos", id, limit = DEFAULT_LIMIT }) {
   const areas = useMemo(
     () => [...new Set(images.map((i) => i.area).filter(Boolean))],
     [images]
@@ -13,7 +13,7 @@ export default function Gallery({ images, title = "Photos", id }) {
   const [active, setActive] = useState(null);
 
   const filtered = tab === "All" ? images : images.filter((i) => i.area === tab);
-  const visible = expanded ? filtered : filtered.slice(0, LIMIT);
+  const visible = expanded ? filtered : filtered.slice(0, limit);
   const tabs = areas.length > 1 ? ["All", ...areas] : [];
 
   function pick(name) {
@@ -65,7 +65,7 @@ export default function Gallery({ images, title = "Photos", id }) {
           ))}
         </div>
 
-        {!expanded && filtered.length > LIMIT && (
+        {!expanded && filtered.length > limit && (
           <div className="center">
             <button type="button" className="btn" onClick={() => setExpanded(true)}>
               View all {filtered.length} photos
