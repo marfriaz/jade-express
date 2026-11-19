@@ -64,6 +64,17 @@ const site = {
   whoWeAre:
     "Wilson & Bay is a creative campus at the corner of Wilson & Bay Streets in Downtown Los Angeles Arts District. Proudly family-owned and operated since 1985.",
 
+  // Event photos for the gallery (public/images/events/NN.jpg + NN-sm.jpg).
+  events: Array.from({ length: 29 }, (_, i) => {
+    const n = String(i + 1).padStart(2, "0");
+    return {
+      src: `/images/events/${n}.jpg`,
+      thumb: `/images/events/${n}-sm.jpg`,
+      alt: `Guests at an event in the loft, photo ${i + 1}`,
+      space: "Events",
+    };
+  }),
+
   life: {
     title: "life at wilson & bay",
     text: "Workdays, shoots, markets, dinners, and everything in between.",
