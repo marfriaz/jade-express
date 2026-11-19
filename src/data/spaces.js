@@ -17,6 +17,24 @@ function photos(slug, count, altBase, areas = {}) {
   });
 }
 
+// Event photos from the courtyard (public/images/courtyard-events/NN.jpg + NN-sm.jpg), grouped by event:
+// birthday party (01, 04, 05), April pop-up market (02, 06, 07), June pop-up market (03, 08, 09).
+export const courtyardEventPhotos = [
+  ["01", "Pink balloon arches and striped tent at a birthday party in the courtyard"],
+  ["04", "Balloon installation and pink backdrop at a birthday party in the courtyard"],
+  ["05", "Birthday party tent and balloon arches set up in the courtyard"],
+  ["02", "Vendor booths at a pop-up market in the courtyard"],
+  ["06", "Vendors with plants and tables at a pop-up market in the courtyard"],
+  ["07", "Vendor tables at a pop-up market in the courtyard"],
+  ["03", "Shoppers browsing racks at a pop-up market in the courtyard"],
+  ["08", "Live DJ performing at a pop-up market in the courtyard"],
+  ["09", "Colorful vendor booth at a pop-up market in the courtyard"],
+].map(([n, alt]) => ({
+  src: `/images/courtyard-events/${n}.jpg`,
+  thumb: `/images/courtyard-events/${n}-sm.jpg`,
+  alt,
+}));
+
 function range(from, to, value) {
   const out = {};
   for (let i = from; i <= to; i++) out[i] = value;
@@ -118,16 +136,8 @@ export const spaces = [
       ...photos("courtyard", 17, "The Courtyard").filter((_, i) =>
         [1, 2, 3, 5, 7, 9, 10, 12, 14].includes(i + 1)
       ),
-      // Last: one best photo from each event (birthday party, April and June pop-up markets).
-      ...[
-        ["01", "Birthday party under a pink striped tent in the courtyard"],
-        ["02", "Vendor booths at a pop-up market in the courtyard"],
-        ["03", "Shoppers browsing racks at a pop-up market in the courtyard"],
-      ].map(([n, alt]) => ({
-        src: `/images/courtyard-events/${n}.jpg`,
-        thumb: `/images/courtyard-events/${n}-sm.jpg`,
-        alt,
-      })),
+      // Last: the best photo from each event (birthday party, April and June pop-up markets).
+      ...[0, 3, 6].map((i) => courtyardEventPhotos[i]),
     ],
   },
 

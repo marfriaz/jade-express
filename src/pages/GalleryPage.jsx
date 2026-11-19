@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import site from "../data/site.js";
-import { spaces } from "../data/spaces.js";
+import { spaces, courtyardEventPhotos } from "../data/spaces.js";
 import Lightbox from "../components/Lightbox.jsx";
 
 const isSuite = (s) => /^Studio \d/.test(s.name);
@@ -25,7 +25,16 @@ export default function GalleryPage() {
     return [
       ["Events", events],
       ["The Loft", spacePhotos("The Loft", by("the-loft"))],
-      ["The Courtyard", spacePhotos("The Courtyard", by("the-courtyard"))],
+      [
+        "The Courtyard",
+        [
+          // Space photos first, then 3 photos from each event at the end.
+          ...spacePhotos("The Courtyard", by("the-courtyard")).filter(
+            (img) => !img.src.includes("courtyard-events")
+          ),
+          ...courtyardEventPhotos.map((img) => ({ ...img, space: "The Courtyard", group: "The Courtyard" })),
+        ],
+      ],
       ["The Studio", spacePhotos("The Studio", by("the-studio"))],
       ["Suites", spacePhotos("Suites", spaces.filter(isSuite))],
     ].filter(([, list]) => list.length > 0);
