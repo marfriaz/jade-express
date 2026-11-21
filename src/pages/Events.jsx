@@ -19,7 +19,7 @@ export default function Events() {
       </section>
 
       <section className="band band--pad band--tight">
-        <div className="container split">
+        <div className="container stack stack--xl">
           <div className="stack">
             <span className="label label--light">Popular for</span>
             <h2 className="h2">What people book us for.</h2>
