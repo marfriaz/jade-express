@@ -110,10 +110,10 @@ const site = {
     image: "/images/suite-2g/10.jpg",
     alt: "Open studio with large windows and wood floors",
     details: [
-      { label: "Leasing", text: "Flexible lease terms, negotiable. Suites are available for immediate occupancy." },
+      { label: "Leasing", text: "Longer-term leases (modified gross, with negotiable terms). Move in now." },
       { label: "Sizes", text: "Move-in-ready suites from 1,100 to 4,800 sq ft, with private offices, conference rooms and kitchens." },
       { label: "Building", text: "A historic industrial warehouse with exposed structure, 14 to 18 ft ceilings and an oversized freight elevator. Suited to office, showroom, production, design and media." },
-      { label: "Parking", text: "Secure gated parking at $150 per stall. Studios 1A and 2G include two spaces." },
+      { label: "Parking", text: "Gated on-site parking, 16 surface spaces, plus a freight elevator." },
       { label: "Location", text: "The Arts District in Downtown Los Angeles, five minutes from Little Tokyo and close to the 10, 5, 101 and 110 freeways." },
     ],
     steps: [
