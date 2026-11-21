@@ -18,7 +18,7 @@ export default function Events() {
         </div>
       </section>
 
-      <section className="band band--pad">
+      <section className="band band--pad band--tight">
         <div className="container split">
           <div className="stack">
             <span className="label label--light">Popular for</span>
@@ -34,7 +34,7 @@ export default function Events() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--tight">
         <div className="container stack stack--xl">
           <div className="section__head section__head--end">
             <h2 className="h2 h2--xl">event spaces</h2>
@@ -51,7 +51,7 @@ export default function Events() {
       </section>
 
 
-      <section className="section">
+      <section className="section section--tight">
         <div className="container">
           <div className="panel panel--cta">
             <div className="stack">

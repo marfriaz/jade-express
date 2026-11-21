@@ -1401,3 +1401,27 @@ ul {
   color: var(--olive);
   border-color: var(--bg);
 }
+
+/* tighter vertical rhythm for the Workspaces / Events pages */
+.section--tight {
+  padding-top: 40px;
+}
+.band--tight {
+  margin-top: 40px;
+  padding: 40px 0;
+}
+.band--tight + .section--tight {
+  padding-top: 40px;
+}
+@media (min-width: 900px) {
+  .section--tight {
+    padding-top: 56px;
+  }
+  .band--tight {
+    margin-top: 56px;
+    padding: 56px 0;
+  }
+  .band--tight + .section--tight {
+    padding-top: 56px;
+  }
+}
