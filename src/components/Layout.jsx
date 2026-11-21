@@ -7,7 +7,6 @@ const links = [
   { to: "/events", label: "Events & Productions" },
   { to: "/spaces", label: "Spaces" },
   { to: "/gallery", label: "Gallery" },
-  { to: "/contact", label: "Contact" },
 ];
 
 export default function Layout() {
@@ -45,8 +44,8 @@ export default function Layout() {
                 {l.label}
               </NavLink>
             ))}
-            <Link to="/contact?type=visit" className="btn btn--primary btn--sm">
-              Book a visit
+            <Link to="/contact" className="btn btn--primary btn--sm">
+              Inquire
             </Link>
           </nav>
           <button
@@ -68,8 +67,8 @@ export default function Layout() {
                 {l.label}
               </NavLink>
             ))}
-            <Link to="/contact?type=visit" className="btn btn--primary">
-              Book a visit
+            <Link to="/contact" className="btn btn--primary">
+              Inquire
             </Link>
           </nav>
         )}
