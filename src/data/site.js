@@ -126,7 +126,7 @@ const site = {
 
   eventsPage: {
     title: "events & productions.",
-    lead: "Rent a space by the day or hour for your event, shoot, or pop-up. Think of it like booking on Peerspace: pick a space, tell us your plans, and we'll confirm availability.",
+    lead: "Rent a space by the day or hour for your event, shoot, or pop-up. Pick a space, tell us your plans, and we'll confirm availability.",
     image: "/images/home/plan-something.jpg",
     alt: "Friends gathered around a lounge area at an evening event",
     popularFor: [
