@@ -15,7 +15,6 @@ export default function Events() {
             <h1 className="h1">{page.title}</h1>
             <p className="lead muted">{page.lead}</p>
           </div>
-          <img className="wide-img" src={page.image} alt={page.alt} />
         </div>
       </section>
 
