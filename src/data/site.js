@@ -14,7 +14,7 @@ const site = {
   // feed, so refresh them by dropping new images into public/images/instagram/.
   // `href` can be a link to the exact post (instagram.com/p/...); it falls back to the profile.
   // Which posts (by position in the list below) appear under the "life at wilson & bay" collage.
-  instagramHome: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], // TEST: all posts. Back to 3: [9, 10, 12]
+  instagramHome: [9, 10, 12],
   instagramPosts: [
     { src: "/images/instagram/01.jpg", alt: "Photo shoot in the loft with natural light" },
     { src: "/images/instagram/02.jpg", alt: "Pop-up clothing market in the loft" },
