@@ -18,10 +18,10 @@ export default function Workspaces() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="band band--pad">
         <div className="container stack stack--xl">
           <div className="stack">
-            <span className="label">Leasing</span>
+            <span className="label label--light">Leasing</span>
             <h2 className="h2">What to know.</h2>
           </div>
           <dl className="facts-list">

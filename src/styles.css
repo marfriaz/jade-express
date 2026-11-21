@@ -1383,3 +1383,14 @@ ul {
     flex: 0 0 180px;
   }
 }
+
+/* facts list on a green band */
+.band .facts-list__row {
+  border-color: rgba(228, 217, 205, 0.25);
+}
+.band .facts-list dt.label {
+  color: var(--olive-text);
+}
+.band .facts-list dd {
+  color: var(--bg);
+}
