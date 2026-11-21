@@ -1394,3 +1394,10 @@ ul {
 .band .facts-list dd {
   color: var(--bg);
 }
+
+/* chips on a green band */
+.chip--light {
+  background: var(--bg);
+  color: var(--olive);
+  border-color: var(--bg);
+}

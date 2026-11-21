@@ -18,15 +18,15 @@ export default function Events() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="band band--pad">
         <div className="container split">
           <div className="stack">
-            <span className="label">Popular for</span>
+            <span className="label label--light">Popular for</span>
             <h2 className="h2">What people book us for.</h2>
           </div>
           <div className="chips">
             {page.popularFor.map((u) => (
-              <span key={u} className="chip chip--solid chip--lg">
+              <span key={u} className="chip chip--light chip--lg">
                 {u}
               </span>
             ))}
