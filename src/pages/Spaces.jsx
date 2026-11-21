@@ -43,7 +43,7 @@ export default function Spaces() {
           ))}
         </div>
 
-        <SpaceInfo use={use} pick={pick} />
+        <SpaceInfo use={use} />
 
         <div className="cards">
           {list.map((s) => (
@@ -61,76 +61,22 @@ export default function Spaces() {
   );
 }
 
-// Explains what "Workspaces" and "Events & productions" mean, so visitors know which to pick.
-function SpaceInfo({ use, pick }) {
+// A short note on what "Workspaces" and "Events & productions" mean. Kept small so the spaces stay up top.
+function SpaceInfo({ use }) {
   const { workspace, events } = site.spaceTypes;
+  const shown = use === "workspace" ? [workspace] : use === "events" ? [events] : [workspace, events];
 
-  if (!use) {
-    return (
-      <div className="spaceinfo">
-        {[
-          ["workspace", workspace, "See workspaces"],
-          ["events", events, "See event spaces"],
-        ].map(([key, t, cta]) => (
-          <div className="spaceinfo__card" key={key}>
-            <span className="label">{t.kind}</span>
-            <h2 className="h2 h2--md">{t.label}</h2>
-            <p className="spaceinfo__text">{t.text}</p>
-            <button type="button" className="text-link text-link--caps spaceinfo__link" onClick={() => pick(key)}>
-              {cta} &rarr;
-            </button>
-          </div>
-        ))}
-      </div>
-    );
-  }
-
-  if (use === "workspace") {
-    return (
-      <div className="spaceinfo spaceinfo--one">
-        <div className="spaceinfo__card">
-          <span className="label">{workspace.kind}</span>
-          <h2 className="h2 h2--md">{workspace.title}</h2>
-          <p className="spaceinfo__text">{workspace.text}</p>
-          <dl className="facts-list">
-            {site.leasing.facts.map((f) => (
-              <div key={f.label} className="facts-list__row">
-                <dt className="label">{f.label}</dt>
-                <dd>{f.text}</dd>
-              </div>
-            ))}
-          </dl>
-          <div className="btn-row">
-            <Link to="/contact?type=visit" className="btn btn--primary">
-              Book a visit
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (use === "events") {
-    return (
-      <div className="spaceinfo spaceinfo--one">
-        <div className="spaceinfo__card">
-          <span className="label">{events.kind}</span>
-          <h2 className="h2 h2--md">{events.title}</h2>
-          <p className="spaceinfo__text">{events.text}</p>
-          <div className="btn-row">
-            <Link to="/contact" className="btn btn--primary">
-              Request a booking
-            </Link>
-            {site.peerspaceUrl && (
-              <a className="btn" href={site.peerspaceUrl} target="_blank" rel="noreferrer">
-                Also on Peerspace
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  return null;
+  return (
+    <div className={"spaceinfo" + (shown.length === 1 ? " spaceinfo--one" : "")}>
+      {shown.map((t) => (
+        <p className="spaceinfo__item" key={t.label}>
+          <strong>
+            {t.label} <span className="spaceinfo__kind">· {t.kind}</span>
+          </strong>
+          <span className="spaceinfo__text">{t.text}</span>
+          {use && t.details && <span className="spaceinfo__details">{t.details}</span>}
+        </p>
+      ))}
+    </div>
+  );
 }
