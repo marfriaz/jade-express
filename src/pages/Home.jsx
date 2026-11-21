@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import site from "../data/site.js";
 import { spaces } from "../data/spaces.js";
 import SpaceCard from "../components/SpaceCard.jsx";
-import Leasing from "../components/Leasing.jsx";
 import InquiryForm from "../components/InquiryForm.jsx";
 
 export default function Home() {
@@ -143,8 +142,6 @@ export default function Home() {
           <p className="who__text">{site.whoWeAre}</p>
         </div>
       </section>
-
-      <Leasing />
 
       <section className="section" id="contact">
         <div className="container">

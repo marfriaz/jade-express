@@ -100,6 +100,25 @@ const site = {
     ],
   },
 
+  // Peerspace listing, linked from the Events & productions description on the Spaces page.
+  peerspaceUrl: "https://www.peerspace.com/pages/listings/66281ae02de482ca77c71015",
+
+  // What the two kinds of space mean. Shown on the Spaces page, above the cards.
+  spaceTypes: {
+    workspace: {
+      label: "Workspaces",
+      kind: "Leasing",
+      title: "Lease a space for your business, team, or practice.",
+      text: "Move-in-ready suites and studios on longer-term leases. Set up an office, studio, or shop and make it yours.",
+    },
+    events: {
+      label: "Events & productions",
+      kind: "Rent by the day",
+      title: "Book a space for a one-time event or shoot.",
+      text: "Rent a space by the day or hour for photo and video shoots, pop-up markets, parties, workshops, and offsites. Tell us your date, guest count, and what you're planning, and we'll confirm availability.",
+    },
+  },
+
   leasing: {
     title: "Flexible spaces for creative businesses, teams, and independent practices.",
     text: "From move-in-ready offices to larger studios with room to make your own.",
