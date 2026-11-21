@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getSpace, coverOf, spaces } from "../data/spaces.js";
-import site from "../data/site.js";
 import Gallery from "../components/Gallery.jsx";
 import BookingCard from "../components/BookingCard.jsx";
 import StickyBar from "../components/StickyBar.jsx";
@@ -29,9 +28,6 @@ export default function Space() {
   const cover = coverOf(space);
   const basics = (space.basics || []).filter((b) => b.value);
   const others = spaces.filter((s) => s.slug !== space.slug).slice(0, 3);
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    `${site.name}, ${space.location}`
-  )}`;
 
   return (
     <>
@@ -141,34 +137,21 @@ export default function Space() {
 
       {!space.placeholder && <Gallery images={space.images} limit={space.slug === "the-courtyard" ? space.images.length : undefined} />}
 
-      <section className="section">
-        <div className="container split">
-          <div className="stack stack--lg">
-            <h2 className="h2">Location</h2>
-            <p className="lead">
-              {site.name} &middot; {space.location}
-            </p>
-            <div>
-              <a className="btn" href={mapsUrl} target="_blank" rel="noreferrer">
-                Get directions
-              </a>
+      {space.faq?.length > 0 && (
+        <section className="section">
+          <div className="container stack">
+            <h2 className="h2">Good to know</h2>
+            <div className="faq">
+              {space.faq.map((f, i) => (
+                <details key={f.q} open={i === 0}>
+                  <summary>{f.q}</summary>
+                  <p>{f.a}</p>
+                </details>
+              ))}
             </div>
           </div>
-          {space.faq?.length > 0 && (
-            <div className="stack">
-              <h2 className="h2">Good to know</h2>
-              <div className="faq">
-                {space.faq.map((f, i) => (
-                  <details key={f.q} open={i === 0}>
-                    <summary>{f.q}</summary>
-                    <p>{f.a}</p>
-                  </details>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
+        </section>
+      )}
 
       {others.length > 0 && (
         <section className="section">
