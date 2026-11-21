@@ -1312,3 +1312,28 @@ ul {
 .facts-wrap + .band {
   margin-top: 0;
 }
+
+/* Instagram row under the "life at wilson & bay" collage: reads as one more row of the same grid. */
+.life-insta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  margin-top: -22px; /* the band's stack gap is 32px; pull the row up so it sits 10px under the collage, like the collage's own rows */
+}
+@media (min-width: 900px) {
+  .life-insta {
+    margin-top: -26px; /* stack gap is 40px here; the collage's row gap is 14px */
+  }
+}
+@media (min-width: 700px) {
+  .life-insta__grid {
+    gap: 14px;
+  }
+}
+.life-insta__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}

@@ -8,6 +8,9 @@ import InquiryForm from "../components/InquiryForm.jsx";
 export default function Home() {
   const featured = spaces.filter((s) => s.featured);
 
+  // 3 Instagram photos shown under the "life at wilson & bay" collage (numbers match instagramPosts order).
+  const igPicks = (site.instagramHome || []).map((n) => site.instagramPosts?.[n - 1]).filter(Boolean);
+
   return (
     <>
       <section className="hero">
@@ -108,6 +111,27 @@ export default function Home() {
               </div>
             ))}
           </div>
+          {site.instagram && igPicks.length > 0 && (
+            <div className="life-insta">
+              <div className="life-insta__grid">
+                {igPicks.map((p) => (
+                  <a
+                    key={p.src}
+                    href={p.href || site.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="insta__tile"
+                    aria-label={`${p.alt} (opens Instagram)`}
+                  >
+                    <img src={p.src} alt={p.alt} loading="lazy" />
+                  </a>
+                ))}
+              </div>
+              <a className="text-link text-link--caps" href={site.instagram} target="_blank" rel="noreferrer">
+                More on Instagram {site.instagramHandle} &rarr;
+              </a>
+            </div>
+          )}
         </div>
       </section>
 
@@ -140,33 +164,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {site.instagram && site.instagramPosts?.length > 0 && (
-        <section className="section insta">
-          <div className="container stack stack--xl">
-            <div className="section__head section__head--end">
-              <h2 className="h2 h2--xl">from instagram</h2>
-              <a className="text-link text-link--caps" href={site.instagram} target="_blank" rel="noreferrer">
-                Follow {site.instagramHandle || "us"} &rarr;
-              </a>
-            </div>
-            <div className="insta__grid">
-              {site.instagramPosts.map((p) => (
-                <a
-                  key={p.src}
-                  href={p.href || site.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="insta__tile"
-                  aria-label={`${p.alt} (opens Instagram)`}
-                >
-                  <img src={p.src} alt={p.alt} loading="lazy" />
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
     </>
   );
 }
