@@ -3,6 +3,8 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import site from "../data/site.js";
 
 const links = [
+  { to: "/workspaces", label: "Workspaces" },
+  { to: "/events", label: "Events & Productions" },
   { to: "/spaces", label: "Spaces" },
   { to: "/gallery", label: "Gallery" },
   { to: "/contact", label: "Contact" },

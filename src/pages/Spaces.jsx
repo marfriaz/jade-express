@@ -1,5 +1,4 @@
 import { Link, useSearchParams } from "react-router-dom";
-import site from "../data/site.js";
 import { spaces } from "../data/spaces.js";
 import SpaceCard from "../components/SpaceCard.jsx";
 
@@ -43,8 +42,6 @@ export default function Spaces() {
           ))}
         </div>
 
-        <SpaceInfo use={use} />
-
         <div className="cards">
           {list.map((s) => (
             <SpaceCard key={s.slug} space={s} />
@@ -58,25 +55,5 @@ export default function Spaces() {
         </div>
       </div>
     </section>
-  );
-}
-
-// A short note on what "Workspaces" and "Events & productions" mean. Kept small so the spaces stay up top.
-function SpaceInfo({ use }) {
-  const { workspace, events } = site.spaceTypes;
-  const shown = use === "workspace" ? [workspace] : use === "events" ? [events] : [workspace, events];
-
-  return (
-    <div className={"spaceinfo" + (shown.length === 1 ? " spaceinfo--one" : "")}>
-      {shown.map((t) => (
-        <p className="spaceinfo__item" key={t.label}>
-          <strong>
-            {t.label} <span className="spaceinfo__kind">· {t.kind}</span>
-          </strong>
-          <span className="spaceinfo__text">{t.text}</span>
-          {use && t.details && <span className="spaceinfo__details">{t.details}</span>}
-        </p>
-      ))}
-    </div>
   );
 }
