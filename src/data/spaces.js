@@ -197,7 +197,8 @@ export const spaces = [
       { label: "Private offices", value: "4" },
       { label: "Conference rooms", value: "1" },
       { label: "Lease rate", value: "$30.00 / sq ft / yr, modified gross" },
-      { label: "Parking", value: "Gated on-site parking available" },
+      { label: "Parking", value: "2 spaces included, more at $150 / stall" },
+      { label: "Restrooms", value: "Private" },
     ],
     features: ["18-ft ceilings", "Direct gated parking access", "Private offices", "Conference room"],
     included: [
@@ -243,7 +244,8 @@ export const spaces = [
       { label: "Floor", value: "Ground floor" },
       { label: "Layout", value: "Mostly open floor plan" },
       { label: "Lease rate", value: "$33.00 / sq ft / yr, modified gross" },
-      { label: "Parking", value: "Gated on-site parking available" },
+      { label: "Parking", value: "Available at $150 / stall" },
+      { label: "Restrooms", value: "Shared" },
     ],
     features: ["Street-facing windows", "High ceilings", "Green-screen capable"],
     included: [
@@ -279,9 +281,11 @@ export const spaces = [
     ],
     basics: [
       { label: "Size", value: "2,400 sq ft" },
+      { label: "Floor", value: "Second floor" },
       { label: "Layout", value: "Mostly open floor plan" },
       { label: "Lease rate", value: "$33.00 / sq ft / yr, modified gross" },
-      { label: "Parking", value: "Gated on-site parking available" },
+      { label: "Parking", value: "Available at $150 / stall" },
+      { label: "Restrooms", value: "Shared" },
     ],
     features: ["Exposed timber ceiling", "Large windows", "Dual entrances", "Kitchenette"],
     included: [
@@ -320,11 +324,13 @@ export const spaces = [
     ],
     basics: [
       { label: "Size", value: "4,800 sq ft" },
+      { label: "Floor", value: "Second floor" },
       { label: "Layout", value: "Mostly open floor plan" },
       { label: "Private offices", value: "7" },
       { label: "Conference rooms", value: "1" },
       { label: "Lease rate", value: "$39.00 / sq ft / yr, modified gross" },
-      { label: "Parking", value: "Gated on-site parking available" },
+      { label: "Parking", value: "2 spaces included, more at $150 / stall" },
+      { label: "Restrooms", value: "Shared" },
     ],
     features: ["7 private offices", "Large conference room", "Kitchen and gathering area", "High-speed internet ready"],
     included: [
@@ -369,7 +375,8 @@ export const spaces = [
       { label: "Layout", value: "Mostly open floor plan" },
       { label: "Private offices", value: "1" },
       { label: "Lease rate", value: "$36.00 / sq ft / yr, modified gross" },
-      { label: "Parking", value: "Gated on-site parking available" },
+      { label: "Parking", value: "Available at $150 / stall" },
+      { label: "Restrooms", value: "Private" },
     ],
     features: ["Private restroom", "Kitchenette", "Tall windows", "Quiet and self-contained"],
     included: [
