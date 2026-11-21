@@ -1378,3 +1378,8 @@ ul {
     gap: 20px;
   }
 }
+@media (min-width: 600px) {
+  .facts-list__row dt {
+    flex: 0 0 180px;
+  }
+}

@@ -51,20 +51,6 @@ export default function Events() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container stack stack--xl">
-          <h2 className="h2 h2--xl">how booking works</h2>
-          <ol className="steps">
-            {page.steps.map((st, i) => (
-              <li key={st.title} className="steps__item">
-                <span className="steps__num">{i + 1}</span>
-                <h3 className="h3">{st.title}</h3>
-                <p className="muted">{st.text}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
 
       <section className="section">
         <div className="container">
