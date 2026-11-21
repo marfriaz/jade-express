@@ -1,95 +1,111 @@
-import { useMemo, useState } from "react";
-import site from "../data/site.js";
-import { spaces, courtyardEventPhotos } from "../data/spaces.js";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { galleryEvents } from "../data/galleryEvents.js";
 import Lightbox from "../components/Lightbox.jsx";
 
-const isSuite = (s) => /^Studio \d/.test(s.name);
-
-// Every photo from every space, tagged with its group so the tabs can filter.
-function spacePhotos(group, list) {
-  return list
-    .filter((s) => !s.placeholder)
-    .flatMap((s) => s.images.map((img) => ({ ...img, space: s.name, group })));
-}
-
 export default function GalleryPage() {
-  const [filter, setFilter] = useState("All");
-  const [active, setActive] = useState(null);
-
-  const groups = useMemo(() => {
-    const events = [
-      ...site.life.images.map((i) => ({ ...i, space: "Events" })),
-      ...site.events,
-    ].map((i) => ({ ...i, group: "Events" }));
-    const by = (slug) => spaces.filter((s) => s.slug === slug);
-    return [
-      ["Events", events],
-      ["The Loft", spacePhotos("The Loft", by("the-loft"))],
-      [
-        "The Courtyard",
-        [
-          // Space photos first, then 3 photos from each event at the end.
-          ...spacePhotos("The Courtyard", by("the-courtyard")).filter(
-            (img) => !img.src.includes("courtyard-events")
-          ),
-          ...courtyardEventPhotos.map((img) => ({ ...img, space: "The Courtyard", group: "The Courtyard" })),
-        ],
-      ],
-      ["The Studio", spacePhotos("The Studio", by("the-studio"))],
-      ["Suites", spacePhotos("Suites", spaces.filter(isSuite))],
-    ].filter(([, list]) => list.length > 0);
-  }, []);
-
-  const shown = useMemo(() => {
-    if (filter !== "All") return groups.find(([name]) => name === filter)?.[1] ?? [];
-    // "All" mixes events first, then each space, so the page opens on people, not empty rooms.
-    return groups.flatMap(([, list]) => list);
-  }, [groups, filter]);
+  const [active, setActive] = useState(null); // { event, index }
 
   return (
-    <section className="section section--page">
-      <div className="container stack stack--xl">
-        <div className="stack">
-          <h1 className="h1">gallery.</h1>
-          <p className="lead muted">{site.life.text}</p>
+    <>
+      <section className="section section--page">
+        <div className="container stack stack--xl">
+          <div className="stack">
+            <h1 className="h1">gallery.</h1>
+            <p className="lead muted">A look at some of the events and productions we've hosted.</p>
+          </div>
         </div>
-        <div className="tabs" role="tablist" aria-label="Filter photos">
-          {["All", ...groups.map(([name]) => name)].map((name) => (
-            <button
-              key={name}
-              type="button"
-              role="tab"
-              aria-selected={filter === name}
-              className={`tab${filter === name ? " tab--on" : ""}`}
-              onClick={() => {
-                setFilter(name);
-                setActive(null);
-              }}
-            >
-              {name}
-            </button>
-          ))}
-        </div>
-        <div className="mosaic mosaic--page">
-          {shown.map((img, i) => (
-            <button
-              key={img.src}
-              type="button"
-              className="tile"
-              aria-label={`Open photo ${i + 1} of ${shown.length}`}
-              onClick={() => setActive(i)}
-            >
-              <img src={img.thumb || img.src} alt={img.alt} loading="lazy" />
-              {img.space && (filter === "All" || img.space !== img.group) && (
-                <span className="tile__tag">{img.space}</span>
+      </section>
+
+      {galleryEvents.map((ev, evIndex) => (
+        <section key={ev.slug} className="section section--tight case" id={ev.slug}>
+          <div className="container stack stack--xl">
+            <div className="case__head">
+              <div className="stack">
+                <span className="label">{ev.kind}</span>
+                <h2 className="h2 h2--xl">{ev.title}</h2>
+              </div>
+              <div className="stack">
+                <p className="lead">{ev.text}</p>
+                <div className="chips">
+                  {ev.spaces.map((s) =>
+                    s.to ? (
+                      <Link key={s.name} to={s.to} className="chip chip--link">
+                        {s.name}
+                      </Link>
+                    ) : (
+                      <span key={s.name} className="chip">
+                        {s.name}
+                      </span>
+                    )
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className={"case__body" + (ev.instagram ? " case__body--embed" : "")}>
+              <div className="collage">
+                {ev.photos.map((img, i) => (
+                  <button
+                    key={img.src}
+                    type="button"
+                    className={"collage__item" + (img.span ? " collage__item--" + img.span : "")}
+                    aria-label={`Open ${ev.title} photo ${i + 1} of ${ev.photos.length}`}
+                    onClick={() => setActive({ event: evIndex, index: i })}
+                  >
+                    <img
+                      src={img.span === "lg" ? img.src : img.thumb || img.src}
+                      alt={img.alt}
+                      style={img.pos ? { objectPosition: img.pos } : undefined}
+                      loading="lazy"
+                    />
+                  </button>
+                ))}
+              </div>
+              {ev.instagram && (
+                <div className="embed">
+                  <iframe
+                    className="embed__frame"
+                    src={`${ev.instagram}embed/`}
+                    title={`${ev.title} on Instagram`}
+                    loading="lazy"
+                    scrolling="no"
+                    allowFullScreen
+                  />
+                  <a className="text-link" href={ev.instagram} target="_blank" rel="noreferrer">
+                    Watch on Instagram &#8599;
+                  </a>
+                </div>
               )}
-            </button>
-          ))}
+            </div>
+          </div>
+        </section>
+      ))}
+
+      <section className="section section--tight">
+        <div className="container">
+          <div className="panel panel--cta">
+            <div className="stack">
+              <h2 className="h2 h2--lg">Planning something?</h2>
+              <p className="light-muted lead">Tell us about your event or production and we'll be in touch.</p>
+            </div>
+            <div className="btn-row">
+              <Link to="/contact" className="btn btn--light">
+                Inquire
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-      {active !== null && (
-        <Lightbox images={shown} index={active} onClose={() => setActive(null)} onChange={setActive} />
+      </section>
+
+      {active && (
+        <Lightbox
+          images={galleryEvents[active.event].photos}
+          index={active.index}
+          onClose={() => setActive(null)}
+          onChange={(i) => setActive({ event: active.event, index: i })}
+        />
       )}
-    </section>
+    </>
   );
 }
