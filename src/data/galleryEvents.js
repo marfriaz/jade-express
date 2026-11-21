@@ -38,11 +38,11 @@ export const galleryEvents = [
     spaces: [{ name: "Wilson Room" }],
     instagram: "https://www.instagram.com/p/DSqa678Eii7/",
     photos: photos("reposada", [
-      [1, "Aerial view of the long dinner tables with a live trio performing", 1.5, "50% 55%"],
+      [1, "Aerial view of the long dinner tables with a live trio performing", 0.85, "50% 55%"],
       [5, "The Reposada sign on a draped orange backdrop"],
       [3, "The host performing at the microphone"],
       [6, "Smoking cocktails served in Patrón-labeled glasses"],
-      [2, "Guests raising a toast along the candlelit table", 1.5, "50% 45%"],
+      [2, "Guests raising a toast along the candlelit table", 0.85, "50% 45%"],
       [7, "Guests dancing after dinner"],
     ]),
     rows: [

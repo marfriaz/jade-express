@@ -53,13 +53,13 @@ export default function GalleryPage() {
                         <button
                           key={img.src}
                           type="button"
-                          className={"justified__item justified__item--btn" + (img.ratio > 1 ? " justified__item--wide" : "")}
+                          className={"justified__item justified__item--btn" + (img.ratio > 0.8 ? " justified__item--wide" : "")}
                           style={{ "--ratio": img.ratio }}
                           aria-label={`Open ${ev.title} photo ${n} of ${ev.photos.length}`}
                           onClick={() => setActive({ event: evIndex, index: n - 1 })}
                         >
                           <img
-                            src={img.ratio > 1 ? img.src : img.thumb || img.src}
+                            src={img.ratio > 0.8 ? img.src : img.thumb || img.src}
                             alt={img.alt}
                             style={img.pos ? { objectPosition: img.pos } : undefined}
                             loading="lazy"
@@ -80,9 +80,6 @@ export default function GalleryPage() {
                     scrolling="no"
                     allowFullScreen
                   />
-                  <a className="text-link" href={ev.instagram} target="_blank" rel="noreferrer">
-                    Watch on Instagram &#8599;
-                  </a>
                 </div>
               )}
             </div>
