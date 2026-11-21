@@ -107,6 +107,8 @@ const site = {
   workspacesPage: {
     title: "workspaces.",
     lead: "Studios, offices, and creative suites to lease for your business, team, or independent practice. Move-in-ready, with room to make it your own.",
+    image: "/images/suite-2g/10.jpg",
+    alt: "Open studio with large windows and wood floors",
     details: [
       { label: "Leasing", text: "Longer-term leases (modified gross, with negotiable terms). Move in now." },
       { label: "Sizes", text: "Move-in-ready suites from 1,100 to 4,800 sq ft, with private offices, conference rooms and kitchens." },
@@ -114,12 +116,19 @@ const site = {
       { label: "Parking", text: "Gated on-site parking, 16 surface spaces, plus a freight elevator." },
       { label: "Location", text: "The Arts District in Downtown Los Angeles, five minutes from Little Tokyo and close to the 10, 5, 101 and 110 freeways." },
     ],
+    steps: [
+      { title: "Book a visit", text: "Come see the suites in person. Tell us what you do and how much room you need." },
+      { title: "Pick your space", text: "We'll walk you through what's available, from compact offices to large studios." },
+      { title: "Talk terms", text: "We'll go over lease terms with you and answer any questions." },
+    ],
     cta: { title: "Want to see a suite in person?", text: "Book a visit and we'll show you what's available." },
   },
 
   eventsPage: {
     title: "events & productions.",
     lead: "Rent a space by the day or hour for your event, shoot, or pop-up. Think of it like booking on Peerspace: pick a space, tell us your plans, and we'll confirm availability.",
+    image: "/images/home/plan-something.jpg",
+    alt: "Friends gathered around a lounge area at an evening event",
     popularFor: [
       "Photo & video shoots",
       "Pop-up markets",
@@ -128,6 +137,11 @@ const site = {
       "Workshops & paint-and-sips",
       "Parties & dance nights",
       "Brand activations",
+    ],
+    steps: [
+      { title: "Choose a space", text: "The Loft, the Courtyard, or the Studio, indoors or out. Each has its own look and size." },
+      { title: "Tell us your plans", text: "Share your date, guest count, and what you're putting together." },
+      { title: "We confirm", text: "We'll check availability and get back to you with next steps." },
     ],
     cta: { title: "Have an event in mind?", text: "Tell us the date and what you're planning and we'll be in touch." },
   },
