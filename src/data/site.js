@@ -42,7 +42,7 @@ const site = {
   },
 
   facts: [
-    { title: "Since 1985", text: "Family-owned and operated" },
+    { title: "Since 1995", text: "Family-owned and operated" },
     { title: "Arts District", text: "Downtown Los Angeles" },
     { title: "From 1,100 sq ft", text: "Move-in-ready offices and studios" },
     { title: "Gated parking", text: "16 on-site spaces" },
@@ -68,7 +68,7 @@ const site = {
   ],
 
   whoWeAre:
-    "Wilson & Bay is a creative campus at the corner of Wilson & Bay Streets in Downtown Los Angeles Arts District. Proudly family-owned and operated since 1985.",
+    "Wilson & Bay is a creative campus at the corner of Wilson & Bay Streets in Downtown Los Angeles Arts District. Proudly family-owned and operated since 1995.",
 
   // Event photos for the gallery (public/images/events/NN.jpg + NN-sm.jpg).
   events: Array.from({ length: 29 }, (_, i) => {
@@ -113,7 +113,7 @@ const site = {
       { label: "Leasing", text: "Longer-term leases (modified gross, with negotiable terms). Move in now." },
       { label: "Sizes", text: "Move-in-ready suites from 1,100 to 4,800 sq ft, with offices, conference rooms and kitchens." },
       { label: "Parking", text: "Gated on-site parking, 16 surface spaces, plus a freight elevator." },
-      { label: "Location", text: "The Arts District in Downtown Los Angeles, on a family-owned campus since 1985." },
+      { label: "Location", text: "The Arts District in Downtown Los Angeles, on a family-owned campus since 1995." },
     ],
     steps: [
       { title: "Book a visit", text: "Come see the suites in person. Tell us what you do and how much room you need." },
