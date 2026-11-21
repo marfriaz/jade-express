@@ -44,22 +44,30 @@ export default function GalleryPage() {
             </div>
 
             <div className={"case__body" + (ev.instagram ? " case__body--embed" : "")}>
-              <div className="collage">
-                {ev.photos.map((img, i) => (
-                  <button
-                    key={img.src}
-                    type="button"
-                    className={"collage__item" + (img.span ? " collage__item--" + img.span : "")}
-                    aria-label={`Open ${ev.title} photo ${i + 1} of ${ev.photos.length}`}
-                    onClick={() => setActive({ event: evIndex, index: i })}
-                  >
-                    <img
-                      src={img.span === "lg" ? img.src : img.thumb || img.src}
-                      alt={img.alt}
-                      style={img.pos ? { objectPosition: img.pos } : undefined}
-                      loading="lazy"
-                    />
-                  </button>
+              <div className="justified">
+                {ev.rows.map((row, r) => (
+                  <div className="justified__row" key={r}>
+                    {row.map((n) => {
+                      const img = ev.photos[n - 1];
+                      return (
+                        <button
+                          key={img.src}
+                          type="button"
+                          className={"justified__item justified__item--btn" + (img.ratio > 1 ? " justified__item--wide" : "")}
+                          style={{ "--ratio": img.ratio }}
+                          aria-label={`Open ${ev.title} photo ${n} of ${ev.photos.length}`}
+                          onClick={() => setActive({ event: evIndex, index: n - 1 })}
+                        >
+                          <img
+                            src={img.ratio > 1 ? img.src : img.thumb || img.src}
+                            alt={img.alt}
+                            style={img.pos ? { objectPosition: img.pos } : undefined}
+                            loading="lazy"
+                          />
+                        </button>
+                      );
+                    })}
+                  </div>
                 ))}
               </div>
               {ev.instagram && (
