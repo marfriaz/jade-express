@@ -113,7 +113,7 @@ export default function Home() {
           </div>
           {site.instagram && igPicks.length > 0 && (
             <div className="life-insta">
-              <div className="life-insta__grid">
+              <div className={"life-insta__grid" + (igPicks.length > 3 ? " life-insta__grid--many" : "")}>
                 {igPicks.map((p) => (
                   <a
                     key={p.src}

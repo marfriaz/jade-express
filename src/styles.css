@@ -1337,3 +1337,10 @@ ul {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
+
+/* More than 3 Instagram posts: 3 per row on phones, 4 per row on larger screens. */
+@media (min-width: 900px) {
+  .life-insta__grid--many {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
