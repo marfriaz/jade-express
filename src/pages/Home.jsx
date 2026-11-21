@@ -48,7 +48,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="band band--pad">
+      <section className="band band--pad band--tight">
         <div className="container stack stack--xl">
           <span className="label label--light">What brings you here?</span>
           <div className="paths">
@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--tight">
         <div className="container stack stack--xl">
           <div className="section__head">
             <h2 className="h2 h2--xl">featured spaces</h2>
@@ -85,7 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="band band--pad">
+      <section className="band band--pad band--tight">
         <div className="container stack stack--xl">
           <div className="section__head section__head--end">
             <div className="stack">
@@ -143,7 +143,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section" id="contact">
+      <section className="section section--tight" id="contact">
         <div className="container">
           <div className="panel">
             <div className="stack">
