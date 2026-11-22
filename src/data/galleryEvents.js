@@ -64,10 +64,10 @@ export const galleryEvents = [
       alt: "Shoppers and vendors at the Manic Pixie Dream Market in the courtyard",
     },
     photos: photos("manic-pixie", [
-      [1, "The Manic Pixie Dream Market banner beside pink vendor tents", 1.5, undefined, "full"],
-      [2, "A DJ playing on the loading dock above the market", 1.5, undefined, "full"],
-      [5, "Shoppers walking past racks of clothing under white and yellow tents", 1.5, undefined, "full"],
-      [4, "Vendor tents and tables lining the courtyard", 1.5, undefined, "full"],
+      [1, "The Manic Pixie Dream Market banner beside pink vendor tents", 1.15, undefined, "full"],
+      [2, "A DJ playing on the loading dock above the market", 1.15, undefined, "full"],
+      [5, "Shoppers walking past racks of clothing under white and yellow tents", 1.15, undefined, "full"],
+      [4, "Vendor tents and tables lining the courtyard", 1.15, undefined, "full"],
     ]),
     rows: [
       [1, 2],
@@ -89,12 +89,7 @@ export const galleryEvents = [
       [1, "Crew and models on set in the bright, high-ceilinged Wilson Room", 1.6, "50% 62%", "full"],
       [2, "Photographer and crew working beside tall windows", 1.6, "50% 78%", "full"],
       [3, "Crew and model in the courtyard", 0.9],
-      [
-        { video: "/videos/gallery/free-people/tile.mp4", poster: "/videos/gallery/free-people/tile.jpg" },
-        "Crew setting up lights in the Wilson Room",
-        0.9,
-        "50% 88%",
-      ],
+      [4, "Model in a black top and grey pants leaning on a dark column", 0.9, "50% 30%"],
     ]),
     rows: [
       [1, 2],
