@@ -5,12 +5,13 @@
 // `rows` works like the "life at wilson & bay" collage on the home page: photo positions (1 = first
 // photo in the list) left to right, one array per row. Photos in a row share the same height.
 // A fifth value of "full" makes that photo take a full row on phones (otherwise portrait photos pair up).
+// A sixth value sets the order on phones only (among the full-row photos in the same row; default 1).
 // Instead of a file number you can pass { video, poster } for a muted, looping video tile.
 function photos(slug, list) {
-  return list.map(([num, alt, ratio = 0.75, pos, mobile]) => {
-    if (typeof num === "object") return { ...num, alt, ratio, pos, mobile };
+  return list.map(([num, alt, ratio = 0.75, pos, mobile, mobileOrder]) => {
+    if (typeof num === "object") return { ...num, alt, ratio, pos, mobile, mobileOrder };
     const n = String(num).padStart(2, "0");
-    return { src: `/images/gallery/${slug}/${n}.jpg`, thumb: `/images/gallery/${slug}/${n}-sm.jpg`, alt, ratio, pos, mobile };
+    return { src: `/images/gallery/${slug}/${n}.jpg`, thumb: `/images/gallery/${slug}/${n}-sm.jpg`, alt, ratio, pos, mobile, mobileOrder };
   });
 }
 
@@ -21,8 +22,8 @@ export const galleryEvents = [
     title: "atrás",
     text: "an intimate gathering in the loft, bringing together music, drinks and a community of creatives for an evening of connection and celebration.",
     photos: photos("atras", [
-      [1, "Guests lounging on couches and chairs under warm light in the Loft", 1.3, undefined, "full"],
-      [2, "Two friends talking on a green velvet sofa in front of exposed brick", 1.25, undefined, "full"],
+      [1, "Guests lounging on couches and chairs under warm light in the Loft", 1.3, undefined, "full", 2],
+      [2, "Two friends talking on a green velvet sofa in front of exposed brick", 1.25, undefined, "full", 1],
       [3, "Friends posing at a photo booth against exposed brick", 0.8],
       [4, "Florals, cake and cupcakes on a candlelit dessert table", 1.25, undefined, "full"],
       [5, "Guests mingling on the wood floor under pendant lights"],
