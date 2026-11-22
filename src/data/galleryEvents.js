@@ -61,4 +61,21 @@ export const galleryEvents = [
       [4, 5, 6],
     ],
   },
+  {
+    slug: "atras",
+    kind: "Loft party",
+    title: "Atrás",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    photos: photos("atras", [
+      [1, "Guests lounging on couches and chairs under warm light in the Loft", 1.3, undefined, "full"],
+      [2, "Three friends seated together on a leather ottoman"],
+      [3, "Friends posing at a photo booth against exposed brick", 0.8],
+      [4, "Two bartenders behind the bar with shelves of bottles", 1.5, undefined, "full"],
+      [5, "A grazing table with fruit, cheese and candles", 1.5, undefined, "full"],
+    ]),
+    rows: [
+      [1, 2, 3],
+      [4, 5],
+    ],
+  },
 ];
