@@ -21,13 +21,15 @@ export const galleryEvents = [
     kind: "EVENT",
     title: "atrás",
     text: "an intimate gathering in the loft, bringing together music, drinks and a community of creatives for an evening of connection and celebration.",
+    // On phones the rows are flattened so photos can swap places across rows.
+    mobileFlat: true,
     photos: photos("atras", [
       [1, "Guests lounging on couches and chairs under warm light in the Loft", 1.3, undefined, "full", 1],
       [2, "Two friends talking on a green velvet sofa in front of exposed brick", 1.25, undefined, "full", 3],
-      [3, "Friends posing at a photo booth against exposed brick", 0.8, undefined, undefined, 2],
-      [4, "Florals, cake and cupcakes on a candlelit dessert table", 1.25, undefined, "full"],
-      [5, "Guests mingling on the wood floor under pendant lights"],
-      [6, "The warmly lit brick wall of the Loft with a film screening", 1.5, undefined, "full"],
+      [3, "Friends posing at a photo booth against exposed brick", 0.8, undefined, undefined, 4],
+      [4, "Florals, cake and cupcakes on a candlelit dessert table", 1.25, undefined, "full", 5],
+      [5, "Guests mingling on the wood floor under pendant lights", 0.75, undefined, undefined, 2],
+      [6, "The warmly lit brick wall of the Loft with a film screening", 1.5, undefined, "full", 6],
     ]),
     rows: [
       [1, 2, 3],
