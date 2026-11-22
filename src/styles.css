@@ -1589,10 +1589,3 @@ ul {
   border: 0;
   transform-origin: top left;
 }
-@media (max-width: 699px) {
-  /* Phones: the embed gets its own full row at normal size. */
-  .justified__item--embed {
-    flex: 1 1 100%;
-    aspect-ratio: 326 / 440;
-  }
-}
