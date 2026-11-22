@@ -1543,12 +1543,11 @@ ul {
   text-transform: lowercase;
 }
 
-/* Gallery: first event sits close under the page title. */
-.section--page + .case {
-  padding-top: 20px;
+/* Gallery: first event sits right under the page title; tighter gap between each event's text and photos. */
+.section--page + .case,
+.section--page + .case.section--tight {
+  padding-top: 4px;
 }
-@media (min-width: 900px) {
-  .section--page + .case {
-    padding-top: 28px;
-  }
+.case > .container.stack--xl {
+  gap: 24px;
 }
