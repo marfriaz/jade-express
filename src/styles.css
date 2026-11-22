@@ -1593,7 +1593,6 @@ ul {
   /* Phones: the embed gets its own full row at normal size. */
   .justified__item--embed {
     flex: 1 1 100%;
-    aspect-ratio: 326 / 600;
-    max-height: 600px;
+    aspect-ratio: 326 / 440;
   }
 }

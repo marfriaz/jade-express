@@ -5,7 +5,9 @@ import { useEffect, useRef, useState } from "react";
 // slot's height, and centered if the slot is wider.
 const NATIVE_WIDTH = 326;
 
-export default function ScaledEmbed({ url, title, height = 600 }) {
+const FULL_HEIGHT = 760; // tall enough for the whole embed; the box clips it to `height`
+
+export default function ScaledEmbed({ url, title, height = 440 }) {
   const box = useRef(null);
   const [size, setSize] = useState({ w: NATIVE_WIDTH, h: height });
 
@@ -29,7 +31,7 @@ export default function ScaledEmbed({ url, title, height = 600 }) {
         loading="lazy"
         allowFullScreen
         scrolling="no"
-        style={{ width: NATIVE_WIDTH, height, transform: `translateX(${x}px) scale(${scale})` }}
+        style={{ width: NATIVE_WIDTH, height: FULL_HEIGHT, transform: `translateX(${x}px) scale(${scale})` }}
       />
     </div>
   );
