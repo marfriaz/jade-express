@@ -1431,9 +1431,6 @@ ul {
 .case__head {
   gap: 14px;
 }
-.case__text {
-  max-width: 60ch;
-}
 .case__body {
   display: grid;
   gap: 24px;
