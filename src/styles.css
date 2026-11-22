@@ -134,11 +134,11 @@ ul {
   }
 }
 .section--page {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 @media (min-width: 900px) {
   .section--page {
-    padding-top: 72px;
+    padding-top: 36px;
   }
 }
 .section__head {
