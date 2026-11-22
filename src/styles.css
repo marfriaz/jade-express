@@ -1542,3 +1542,13 @@ ul {
 .tab {
   text-transform: lowercase;
 }
+
+/* Gallery: first event sits close under the page title. */
+.section--page + .case {
+  padding-top: 20px;
+}
+@media (min-width: 900px) {
+  .section--page + .case {
+    padding-top: 28px;
+  }
+}
