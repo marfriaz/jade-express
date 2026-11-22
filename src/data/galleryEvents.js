@@ -40,11 +40,11 @@ export const galleryEvents = [
     instagram: "https://www.instagram.com/p/DSqa678Eii7/",
     photos: photos("reposada", [
       [1, "Aerial view of the long dinner tables with a live trio performing", 0.85, "50% 55%", "full"],
-      [5, "The Reposada sign on a draped orange backdrop"],
+      [2, "Smoking cocktails served in Patrón-labeled glasses"],
       [3, "The host performing at the microphone"],
-      [6, "Smoking cocktails served in Patrón-labeled glasses"],
-      [2, "Guests raising a toast along the candlelit table", 0.85, "50% 45%", "full"],
-      [7, "Guests dancing after dinner"],
+      [4, "A trio performing with guitars behind the dinner table"],
+      [5, "Guests raising a toast along the candlelit table", 0.85, "50% 45%", "full"],
+      [6, "Guests dancing at the dinner"],
     ]),
     rows: [
       [1, 2, 3],
