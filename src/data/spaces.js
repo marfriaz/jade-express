@@ -66,10 +66,8 @@ const allSpaces = [
     sqft: "7,000",
     location: "arts district, Los Angeles",
     summary:
-      "exposed brick, timber beams, and original wood floors, with a private entrance, freight elevator, soundproof rooms, and a hidden space behind a bookshelf.",
-    description: [
-      "spanning 7,000 sq ft on the second floor, the loft unfolds across a series of expansive, connected spaces with exposed brick, timber beams, and original wood floors throughout. smaller rooms are tucked within the layout, including soundproof rooms and a hidden room behind a bookshelf. with a private entrance, freight elevator, kitchen and bar area, and built-in projection, the loft offers a versatile setting for creative work, productions, and gatherings.",
-    ],
+      "a private loft with its own entrance and freight elevator, featuring exposed brick, timber beams, and original wood floors. the space flows through several connected areas, with soundproof rooms and a hidden room behind a bookshelf.",
+    description: [],
     basics: [
       { label: "size", value: "7,000 sq ft" },
       { label: "floor", value: "second floor" },
@@ -113,10 +111,8 @@ const allSpaces = [
     sqft: "15,000+",
     location: "arts district, Los Angeles",
     summary:
-      "an expansive gated courtyard framed by historic brick walls and industrial architecture, with plenty of room to spread out and make it your own.",
-    description: [
-      "an expansive, 15,000+ sq ft gated courtyard framed by historic brick walls and industrial architecture. with plenty of room to spread out and make it your own, it's a flexible setting for outdoor events, markets, brand activations, and productions.",
-    ],
+      "a gated outdoor courtyard surrounded by brick buildings and industrial architecture, with an open layout for markets, brand activations, productions, and gatherings.",
+    description: [],
     basics: [
       { label: "size", value: "15,000+ sq ft" },
       { label: "setting", value: "gated courtyard" },
@@ -149,10 +145,8 @@ const allSpaces = [
     sqft: "5,000",
     location: "arts district, Los Angeles",
     summary:
-      "5,000 sq ft of open, light-filled space with high ceilings and a flexible layout.",
-    description: [
-      "5,000 sq ft of open, light-filled space with high ceilings and a flexible layout. a blank canvas that can be transformed for creative work, photo and video productions, intimate gatherings, and celebrations.",
-    ],
+      "an open industrial space with high ceilings, concrete floors, and natural light. its flexible floor plan can accommodate creative work, productions, and gatherings.",
+    description: [],
     basics: [
       { label: "size", value: "5,000 sq ft" },
       { label: "capacity", value: "" },
@@ -185,10 +179,8 @@ const allSpaces = [
     sqft: "2,700",
     location: "arts district, Los Angeles",
     summary:
-      "a ground-floor, move-in-ready suite with 18-foot ceilings, private offices, a conference room, and direct access from the gated parking area.",
-    description: [
-      "ground-floor creative office suite with direct access from the gated parking area, roughly 18-foot ceilings, abundant natural light, private restrooms, a conference room, a kitchen and break area, private offices, storage rooms, and open collaborative workspace. move-in ready, with quality improvements throughout.",
-    ],
+      "a ground-floor studio with 18-foot ceilings, concrete floors, and glass-enclosed rooms. the open layout offers flexibility for creative teams, offices, and production work.",
+    description: [],
     basics: [
       { label: "size", value: "2,700 sq ft" },
       { label: "floor", value: "ground floor" },
@@ -276,10 +268,8 @@ const allSpaces = [
     sqft: "2,400",
     location: "arts district, Los Angeles",
     summary:
-      "historic character with modern function: exposed timber, large windows, hardwood floors, a conference room, kitchenette, and dual entrances.",
-    description: [
-      "a creative office suite that blends historic character with modern functionality. it features exposed architectural elements, large windows, open workspace, a conference room, a private office, a kitchenette, HVAC, and dual entrances.",
-    ],
+      "exposed timber ceilings, large windows, hardwood floors, and a mix of open workspace and enclosed rooms. a flexible layout for creative offices and studios.",
+    description: [],
     basics: [
       { label: "size", value: "2,400 sq ft" },
       { label: "floor", value: "second floor" },
@@ -319,10 +309,8 @@ const allSpaces = [
     sqft: "4,800",
     location: "arts district, Los Angeles",
     summary:
-      "our largest suite: seven private offices, a large conference room, collaborative workspace, and a kitchen and gathering area under a timber ceiling.",
-    description: [
-      "a creative office suite with multiple private offices, a creative office layout, a large conference room, collaborative workspace, a kitchen and gathering area, utility and storage space, modern lighting, and high-speed internet infrastructure. well suited to growing teams seeking a move-in-ready creative office environment.",
-    ],
+      "seven private offices, a large conference room, collaborative workspace, and a kitchenette, with exposed timber ceilings and large industrial windows.",
+    description: [],
     basics: [
       { label: "size", value: "4,800 sq ft" },
       { label: "floor", value: "second floor" },
@@ -366,10 +354,8 @@ const allSpaces = [
     sqft: "1,100",
     location: "arts district, Los Angeles",
     summary:
-      "a quiet, self-contained second-floor suite with tall windows, a timber ceiling, a private restroom, and a kitchenette.",
-    description: [
-      "a private second-floor office suite originally configured for owner occupancy. it features a private restroom, a kitchenette, efficient workspace separation, and a quiet, self-contained office environment.",
-    ],
+      "a second-floor studio with tall windows, timber ceilings, a private restroom, and a kitchenette. suited for a small team or independent business.",
+    description: [],
     basics: [
       { label: "size", value: "1,100 sq ft" },
       { label: "floor", value: "second floor" },
