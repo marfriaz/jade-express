@@ -1691,3 +1691,12 @@ ul {
   letter-spacing: normal;
   font-size: 15px;
 }
+
+/* Phones: the hero fills the screen under the header, so the photo runs flush to the bottom edge. */
+@media (max-width: 899px) {
+  .hero {
+    min-height: 600px;
+    min-height: calc(100vh - 65px);
+    min-height: calc(100svh - 65px);
+  }
+}
