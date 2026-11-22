@@ -17,46 +17,53 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {galleryEvents.map((ev, evIndex) => (
+      {galleryEvents.map((ev, evIndex) => {
+        const stills = ev.photos.filter((p) => !p.video);
+        return (
         <section key={ev.slug} className="section section--tight case" id={ev.slug}>
           <div className="container stack stack--xl">
-            <div className="case__head">
-              <div className="stack">
-                <span className="label">{ev.kind}</span>
-                <h2 className="h2 h2--xl">{ev.title}</h2>
-              </div>
-              <div className="stack">
-                <p className="lead">{ev.text}</p>
-                <div className="chips">
-                  {ev.spaces.map((s) =>
-                    s.to ? (
-                      <Link key={s.name} to={s.to} className="chip chip--link">
-                        {s.name}
-                      </Link>
-                    ) : (
-                      <span key={s.name} className="chip">
-                        {s.name}
-                      </span>
-                    )
-                  )}
-                </div>
-              </div>
+            <div className="case__head stack">
+              <span className="label">{ev.kind}</span>
+              <h2 className="h2 h2--xl">{ev.title}</h2>
+              <p className="lead case__text">{ev.text}</p>
             </div>
 
-            <div className={"case__body" + (ev.instagram ? " case__body--embed" : "")}>
+            <div className={"case__body" + (ev.instagram || ev.sideVideo ? " case__body--embed" : "")}>
               <div className="justified">
                 {ev.rows.map((row, r) => (
                   <div className="justified__row" key={r}>
                     {row.map((n) => {
                       const img = ev.photos[n - 1];
+                      const mobile = img.mobile === "full" ? " justified__item--wide" : "";
+                      if (img.video) {
+                        return (
+                          <div
+                            key={img.video}
+                            className={"justified__item" + mobile}
+                            style={{ "--ratio": img.ratio }}
+                          >
+                            <video
+                              className="justified__video"
+                              src={img.video}
+                              poster={img.poster}
+                              aria-label={img.alt}
+                              autoPlay
+                              muted
+                              loop
+                              playsInline
+                              preload="metadata"
+                            />
+                          </div>
+                        );
+                      }
                       return (
                         <button
                           key={img.src}
                           type="button"
-                          className={"justified__item justified__item--btn" + (img.ratio > 0.8 ? " justified__item--wide" : "")}
+                          className={"justified__item justified__item--btn" + mobile}
                           style={{ "--ratio": img.ratio }}
                           aria-label={`Open ${ev.title} photo ${n} of ${ev.photos.length}`}
-                          onClick={() => setActive({ event: evIndex, index: n - 1 })}
+                          onClick={() => setActive({ event: evIndex, index: stills.indexOf(img) })}
                         >
                           <img
                             src={img.ratio > 0.8 ? img.src : img.thumb || img.src}
@@ -70,6 +77,22 @@ export default function GalleryPage() {
                   </div>
                 ))}
               </div>
+              {ev.sideVideo && (
+                <div className="embed">
+                  <video
+                    className="embed__video"
+                    src={ev.sideVideo.src}
+                    poster={ev.sideVideo.poster}
+                    aria-label={ev.sideVideo.alt}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                    preload="metadata"
+                  />
+                </div>
+              )}
               {ev.instagram && (
                 <div className="embed">
                   <iframe
@@ -85,7 +108,8 @@ export default function GalleryPage() {
             </div>
           </div>
         </section>
-      ))}
+        );
+      })}
 
       <section className="section section--tight">
         <div className="container">
@@ -105,7 +129,7 @@ export default function GalleryPage() {
 
       {active && (
         <Lightbox
-          images={galleryEvents[active.event].photos}
+          images={galleryEvents[active.event].photos.filter((p) => !p.video)}
           index={active.index}
           onClose={() => setActive(null)}
           onChange={(i) => setActive({ event: active.event, index: i })}

@@ -1428,20 +1428,10 @@ ul {
 
 /* ---------- gallery case studies ---------- */
 .case__head {
-  display: grid;
-  gap: 20px;
+  gap: 14px;
 }
-@media (min-width: 900px) {
-  .case__head {
-    grid-template-columns: 5fr 7fr;
-    gap: 64px;
-    align-items: end;
-  }
-}
-.chip--link {
-  text-decoration: none;
-  background: var(--ink);
-  color: var(--bg);
+.case__text {
+  max-width: 60ch;
 }
 .case__body {
   display: grid;
@@ -1488,5 +1478,33 @@ ul {
   .embed__frame {
     min-height: 0;
     height: 100%;
+  }
+}
+
+/* Looping video tile inside a collage row, and the vertical video beside a collage. */
+.justified__video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: var(--ratio);
+  object-fit: cover;
+}
+.embed__video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  background: #000;
+  object-fit: cover;
+}
+@media (min-width: 900px) {
+  /* Out of flow so the collage, not the video's own shape, sets the shared height. */
+  .embed {
+    position: relative;
+  }
+  .embed__video {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    aspect-ratio: auto;
   }
 }
