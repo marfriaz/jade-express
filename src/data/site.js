@@ -37,7 +37,7 @@ const site = {
   formEndpoint: "",
 
   hero: {
-    title: "make room for something new",
+    title: "make room for\nsomething new",
     text: "a place to work, make things, bring people together, or all of the above.",
   },
 

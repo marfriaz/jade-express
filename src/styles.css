@@ -528,7 +528,8 @@ ul {
   }
 }
 .hero__title {
-  font-size: clamp(52px, 9vw, 104px);
+  white-space: pre-line; /* the title is written on two lines in site.js */
+  font-size: clamp(38px, 7vw, 76px);
   line-height: 0.96;
   font-weight: 500;
   letter-spacing: -0.045em;
@@ -1518,11 +1519,6 @@ ul {
 }
 
 /* Hero headline: a little smaller on tablets, where it ran too big. */
-@media (min-width: 700px) and (max-width: 1100px) {
-  .hero__title {
-    font-size: clamp(46px, 6.2vw, 68px);
-  }
-}
 
 /* Space cards: names in the headline style, all lowercase, and quiet text tags instead of button-like pills. */
 .card .h3 {
