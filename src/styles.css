@@ -1571,3 +1571,27 @@ ul {
     padding-bottom: 28px;
   }
 }
+
+/* Instagram embed sitting in a collage slot (see ScaledEmbed). Full row on phones. */
+.justified__item--embed {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  aspect-ratio: var(--ratio);
+}
+.scaled-embed {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.scaled-embed iframe {
+  display: block;
+  border: 0;
+  transform-origin: top left;
+}
+@media (max-width: 699px) {
+  .justified__item--embed {
+    flex: 1 1 100%;
+    aspect-ratio: 0.6;
+  }
+}

@@ -3,6 +3,7 @@ import site from "../data/site.js";
 import { spaces } from "../data/spaces.js";
 import SpaceCard from "../components/SpaceCard.jsx";
 import InquiryForm from "../components/InquiryForm.jsx";
+import ScaledEmbed from "../components/ScaledEmbed.jsx";
 
 export default function Home() {
   const featured = spaces.filter((s) => s.featured);
@@ -102,8 +103,16 @@ export default function Home() {
                 {row.map((n) => {
                   const img = site.life.images[n - 1];
                   return (
-                    <div className="justified__item" key={img.src} style={{ "--ratio": img.ratio }}>
-                      <img src={img.src} alt={img.alt} loading="lazy" />
+                    <div
+                      className={"justified__item" + (img.embed ? " justified__item--embed" : "")}
+                      key={img.src || img.embed}
+                      style={{ "--ratio": img.ratio }}
+                    >
+                      {img.embed ? (
+                        <ScaledEmbed url={img.embed} title={img.alt} />
+                      ) : (
+                        <img src={img.src} alt={img.alt} loading="lazy" />
+                      )}
                     </div>
                   );
                 })}

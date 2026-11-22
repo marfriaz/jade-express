@@ -94,7 +94,7 @@ const site = {
       { src: "/images/home/life-4.webp", alt: "Wedding portrait in front of white drapes", ratio: 1.5 },
       { src: "/images/home/life-5.webp", alt: "Sunlit loft with a photo shoot below", ratio: 0.75 },
       { src: "/images/home/life-6.webp", alt: "Long dinner tables seen from above", ratio: 0.75 },
-      { src: "/images/home/life-7.webp", alt: "Woman holding up a sweatshirt beside a vintage Airstream in the courtyard", ratio: 0.75 },
+      { embed: "https://www.instagram.com/p/DdNO9eKjY00/", alt: "Instagram post from Wilson & Bay", ratio: 0.56 },
     ],
     rows: [
       [5, 2, 1, 6],
