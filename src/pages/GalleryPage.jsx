@@ -12,7 +12,7 @@ export default function GalleryPage() {
         <div className="container stack stack--xl">
           <div className="stack">
             <h1 className="h1">gallery.</h1>
-            <p className="lead muted">A look at some of the events and productions we've hosted.</p>
+            <p className="lead muted">a collection of events, productions, and creative projects that have come to life at wilson & bay.</p>
           </div>
         </div>
       </section>

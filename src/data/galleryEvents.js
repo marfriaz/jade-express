@@ -17,26 +17,27 @@ function photos(slug, list) {
 export const galleryEvents = [
   {
     slug: "atras",
-    kind: "Loft party",
-    title: "Atrás",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    kind: "EVENT",
+    title: "atrás",
+    text: "an intimate gathering in the loft, bringing together music, drinks and a community of creatives for an evening of connection and celebration.",
     photos: photos("atras", [
       [1, "Guests lounging on couches and chairs under warm light in the Loft", 1.3, undefined, "full"],
-      [2, "Three friends seated together on a leather ottoman"],
+      [2, "Two friends talking on a green velvet sofa in front of exposed brick", 1.25, undefined, "full"],
       [3, "Friends posing at a photo booth against exposed brick", 0.8],
-      [4, "Two bartenders behind the bar with shelves of bottles", 1.5, undefined, "full"],
-      [5, "A grazing table with fruit, cheese and candles", 1.5, undefined, "full"],
+      [4, "Florals, cake and cupcakes on a candlelit dessert table", 1.25, undefined, "full"],
+      [5, "Guests mingling on the wood floor under pendant lights"],
+      [6, "The warmly lit brick wall of the Loft with a film screening", 1.5, undefined, "full"],
     ]),
     rows: [
       [1, 2, 3],
-      [4, 5],
+      [4, 5, 6],
     ],
   },
   {
     slug: "reposada",
-    kind: "Dinner & live music",
-    title: "Reposada",
-    text: "Reposada, a dinner by Mando Fresco in collaboration with Patrón, recognizing Latin excellence. Long candlelit tables, live music and cocktails filled the Wilson Room.",
+    kind: "PRIVATE DINNER",
+    title: "reposada by mando fresko",
+    text: "a dinner experience hosted by Mando Fresko in collaboration with Patrón, celebrating Latin excellence through food, live music, and cocktails.",
     instagram: "https://www.instagram.com/p/DSqa678Eii7/",
     photos: photos("reposada", [
       [1, "Aerial view of the long dinner tables with a live trio performing", 0.85, "50% 55%", "full"],
@@ -53,9 +54,9 @@ export const galleryEvents = [
   },
   {
     slug: "manic-pixie-dream-market",
-    kind: "Market",
-    title: "Manic Pixie Dream Market",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    kind: "POP-UP MARKET",
+    title: "manic pixie pop up market",
+    text: "an outdoor pop-up market bringing together independent vendors, local creatives and shoppers into the courtyard.",
     photos: photos("manic-pixie", [
       [1, "The Manic Pixie Dream Market banner beside pink vendor tents", 1.5, undefined, "full"],
       [2, "A DJ playing on the loading dock above the market", 1.5, undefined, "full"],
@@ -71,9 +72,9 @@ export const galleryEvents = [
   },
   {
     slug: "free-people",
-    kind: "Brand photoshoot",
-    title: "Free People",
-    text: "A clothing-brand photoshoot for Free People, using the bright Wilson Room and the courtyard outside as backdrops.",
+    kind: "PHOTO PRODUCTION",
+    title: "free people",
+    text: "a fashion photoshoot for free people, using multiple spaces throughout the property as the backdrop for the brand's creative production.",
     // A vertical video sits to the right of the collage, like the Instagram post on Reposada.
     sideVideo: {
       src: "/videos/gallery/free-people/feature.mp4",
