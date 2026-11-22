@@ -1587,19 +1587,20 @@ ul {
 .scaled-embed iframe {
   display: block;
   border: 0;
-  transform-origin: top left;
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 699px) {
   .justified__item--embed {
     flex: 1 1 100%;
-    aspect-ratio: 0.88;
+    aspect-ratio: 0.6;
   }
 }
 
 /* A row made only of Instagram embeds: narrower and centered so each embed shows at about its natural size. */
 @media (min-width: 700px) {
   .justified__row--embeds {
-    max-width: 666px;
+    max-width: 780px;
     width: 100%;
     margin: 0 auto;
   }
