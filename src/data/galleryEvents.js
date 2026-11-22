@@ -78,4 +78,20 @@ export const galleryEvents = [
       [4, 5],
     ],
   },
+  {
+    slug: "manic-pixie-dream-market",
+    kind: "Market",
+    title: "Manic Pixie Dream Market",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    photos: photos("manic-pixie", [
+      [1, "The Manic Pixie Dream Market banner beside pink vendor tents", 1.5, undefined, "full"],
+      [2, "A DJ playing on the loading dock above the market", 1.5, undefined, "full"],
+      [3, "Shoppers browsing racks of vintage clothing and shoes", 1.5, undefined, "full"],
+      [4, "Vendor tents and tables lining the courtyard", 1.5, undefined, "full"],
+    ]),
+    rows: [
+      [1, 2],
+      [3, 4],
+    ],
+  },
 ];
