@@ -43,7 +43,7 @@ export const galleryEvents = [
     photos: photos("reposada", [
       [1, "Aerial view of the long dinner tables with a live trio performing", 0.85, "50% 55%", "full"],
       [2, "A bartender shaking a cocktail behind the bar"],
-      [3, "The host performing at the microphone"],
+      [3, "The host performing at the microphone", 0.75, undefined, undefined, -1],
       [4, "A trio performing with guitars on stage"],
       [5, "Guests raising a toast along the candlelit table", 0.85, "50% 45%", "full"],
       [6, "Guests dancing at the dinner"],
