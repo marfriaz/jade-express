@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import site from "../data/site.js";
+import PrivacyPolicy from "./PrivacyPolicy.jsx";
 
 const links = [
   { to: "/workspaces", label: "Workspaces" },
@@ -10,6 +11,7 @@ const links = [
 ];
 
 export default function Layout() {
+  const [policyOpen, setPolicyOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname, hash } = useLocation();
 
@@ -94,9 +96,13 @@ export default function Layout() {
             )}
             {site.phone && <a href={`tel:${site.phone}`}>{site.phone}</a>}
             {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
+            <button type="button" className="footer__policy" onClick={() => setPolicyOpen(true)}>
+              privacy policy
+            </button>
           </div>
         </div>
       </footer>
+      <PrivacyPolicy open={policyOpen} onClose={() => setPolicyOpen(false)} />
     </>
   );
 }
