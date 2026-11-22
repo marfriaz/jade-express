@@ -109,7 +109,7 @@ export default function Home() {
                     <div
                       className={"justified__item" + (img.embed ? " justified__item--embed" : "")}
                       key={img.src || img.embed}
-                      style={{ "--ratio": img.ratio }}
+                      style={{ "--ratio": img.ratio, ...(img.embed ? { "--h": `${img.height}px` } : {}) }}
                     >
                       {img.embed ? (
                         <ScaledEmbed url={img.embed} title={img.alt} />
