@@ -143,7 +143,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--tight" id="contact">
+      <section className="section section--tight home-end" id="contact">
         <div className="container">
           <div className="panel">
             <div className="stack">

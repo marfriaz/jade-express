@@ -1551,3 +1551,8 @@ ul {
 .case > .container.stack--xl {
   gap: 24px;
 }
+
+/* Home: less space between the closing "let's make something happen" panel and the footer. */
+.home-end {
+  margin-bottom: -32px;
+}
