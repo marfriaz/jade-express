@@ -64,11 +64,13 @@ export const galleryEvents = [
       poster: "/videos/gallery/manic-pixie/feature.jpg",
       alt: "Shoppers and vendors at the Manic Pixie Dream Market in the courtyard",
     },
+    // On phones the rows are flattened so a photo can swap places with one from another row.
+    mobileFlat: true,
     photos: photos("manic-pixie", [
-      [1, "The Manic Pixie Dream Market banner beside pink vendor tents", 1.15, undefined, "full"],
-      [2, "A DJ playing on the loading dock above the market", 1.15, undefined, "full"],
-      [3, "Racks of vintage clothing and shoes along the courtyard aisle", 1.15, undefined, "full"],
-      [4, "Shoppers browsing vendor tents lining the courtyard", 1.15, undefined, "full"],
+      [1, "The Manic Pixie Dream Market banner beside pink vendor tents", 1.15, undefined, "full", 1],
+      [2, "A DJ playing on the loading dock above the market", 1.15, undefined, "full", 3],
+      [3, "Racks of vintage clothing and shoes along the courtyard aisle", 1.15, undefined, "full", 2],
+      [4, "Shoppers browsing vendor tents lining the courtyard", 1.15, undefined, "full", 4],
     ]),
     rows: [
       [1, 2],

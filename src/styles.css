@@ -1451,6 +1451,13 @@ ul {
     flex-basis: 100%;
     order: var(--mo, 1);
   }
+  .justified--flat {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .justified--flat .justified__row {
+    display: contents;
+  }
 }
 .justified__item--btn {
   display: block;

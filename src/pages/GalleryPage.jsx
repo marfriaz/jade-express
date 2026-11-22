@@ -29,7 +29,7 @@ export default function GalleryPage() {
             </div>
 
             <div className={"case__body" + (ev.instagram || ev.sideVideo ? " case__body--embed" : "")}>
-              <div className="justified">
+              <div className={"justified" + (ev.mobileFlat ? " justified--flat" : "")}>
                 {ev.rows.map((row, r) => (
                   <div className="justified__row" key={r}>
                     {row.map((n) => {
