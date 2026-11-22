@@ -37,7 +37,15 @@ export default function Layout() {
     <>
       <header className="header">
         <div className="container header__inner">
-          <Link to="/" className="logo">
+          <Link
+            to="/"
+            className="logo"
+            onClick={() => {
+              // Already on the home page: the route doesn't change, so scroll up ourselves.
+              setOpen(false);
+              if (pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
             {site.name}
           </Link>
           <nav className="nav" aria-label="Main">
