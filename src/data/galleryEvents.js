@@ -66,8 +66,8 @@ export const galleryEvents = [
     photos: photos("manic-pixie", [
       [1, "The Manic Pixie Dream Market banner beside pink vendor tents", 1.15, undefined, "full"],
       [2, "A DJ playing on the loading dock above the market", 1.15, undefined, "full"],
-      [5, "Shoppers walking past racks of clothing under white and yellow tents", 1.15, undefined, "full"],
-      [4, "Vendor tents and tables lining the courtyard", 1.15, undefined, "full"],
+      [3, "Racks of vintage clothing and shoes along the courtyard aisle", 1.15, undefined, "full"],
+      [4, "Shoppers browsing vendor tents lining the courtyard", 1.15, undefined, "full"],
     ]),
     rows: [
       [1, 2],
