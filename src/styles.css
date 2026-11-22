@@ -1593,7 +1593,7 @@ ul {
 @media (max-width: 699px) {
   .justified__item--embed {
     flex: 1 1 100%;
-    aspect-ratio: 0.54;
+    aspect-ratio: var(--ratio);
   }
 }
 
@@ -1603,5 +1603,15 @@ ul {
     max-width: 780px;
     width: 100%;
     margin: 0 auto;
+  }
+}
+
+/* Each embed is cut off right under its like count; the posts differ slightly in height, so they top-align at equal widths. */
+@media (min-width: 700px) {
+  .justified__row--embeds {
+    align-items: flex-start;
+  }
+  .justified__row--embeds .justified__item {
+    flex: 1 1 0;
   }
 }
