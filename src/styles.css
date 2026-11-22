@@ -259,8 +259,8 @@ ul {
 .text-link[href^="mailto:"],
 .text-link[href^="tel:"] {
   font-size: inherit;
-  letter-spacing: normal;
-  text-transform: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 .text-link--caps {
   font-size: 14px;
@@ -1685,11 +1685,11 @@ ul {
   margin: 0;
 }
 
-/* Footer email stays as typed (not forced to caps). */
+/* Footer email: same caps style as the other footer links. */
 .footer__links a[href^="mailto:"] {
-  text-transform: none;
-  letter-spacing: normal;
-  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 13px;
 }
 
 /* Phones: the hero fills the screen under the header, so the photo runs flush to the bottom edge. */
