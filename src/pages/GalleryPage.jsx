@@ -47,6 +47,7 @@ export default function GalleryPage() {
                               src={img.video}
                               poster={img.poster}
                               aria-label={img.alt}
+                              style={img.pos ? { objectPosition: img.pos } : undefined}
                               autoPlay
                               muted
                               loop

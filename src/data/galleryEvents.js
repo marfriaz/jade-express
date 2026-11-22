@@ -34,6 +34,7 @@ export const galleryEvents = [
         { video: "/videos/gallery/free-people/tile.mp4", poster: "/videos/gallery/free-people/tile.jpg" },
         "Crew setting up lights in the Wilson Room",
         0.9,
+        "50% 88%",
       ],
     ]),
     rows: [
