@@ -42,11 +42,12 @@ const site = {
   },
 
   facts: [
-    { title: "Since 1995", text: "Family-owned and operated" },
-    { title: "Arts District", text: "Downtown Los Angeles" },
-    { title: "From 1,100 sq ft", text: "Move-in-ready offices and studios" },
-    { title: "Gated parking", text: "16 on-site spaces" },
+    { title: "since 1995", text: "family-owned and operated" },
+    { title: "arts district", text: "downtown los angeles" },
+    { title: "1,100 to 15,000+ sq ft", text: "offices to lease, spaces to rent by the day" },
+    { title: "gated parking", text: "on-site spaces" },
   ],
+
 
   paths: [
     {

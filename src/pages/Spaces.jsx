@@ -3,9 +3,9 @@ import { spaces } from "../data/spaces.js";
 import SpaceCard from "../components/SpaceCard.jsx";
 
 const filters = [
-  { key: "", label: "All spaces" },
-  { key: "workspace", label: "Workspaces" },
-  { key: "events", label: "Events & productions" },
+  { key: "", label: "all spaces" },
+  { key: "workspace", label: "workspaces" },
+  { key: "events", label: "events & productions" },
 ];
 
 export default function Spaces() {
@@ -24,7 +24,7 @@ export default function Spaces() {
         <div className="stack">
           <h1 className="h1">spaces.</h1>
           <p className="lead muted">
-            Studios, offices, and event spaces on the Wilson &amp; Bay campus.
+            Studios, offices, and event spaces on the Wilson &amp; Bay campus. Showing what&rsquo;s currently available.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export default function Spaces() {
 
         <div className="center">
           <Link to="/contact?type=visit" className="btn btn--primary btn--wide">
-            Book a visit
+            book a visit
           </Link>
         </div>
       </div>

@@ -564,13 +564,14 @@ ul {
   }
 }
 .fact__title {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
 }
 @media (min-width: 900px) {
   .fact__title {
-    font-size: 22px;
+    font-size: 26px;
   }
 }
 .fact__text {
@@ -1507,4 +1508,40 @@ ul {
     height: 100%;
     aspect-ratio: auto;
   }
+}
+
+/* Hero headline: a little smaller on tablets, where it ran too big. */
+@media (min-width: 700px) and (max-width: 1100px) {
+  .hero__title {
+    font-size: clamp(46px, 6.2vw, 68px);
+  }
+}
+
+/* Space cards: names in the headline style, all lowercase, and quiet text tags instead of button-like pills. */
+.card .h3 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  text-transform: lowercase;
+}
+.card .chips {
+  gap: 0;
+}
+.card .chip {
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: lowercase;
+}
+.card .chip + .chip::before {
+  content: "\00b7";
+  margin: 0 8px;
+}
+.tab {
+  text-transform: lowercase;
 }

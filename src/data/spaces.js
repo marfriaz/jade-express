@@ -57,7 +57,7 @@ const loftAreas = {
   ...range(28, 30, "Entry"),
 };
 
-export const spaces = [
+const allSpaces = [
   {
     slug: "the-loft",
     name: "The Loft",
@@ -230,6 +230,7 @@ export const spaces = [
     slug: "studio-1d",
     name: "Studio 1D",
     featured: false,
+    leased: true, // leased; hidden from the site until it's available again
     placeholder: true,
     uses: ["workspace"],
     sqft: "1,100",
@@ -354,7 +355,7 @@ export const spaces = [
         a: "Terms are negotiable. The listed rate is modified gross, plus about $0.32 / sq ft / month in common area charges. The suite is available now.",
       },
     ],
-    cover: 10,
+    cover: 7,
     images: photos("suite-2g", 15, "Studio 2G"),
   },
   {
@@ -396,11 +397,14 @@ export const spaces = [
         a: "Terms are negotiable. The listed rate is modified gross, plus about $0.30 / sq ft / month in common area charges. The suite is available now.",
       },
     ],
-    cover: 1,
+    cover: 2,
     images: photos("unit-5", 2, "Studio 2H"),
   },
 
 ];
+
+// Leased spaces stay in the data above (flag them `leased: true`) but are left off the site.
+export const spaces = allSpaces.filter((s) => !s.leased);
 
 export function getSpace(slug) {
   return spaces.find((s) => s.slug === slug);
