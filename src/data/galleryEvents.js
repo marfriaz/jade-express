@@ -90,7 +90,7 @@ export const galleryEvents = [
     },
     photos: photos("free-people", [
       [1, "Crew and models on set in the bright, high-ceilinged Wilson Room", 1.6, "50% 62%", "full"],
-      [2, "Model walking in a navy and lime Free People set against a blue-grey wall", 0.667],
+      [2, "Photographer and crew working beside tall windows", 1.6, "50% 78%", "full"],
       [3, "Crew and model in the courtyard", 0.9],
       [4, "Model in a black top and grey pants leaning on a dark column", 0.9, "50% 30%"],
     ]),
