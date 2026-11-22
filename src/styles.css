@@ -1444,6 +1444,9 @@ ul {
 }
 /* On phones, landscape photos take a full row and portrait ones pair up above them. */
 @media (max-width: 699px) {
+  .justified__item {
+    order: var(--mo, 0);
+  }
   .justified__item--wide {
     flex-basis: 100%;
     order: var(--mo, 1);
