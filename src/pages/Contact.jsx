@@ -9,7 +9,7 @@ export default function Contact() {
           <div className="stack">
             <h1 className="h1 h1--panel">let's make something happen.</h1>
             <p className="light-muted lead">
-              Looking for a space? Tell us what you have in mind and we'll be in touch.
+              looking for a space? tell us what you have in mind and we'll be in touch.
             </p>
             {site.email && (
               <a className="text-link" href={`mailto:${site.email}`}>
@@ -37,7 +37,7 @@ export default function Contact() {
         {site.mapEmbed && (
           <div className="map">
             <iframe
-              title="Map of Wilson & Bay"
+              title="map of wilson & bay"
               src={site.mapEmbed}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

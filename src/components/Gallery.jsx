@@ -3,7 +3,7 @@ import Lightbox from "./Lightbox.jsx";
 
 const DEFAULT_LIMIT = 7;
 
-export default function Gallery({ images, title = "Photos", id, limit = DEFAULT_LIMIT }) {
+export default function Gallery({ images, title = "photos", id, limit = DEFAULT_LIMIT }) {
   const areas = useMemo(
     () => [...new Set(images.map((i) => i.area).filter(Boolean))],
     [images]
@@ -68,7 +68,7 @@ export default function Gallery({ images, title = "Photos", id, limit = DEFAULT_
         {!expanded && filtered.length > limit && (
           <div className="center">
             <button type="button" className="btn" onClick={() => setExpanded(true)}>
-              View all {filtered.length} photos
+              view all {filtered.length} photos
             </button>
           </div>
         )}

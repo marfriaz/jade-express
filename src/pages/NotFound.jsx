@@ -5,10 +5,10 @@ export default function NotFound() {
     <section className="section section--page">
       <div className="container stack stack--lg">
         <h1 className="h1">page not found.</h1>
-        <p className="lead muted">That page doesn't exist, or the space has moved.</p>
+        <p className="lead muted">that page doesn't exist, or the space has moved.</p>
         <div>
           <Link to="/spaces" className="btn btn--primary">
-            View all spaces
+            view all spaces
           </Link>
         </div>
       </div>

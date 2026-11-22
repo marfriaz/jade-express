@@ -17,27 +17,27 @@ export default function BookingCard({ space }) {
   return (
     <aside className="booking" aria-label="Booking">
       <div className="booking__price">
-        <span className="muted small-strong">{space.price ? "Starting at" : "Pricing"}</span>
-        <span className="booking__amount">{space.price || "Request a quote"}</span>
+        <span className="muted small-strong">{space.price ? "starting at" : "pricing"}</span>
+        <span className="booking__amount">{space.price || "request a quote"}</span>
       </div>
       <form className="form" onSubmit={onSubmit}>
         <label>
-          Date
+          date
           <input name="date" type="date" />
         </label>
         <label>
-          Guests
-          <input name="guests" type="number" min="1" placeholder="How many people?" />
+          guests
+          <input name="guests" type="number" min="1" placeholder="how many people?" />
         </label>
         <button type="submit" className="btn btn--primary btn--block">
-          Check availability
+          check availability
         </button>
       </form>
       <Link
         to={`/contact?type=visit&space=${space.slug}`}
         className="btn btn--block"
       >
-        Book a visit
+        book a visit
       </Link>
     </aside>
   );

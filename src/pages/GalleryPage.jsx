@@ -116,12 +116,12 @@ export default function GalleryPage() {
         <div className="container">
           <div className="panel panel--cta">
             <div className="stack">
-              <h2 className="h2 h2--lg">Planning something?</h2>
-              <p className="light-muted lead">Tell us about your event or production and we'll be in touch.</p>
+              <h2 className="h2 h2--lg">planning something?</h2>
+              <p className="light-muted lead">tell us about your event or production and we'll be in touch.</p>
             </div>
             <div className="btn-row">
               <Link to="/contact" className="btn btn--light">
-                Inquire
+                inquire
               </Link>
             </div>
           </div>

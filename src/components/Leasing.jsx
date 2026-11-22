@@ -7,7 +7,7 @@ export default function Leasing() {
     <section className="section">
       <div className="container split">
         <div className="stack stack--lg">
-          <span className="label">Leasing</span>
+          <span className="label">leasing</span>
           <h2 className="h2 h2--md">{leasing.title}</h2>
           <p className="lead">{leasing.text}</p>
           <dl className="facts-list">
@@ -20,10 +20,10 @@ export default function Leasing() {
           </dl>
           <div className="btn-row">
             <Link to="/contact?type=visit" className="btn btn--primary">
-              Book a visit
+              book a visit
             </Link>
             <Link to="/spaces" className="btn">
-              View all spaces
+              view all spaces
             </Link>
           </div>
         </div>

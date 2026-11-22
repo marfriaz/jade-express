@@ -27,10 +27,10 @@ export default function Home() {
               <p className="hero__text">{site.hero.text}</p>
               <div className="btn-row">
                 <Link to="/spaces" className="btn btn--light">
-                  View our spaces
+                  view our spaces
                 </Link>
                 <Link to="/contact" className="btn btn--ghost-light">
-                  Get in touch
+                  get in touch
                 </Link>
               </div>
             </div>
@@ -51,7 +51,7 @@ export default function Home() {
 
       <section className="band band--pad band--tight">
         <div className="container stack stack--xl">
-          <span className="label label--light">What brings you here?</span>
+          <span className="label label--light">what brings you here?</span>
           <div className="paths">
             {site.paths.map((p) => (
               <Link key={p.title} to={p.to} className="path">
@@ -70,7 +70,7 @@ export default function Home() {
           <div className="section__head">
             <h2 className="h2 h2--xl">featured spaces</h2>
             <Link to="/spaces" className="text-link">
-              View all spaces &rarr;
+              view all spaces &rarr;
             </Link>
           </div>
           <div className="cards">
@@ -80,7 +80,7 @@ export default function Home() {
           </div>
           <div className="center">
             <Link to="/spaces" className="btn btn--primary btn--wide">
-              View all spaces
+              view all spaces
             </Link>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function Home() {
         <img src="/images/home/who-we-are.webp" alt="" className="who__img" loading="lazy" />
         <div className="who__shade" />
         <div className="container who__content">
-          <span className="label label--light">Who we are</span>
+          <span className="label label--light">who we are</span>
           <p className="who__text">{site.whoWeAre}</p>
         </div>
       </section>
@@ -161,7 +161,7 @@ export default function Home() {
             <div className="stack">
               <h2 className="h2 h2--xl">let's make something happen.</h2>
               <p className="light-muted lead">
-                Looking for a space? Tell us what you have in mind and we'll be in touch.
+                looking for a space? tell us what you have in mind and we'll be in touch.
               </p>
               {site.email && (
                 <a className="text-link" href={`mailto:${site.email}`}>

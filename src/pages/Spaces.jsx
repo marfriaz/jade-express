@@ -24,7 +24,7 @@ export default function Spaces() {
         <div className="stack">
           <h1 className="h1">spaces.</h1>
           <p className="lead muted">
-            Studios, offices, and event spaces on the Wilson &amp; Bay campus. Showing what&rsquo;s currently available.
+            studios, offices, and event spaces on the wilson &amp; bay campus. showing what&rsquo;s currently available.
           </p>
         </div>
 

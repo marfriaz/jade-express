@@ -21,8 +21,8 @@ export default function Workspaces() {
       <section className="band band--pad band--tight">
         <div className="container stack stack--xl">
           <div className="stack">
-            <span className="label label--light">Leasing</span>
-            <h2 className="h2">What to know.</h2>
+            <span className="label label--light">leasing</span>
+            <h2 className="h2">what to know.</h2>
           </div>
           <dl className="facts-list">
             {page.details.map((f) => (
@@ -40,7 +40,7 @@ export default function Workspaces() {
           <div className="section__head section__head--end">
             <h2 className="h2 h2--xl">available spaces</h2>
             <Link to="/spaces?use=workspace" className="text-link text-link--caps">
-              See all in Spaces &rarr;
+              see all in spaces &rarr;
             </Link>
           </div>
           <div className="cards">
@@ -61,10 +61,10 @@ export default function Workspaces() {
             </div>
             <div className="btn-row">
               <Link to="/contact?type=visit" className="btn btn--light">
-                Book a visit
+                book a visit
               </Link>
               <Link to="/spaces?use=workspace" className="btn btn--ghost-light">
-                View workspaces
+                view workspaces
               </Link>
             </div>
           </div>

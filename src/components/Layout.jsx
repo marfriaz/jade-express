@@ -45,7 +45,7 @@ export default function Layout() {
               </NavLink>
             ))}
             <Link to="/contact" className="btn btn--primary btn--sm">
-              Inquire
+              inquire
             </Link>
           </nav>
           <button
@@ -68,7 +68,7 @@ export default function Layout() {
               </NavLink>
             ))}
             <Link to="/contact" className="btn btn--primary">
-              Inquire
+              inquire
             </Link>
           </nav>
         )}

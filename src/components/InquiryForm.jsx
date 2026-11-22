@@ -4,10 +4,10 @@ import site from "../data/site.js";
 import { spaces } from "../data/spaces.js";
 
 const interests = [
-  "A workspace or studio",
-  "An event or production",
-  "Booking a visit",
-  "Not sure yet",
+  "a workspace or studio",
+  "an event or production",
+  "booking a visit",
+  "not sure yet",
 ];
 
 export default function InquiryForm({ dark = false }) {
@@ -68,24 +68,24 @@ export default function InquiryForm({ dark = false }) {
     <form className={"form" + (dark ? " form--dark" : "")} onSubmit={onSubmit}>
       <div className="form__row">
         <label>
-          First name
+          first name
           <input name="first_name" type="text" required autoComplete="given-name" />
         </label>
         <label>
-          Last name
+          last name
           <input name="last_name" type="text" required autoComplete="family-name" />
         </label>
       </div>
       <label>
-        Email
+        email
         <input name="email" type="email" required autoComplete="email" />
       </label>
       <div className="form__row">
         <label>
-          What are you interested in?
+          what are you interested in?
           <select name="interest" required defaultValue={defaultInterest}>
             <option value="" disabled>
-              Select an option
+              select an option
             </option>
             {interests.map((i) => (
               <option key={i} value={i}>
@@ -95,9 +95,9 @@ export default function InquiryForm({ dark = false }) {
           </select>
         </label>
         <label>
-          Which space?
+          which space?
           <select name="space" defaultValue={defaultSpace}>
-            <option value="">Not sure yet</option>
+            <option value="">not sure yet</option>
             {spaces.map((s) => (
               <option key={s.slug} value={s.name}>
                 {s.name}
@@ -108,21 +108,21 @@ export default function InquiryForm({ dark = false }) {
       </div>
       <div className="form__row">
         <label>
-          Preferred date (optional)
+          preferred date (optional)
           <input name="date" type="date" defaultValue={defaultDate} />
         </label>
         <label>
-          Guests (optional)
+          guests (optional)
           <input name="guests" type="number" min="1" defaultValue={defaultGuests} />
         </label>
       </div>
       <label>
-        Tell us a bit more
+        tell us a bit more
         <textarea
           name="message"
           rows="4"
           required
-          placeholder="What kind of space are you looking for? Any dates, size requirements, or other details?"
+          placeholder="what kind of space are you looking for? any dates, size requirements, or other details?"
         />
       </label>
       <input

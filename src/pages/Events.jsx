@@ -21,8 +21,8 @@ export default function Events() {
       <section className="band band--pad band--tight">
         <div className="container stack stack--xl">
           <div className="stack">
-            <span className="label label--light">Popular for</span>
-            <h2 className="h2">What people book us for.</h2>
+            <span className="label label--light">popular for</span>
+            <h2 className="h2">what people book us for.</h2>
           </div>
           <div className="chips">
             {page.popularFor.map((u) => (
@@ -39,7 +39,7 @@ export default function Events() {
           <div className="section__head section__head--end">
             <h2 className="h2 h2--xl">event spaces</h2>
             <Link to="/spaces?use=events" className="text-link text-link--caps">
-              See all in Spaces &rarr;
+              see all in spaces &rarr;
             </Link>
           </div>
           <div className="cards">
@@ -59,16 +59,16 @@ export default function Events() {
               <p className="light-muted lead">{page.cta.text}</p>
               {site.peerspaceUrl && (
                 <a className="text-link" href={site.peerspaceUrl} target="_blank" rel="noreferrer">
-                  Or book through Peerspace
+                  or book through Peerspace
                 </a>
               )}
             </div>
             <div className="btn-row">
               <Link to="/contact" className="btn btn--light">
-                Request a booking
+                request a booking
               </Link>
               <Link to="/gallery" className="btn btn--ghost-light">
-                See event photos
+                see event photos
               </Link>
             </div>
           </div>
