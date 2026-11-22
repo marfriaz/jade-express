@@ -1556,3 +1556,8 @@ ul {
 .home-end {
   margin-bottom: -32px;
 }
+
+/* Gallery: the tag sits tight against its event title. */
+.case__head > .label {
+  margin-bottom: -8px;
+}
