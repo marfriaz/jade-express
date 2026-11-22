@@ -75,7 +75,7 @@ export default function Home() {
           </div>
           <div className="cards">
             {featured.map((s) => (
-              <SpaceCard key={s.slug} space={s} />
+              <SpaceCard key={s.slug} space={s} showTags={false} />
             ))}
           </div>
           <div className="center">
