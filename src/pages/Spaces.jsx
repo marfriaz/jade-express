@@ -44,7 +44,7 @@ export default function Spaces() {
 
         <div className="cards">
           {list.map((s) => (
-            <SpaceCard key={s.slug} space={s} />
+            <SpaceCard key={s.slug} space={s} showTags={false} />
           ))}
         </div>
 
