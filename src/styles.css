@@ -1593,7 +1593,7 @@ ul {
 @media (max-width: 699px) {
   .justified__item--embed {
     flex: 1 1 100%;
-    aspect-ratio: 0.6;
+    aspect-ratio: 0.54;
   }
 }
 
