@@ -1700,3 +1700,17 @@ ul {
     min-height: max(600px, calc(100svh - 65px));
   }
 }
+
+/* No sideways scrolling on phones: clip at the page level too (iPhones ignore the body rule alone),
+   and keep embedded/transformed content inside its box. */
+html {
+  overflow-x: clip;
+  max-width: 100%;
+  overscroll-behavior-x: none;
+}
+.justified__item--embed,
+.scaled-embed {
+  isolation: isolate;
+  contain: paint;
+  max-width: 100%;
+}
