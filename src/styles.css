@@ -1546,7 +1546,7 @@ ul {
 /* Gallery: first event sits right under the page title; tighter gap between each event's text and photos. */
 .section--page + .case,
 .section--page + .case.section--tight {
-  padding-top: 28px;
+  padding-top: 40px;
 }
 .case > .container.stack--xl {
   gap: 24px;
@@ -1559,5 +1559,5 @@ ul {
 
 /* Gallery: the tag sits tight against its event title. */
 .case__head > .label {
-  margin-bottom: -8px;
+  margin-bottom: -18px;
 }
