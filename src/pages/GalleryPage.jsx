@@ -40,7 +40,7 @@ export default function GalleryPage() {
                           <div
                             key={img.video}
                             className={"justified__item" + mobile}
-                            style={{ "--ratio": img.ratio }}
+                            style={{ "--ratio": img.ratio, "--mo": img.mobileOrder }}
                           >
                             <video
                               className="justified__video"
@@ -62,7 +62,7 @@ export default function GalleryPage() {
                           key={img.src}
                           type="button"
                           className={"justified__item justified__item--btn" + mobile}
-                          style={{ "--ratio": img.ratio }}
+                          style={{ "--ratio": img.ratio, "--mo": img.mobileOrder }}
                           aria-label={`Open ${ev.title} photo ${n} of ${ev.photos.length}`}
                           onClick={() => setActive({ event: evIndex, index: stills.indexOf(img) })}
                         >
