@@ -16,6 +16,42 @@ function photos(slug, list) {
 
 export const galleryEvents = [
   {
+    slug: "atras",
+    kind: "Loft party",
+    title: "Atrás",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    photos: photos("atras", [
+      [1, "Guests lounging on couches and chairs under warm light in the Loft", 1.3, undefined, "full"],
+      [2, "Three friends seated together on a leather ottoman"],
+      [3, "Friends posing at a photo booth against exposed brick", 0.8],
+      [4, "Two bartenders behind the bar with shelves of bottles", 1.5, undefined, "full"],
+      [5, "A grazing table with fruit, cheese and candles", 1.5, undefined, "full"],
+    ]),
+    rows: [
+      [1, 2, 3],
+      [4, 5],
+    ],
+  },
+  {
+    slug: "reposada",
+    kind: "Dinner & live music",
+    title: "Reposada",
+    text: "Reposada, a dinner by Mando Fresco in collaboration with Patrón, recognizing Latin excellence. Long candlelit tables, live music and cocktails filled the Wilson Room.",
+    instagram: "https://www.instagram.com/p/DSqa678Eii7/",
+    photos: photos("reposada", [
+      [1, "Aerial view of the long dinner tables with a live trio performing", 0.85, "50% 55%", "full"],
+      [5, "The Reposada sign on a draped orange backdrop"],
+      [3, "The host performing at the microphone"],
+      [6, "Smoking cocktails served in Patrón-labeled glasses"],
+      [2, "Guests raising a toast along the candlelit table", 0.85, "50% 45%", "full"],
+      [7, "Guests dancing after dinner"],
+    ]),
+    rows: [
+      [1, 2, 3],
+      [4, 5, 6],
+    ],
+  },
+  {
     slug: "free-people",
     kind: "Brand photoshoot",
     title: "Free People",
@@ -40,42 +76,6 @@ export const galleryEvents = [
     rows: [
       [1, 2],
       [3, 4],
-    ],
-  },
-  {
-    slug: "reposada",
-    kind: "Dinner & live music",
-    title: "Reposada",
-    text: "Reposada, a dinner by Mando Fresco in collaboration with Patrón, recognizing Latin excellence. Long candlelit tables, live music and cocktails filled the Wilson Room.",
-    instagram: "https://www.instagram.com/p/DSqa678Eii7/",
-    photos: photos("reposada", [
-      [1, "Aerial view of the long dinner tables with a live trio performing", 0.85, "50% 55%", "full"],
-      [5, "The Reposada sign on a draped orange backdrop"],
-      [3, "The host performing at the microphone"],
-      [6, "Smoking cocktails served in Patrón-labeled glasses"],
-      [2, "Guests raising a toast along the candlelit table", 0.85, "50% 45%", "full"],
-      [7, "Guests dancing after dinner"],
-    ]),
-    rows: [
-      [1, 2, 3],
-      [4, 5, 6],
-    ],
-  },
-  {
-    slug: "atras",
-    kind: "Loft party",
-    title: "Atrás",
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    photos: photos("atras", [
-      [1, "Guests lounging on couches and chairs under warm light in the Loft", 1.3, undefined, "full"],
-      [2, "Three friends seated together on a leather ottoman"],
-      [3, "Friends posing at a photo booth against exposed brick", 0.8],
-      [4, "Two bartenders behind the bar with shelves of bottles", 1.5, undefined, "full"],
-      [5, "A grazing table with fruit, cheese and candles", 1.5, undefined, "full"],
-    ]),
-    rows: [
-      [1, 2, 3],
-      [4, 5],
     ],
   },
   {
