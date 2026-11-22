@@ -1592,14 +1592,14 @@ ul {
 @media (max-width: 699px) {
   .justified__item--embed {
     flex: 1 1 100%;
-    aspect-ratio: 0.6;
+    aspect-ratio: 0.88;
   }
 }
 
 /* A row made only of Instagram embeds: narrower and centered so each embed shows at about its natural size. */
 @media (min-width: 700px) {
   .justified__row--embeds {
-    max-width: 780px;
+    max-width: 666px;
     width: 100%;
     margin: 0 auto;
   }
