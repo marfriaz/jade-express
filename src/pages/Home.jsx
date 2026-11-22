@@ -99,7 +99,10 @@ export default function Home() {
           </div>
           <div className="justified">
             {site.life.rows.map((row, r) => (
-              <div className="justified__row" key={r}>
+              <div
+                className={"justified__row" + (row.every((n) => site.life.images[n - 1].embed) ? " justified__row--embeds" : "")}
+                key={r}
+              >
                 {row.map((n) => {
                   const img = site.life.images[n - 1];
                   return (

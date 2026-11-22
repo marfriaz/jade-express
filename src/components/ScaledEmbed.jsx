@@ -28,7 +28,7 @@ export default function ScaledEmbed({ url, title }) {
         loading="lazy"
         allowFullScreen
         scrolling="no"
-        style={{ width: NATIVE_WIDTH, height: size.h / scale + HEADER_CROP, transform: `translateY(${-HEADER_CROP * scale}px) scale(${scale})` }}
+        style={{ width: NATIVE_WIDTH, height: size.h / scale + HEADER_CROP, transform: `translate(${(size.w - NATIVE_WIDTH * scale) / 2}px, ${-HEADER_CROP * scale}px) scale(${scale})` }}
       />
     </div>
   );
