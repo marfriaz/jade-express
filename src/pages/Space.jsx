@@ -1,152 +1,82 @@
-import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getSpace, coverOf, spaces } from "../data/spaces.js";
 import Gallery from "../components/Gallery.jsx";
-import BookingCard from "../components/BookingCard.jsx";
-import StickyBar from "../components/StickyBar.jsx";
 import SpaceCard from "../components/SpaceCard.jsx";
 import NotFound from "./NotFound.jsx";
+
+// The rows of the "details" table: an explicit `details` list when a space has one, otherwise its
+// basics plus what's included (or its features).
+function detailsOf(space) {
+  if (space.details?.length) return space.details.filter((d) => d.value);
+  const rows = (space.basics || []).filter((b) => b.value);
+  const extra = space.included?.length ? space.included : space.features;
+  if (extra?.length) rows.push({ label: space.included?.length ? "included" : "features", value: extra.join(", ") });
+  return rows;
+}
 
 export default function Space() {
   const { slug } = useParams();
   const space = getSpace(slug);
-  const ctaRef = useRef(null);
-  const [showBar, setShowBar] = useState(false);
-
-  useEffect(() => {
-    const el = ctaRef.current;
-    if (!el || typeof IntersectionObserver === "undefined") return undefined;
-    const io = new IntersectionObserver(([entry]) => {
-      setShowBar(!entry.isIntersecting && entry.boundingClientRect.top < 0);
-    });
-    io.observe(el);
-    return () => io.disconnect();
-  }, [slug]);
-
   if (!space) return <NotFound />;
 
   const cover = coverOf(space);
-  const basics = (space.basics || []).filter((b) => b.value);
+  const rows = detailsOf(space);
+  const half = Math.ceil(rows.length / 2);
+  const columns = [rows.slice(0, half), rows.slice(half)].filter((c) => c.length > 0);
   const others = spaces.filter((s) => s.slug !== space.slug).slice(0, 3);
 
   return (
     <>
       <section className="space-hero">
-        <div className="container space-hero__grid">
-          <div className="space-hero__text stack">
-            <Link to="/spaces" className="back">
-              &larr; all spaces
-            </Link>
-            <h1 className="h1 h1--xl">{space.name.toLowerCase()}.</h1>
-            <p className="space-hero__meta">
-              {[space.sqft && `${space.sqft} sq ft`, space.location].filter(Boolean).join(" · ")}
-            </p>
-            {space.features?.length > 0 && (
-              <div className="chips">
-                {space.features.map((f) => (
-                  <span key={f} className="chip">
-                    {f}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
-          <div className="space-hero__photo">
+        <div className="container space-top">
+          <Link to="/spaces" className="back">
+            &larr; all spaces
+          </Link>
+          <h1 className="h1 h1--xl">{space.name.toLowerCase()}.</h1>
+          <div className="space-top__photo">
             <img src={cover.src} alt={cover.alt} />
             {space.placeholder && <span className="photo-note">photos coming soon</span>}
           </div>
-          <div className="hero-cta" ref={ctaRef}>
-            <div className="hero-cta__price">
-              <span className="muted small-strong">{space.price ? "starting at" : "pricing"}</span>
-              <span className="hero-cta__amount">{space.price || "request a quote"}</span>
-            </div>
-            <Link to={`/contact?space=${space.slug}`} className="btn btn--primary">
-              inquire
+          <div className="space-top__text">
+            {space.summary && <p className="statement">{space.summary}</p>}
+            {space.description?.map((p) => (
+              <p key={p.slice(0, 24)} className="body-text">
+                {p}
+              </p>
+            ))}
+            <Link to={`/contact?space=${space.slug}`} className="text-link space-top__cta">
+              inquire about {space.name.replace(/^The /, "the ")}
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container space-body">
-          <div className="stack stack--xl">
-            {(space.summary || space.description?.length > 0) && (
-              <div className="stack">
-                <span className="label">about</span>
-                <p className="statement">{space.summary}</p>
-                {space.description?.map((p) => (
-                  <p key={p.slice(0, 24)} className="body-text">
-                    {p}
-                  </p>
-                ))}
-              </div>
-            )}
-
-            {basics.length > 0 && (
-              <div className="stack">
-                <span className="label">the basics</span>
-                <div className="basics">
-                  {basics.map((b) => (
-                    <div key={b.label} className="basic">
-                      <span className="basic__label">{b.label}</span>
-                      <span className="basic__value">{b.value}</span>
+      {columns.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <div className="details">
+            <h2 className="h2">details.</h2>
+            <div className="details__grid">
+              {columns.map((col, i) => (
+                <dl key={i} className="details__col">
+                  {col.map((r) => (
+                    <div key={r.label} className="details__row">
+                      <dt>{r.label}</dt>
+                      <dd>{r.value}</dd>
                     </div>
                   ))}
-                </div>
-              </div>
-            )}
-
-            {space.included?.length > 0 && (
-              <div className="stack">
-                <span className="label">what's included</span>
-                <ul className="checklist">
-                  {space.included.map((i) => (
-                    <li key={i}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <path d="M5 12.5l4.5 4.5L19 7.5" />
-                      </svg>
-                      {i}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {space.popularFor?.length > 0 && (
-              <div className="stack">
-                <span className="label">popular for</span>
-                <div className="chips">
-                  {space.popularFor.map((u) => (
-                    <span key={u} className="chip chip--solid chip--lg">
-                      {u}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
-          <BookingCard space={space} />
-        </div>
-      </section>
-
-      {!space.placeholder && <Gallery images={space.images} limit={space.slug === "the-courtyard" ? space.images.length : undefined} />}
-
-      {space.faq?.length > 0 && (
-        <section className="section">
-          <div className="container stack">
-            <h2 className="h2">good to know</h2>
-            <div className="faq">
-              {space.faq.map((f, i) => (
-                <details key={f.q} open={i === 0}>
-                  <summary>{f.q}</summary>
-                  <p>{f.a}</p>
-                </details>
+                </dl>
               ))}
+            </div>
             </div>
           </div>
         </section>
       )}
+
+      {!space.placeholder && <Gallery title="photos." images={space.images} limit={space.slug === "the-courtyard" ? space.images.length : undefined} />}
 
       {others.length > 0 && (
         <section className="section">
@@ -184,7 +114,6 @@ export default function Space() {
         </div>
       </section>
 
-      <StickyBar space={space} visible={showBar} />
     </>
   );
 }
