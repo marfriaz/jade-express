@@ -134,9 +134,16 @@ const allSpaces = [
     popularFor: ["outdoor events", "markets", "brand activations", "productions"],
     price: "",
     faq: [],
-    cover: 3,
+    cover: 1,
     // Best 9 of the 17 courtyard photos (the rest are near-duplicates), keeping their original numbers.
     images: [
+      // First: the courtyard hero shot (public/images/courtyard/court.jpg + court-sm.jpg).
+      {
+        src: "/images/courtyard/court.jpg",
+        thumb: "/images/courtyard/court-sm.jpg",
+        alt: "Open courtyard with a tall brick wall and gray industrial buildings under a blue sky",
+        area: null,
+      },
       ...photos("courtyard", 17, "the courtyard").filter((_, i) =>
         [1, 2, 3, 5, 7, 9, 10, 12, 14].includes(i + 1)
       ),
