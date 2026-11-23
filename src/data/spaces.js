@@ -128,6 +128,10 @@ const allSpaces = [
       { label: "hours", value: "" },
       { label: "power", value: "" },
     ],
+    details: [
+      { label: "size", value: "15,000+ sq ft" },
+      { label: "setting", value: "gated courtyard" },
+    ],
     features: ["gated", "historic brick walls", "industrial architecture"],
     included: ["gated courtyard", "room for outdoor events and markets"],
     popularFor: ["outdoor events", "markets", "brand activations", "productions"],
