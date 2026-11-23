@@ -49,31 +49,6 @@ export default function Events() {
           </div>
         </div>
       </section>
-
-
-      <section className="section section--tight">
-        <div className="container">
-          <div className="panel panel--cta">
-            <div className="stack">
-              <h2 className="h2 h2--lg">{page.cta.title}</h2>
-              <p className="light-muted lead">{page.cta.text}</p>
-              {site.peerspaceUrl && (
-                <a className="text-link" href={site.peerspaceUrl} target="_blank" rel="noreferrer">
-                  or book through Peerspace
-                </a>
-              )}
-            </div>
-            <div className="btn-row">
-              <Link to="/contact" className="btn btn--light">
-                request a booking
-              </Link>
-              <Link to="/gallery" className="btn btn--ghost-light">
-                see event photos
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

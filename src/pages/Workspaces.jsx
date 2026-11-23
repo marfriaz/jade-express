@@ -50,26 +50,6 @@ export default function Workspaces() {
           </div>
         </div>
       </section>
-
-
-      <section className="section section--tight">
-        <div className="container">
-          <div className="panel panel--cta">
-            <div className="stack">
-              <h2 className="h2 h2--lg">{page.cta.title}</h2>
-              <p className="light-muted lead">{page.cta.text}</p>
-            </div>
-            <div className="btn-row">
-              <Link to="/contact?type=visit" className="btn btn--light">
-                book a visit
-              </Link>
-              <Link to="/spaces?use=workspace" className="btn btn--ghost-light">
-                view workspaces
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
