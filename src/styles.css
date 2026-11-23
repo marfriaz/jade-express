@@ -1831,3 +1831,10 @@ html {
     padding-top: 56px;
   }
 }
+
+/* below 1000px the fixed "inquire" bar takes over from the in-page link */
+@media (max-width: 999px) {
+  .space-top__cta {
+    display: none;
+  }
+}

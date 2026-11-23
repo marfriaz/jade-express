@@ -1,7 +1,9 @@
+import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getSpace, coverOf, spaces } from "../data/spaces.js";
 import Gallery from "../components/Gallery.jsx";
 import SpaceCard from "../components/SpaceCard.jsx";
+import StickyBar from "../components/StickyBar.jsx";
 import NotFound from "./NotFound.jsx";
 
 // The rows of the "details" table: an explicit `details` list when a space has one, otherwise its
@@ -17,6 +19,20 @@ function detailsOf(space) {
 export default function Space() {
   const { slug } = useParams();
   const space = getSpace(slug);
+  const ctaRef = useRef(null);
+  const [showBar, setShowBar] = useState(false);
+
+  // Phones and tablets: slide the fixed "inquire" bar up once the intro has scrolled out of view.
+  useEffect(() => {
+    const el = ctaRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return undefined;
+    const io = new IntersectionObserver(([entry]) => {
+      setShowBar(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [slug]);
+
   if (!space) return <NotFound />;
 
   const cover = coverOf(space);
@@ -37,7 +53,7 @@ export default function Space() {
             <img src={cover.src} alt={cover.alt} />
             {space.placeholder && <span className="photo-note">photos coming soon</span>}
           </div>
-          <div className="space-top__text">
+          <div className="space-top__text" ref={ctaRef}>
             {space.summary && <p className="statement">{space.summary}</p>}
             {space.description?.map((p) => (
               <p key={p.slice(0, 24)} className="body-text">
@@ -95,6 +111,8 @@ export default function Space() {
           </div>
         </section>
       )}
+
+      <StickyBar space={space} visible={showBar} />
     </>
   );
 }
