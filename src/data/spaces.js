@@ -144,6 +144,13 @@ const allSpaces = [
         alt: "Open courtyard with a tall brick wall and gray industrial buildings under a blue sky",
         area: null,
       },
+      // Second: aerial view (public/images/courtyard/court2.jpg + court2-sm.jpg).
+      {
+        src: "/images/courtyard/court2.jpg",
+        thumb: "/images/courtyard/court2-sm.jpg",
+        alt: "Aerial view of the courtyard and surrounding gray industrial buildings",
+        area: null,
+      },
       ...photos("courtyard", 17, "the courtyard").filter((_, i) =>
         [1, 2, 3, 5, 7, 9, 10, 12, 14].includes(i + 1)
       ),
