@@ -95,25 +95,6 @@ export default function Space() {
           </div>
         </section>
       )}
-
-      <section className="section">
-        <div className="container">
-          <div className="panel panel--cta">
-            <div className="stack">
-              <h2 className="h2 h2--lg">want to see {space.name.replace(/^The /, "the ")} in person?</h2>
-              <p className="light-muted lead">
-                tell us about your project and we'll check availability or set up a visit.
-              </p>
-            </div>
-            <div className="btn-row">
-              <Link to={`/contact?space=${space.slug}`} className="btn btn--light">
-                inquire
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </>
   );
 }
