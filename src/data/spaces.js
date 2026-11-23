@@ -95,9 +95,9 @@ const allSpaces = [
       { label: "size", value: "7,000 sq ft" },
       { label: "floor", value: "second floor" },
       { label: "access", value: "private entrance, freight elevator" },
-      { label: "facilities", value: "kitchen and bar area" },
-      { label: "features", value: "soundproof rooms, hidden room behind a bookshelf, built-in projection" },
-      { label: "parking", value: "gated on-site parking available" },
+      { label: "facilities", value: "kitchen" },
+      { label: "features", value: "soundproof rooms, hidden room behind a bookshelf" },
+      { label: "parking", value: "on-site parking available" },
     ],
     popularFor: ["creative work", "productions", "gatherings"],
     price: "", // e.g. "$150 / hr". Empty shows "request a quote".
