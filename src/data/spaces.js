@@ -135,7 +135,7 @@ const allSpaces = [
     price: "",
     faq: [],
     cover: 1,
-    // Best 9 of the 17 courtyard photos (the rest are near-duplicates), keeping their original numbers.
+    // Best 7 of the 17 courtyard photos (the rest are near-duplicates), keeping their original numbers.
     images: [
       // First: the courtyard hero shot (public/images/courtyard/court.jpg + court-sm.jpg).
       {
@@ -152,10 +152,8 @@ const allSpaces = [
         area: null,
       },
       ...photos("courtyard", 17, "the courtyard").filter((_, i) =>
-        [1, 2, 3, 5, 7, 9, 10, 12, 14].includes(i + 1)
+        [1, 2, 3, 5, 7, 9, 10].includes(i + 1)
       ),
-      // Last: the best photo from each event (birthday party, April and June pop-up markets).
-      ...[0, 3, 6].map((i) => courtyardEventPhotos[i]),
     ],
   },
 
