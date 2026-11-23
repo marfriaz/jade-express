@@ -55,7 +55,7 @@ export default function Space() {
       </section>
 
       {columns.length > 0 && (
-        <section className="section">
+        <section className="section section--tight details-section">
           <div className="container">
             <div className="details">
             <h2 className="h2">details.</h2>

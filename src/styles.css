@@ -1821,3 +1821,13 @@ html {
   line-height: 1.5;
   font-weight: 500;
 }
+
+/* tighter spacing around the details table */
+.details-section + .section {
+  padding-top: 40px;
+}
+@media (min-width: 900px) {
+  .details-section + .section {
+    padding-top: 56px;
+  }
+}
