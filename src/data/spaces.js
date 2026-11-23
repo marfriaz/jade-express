@@ -119,7 +119,10 @@ const allSpaces = [
     sqft: "15,000+",
     location: "arts district, Los Angeles",
     summary:
-      "a gated outdoor courtyard surrounded by brick buildings and industrial architecture, with an open layout for markets, brand activations, productions, and gatherings.",
+      "a 15,000+ sq ft gated outdoor courtyard surrounded by brick buildings and industrial architecture, with an open layout for markets, brand activations, productions, and gatherings.",
+    // Shown on the space page itself; **double asterisks** make text bold.
+    intro:
+      "a **15,000+ sq ft** gated outdoor courtyard surrounded by brick buildings and industrial architecture, with an open layout for markets, brand activations, productions, and gatherings.",
     description: [],
     basics: [
       { label: "size", value: "15,000+ sq ft" },
@@ -128,10 +131,7 @@ const allSpaces = [
       { label: "hours", value: "" },
       { label: "power", value: "" },
     ],
-    details: [
-      { label: "size", value: "15,000+ sq ft" },
-      { label: "setting", value: "gated courtyard" },
-    ],
+    details: [], // no details table on this page
     features: ["gated", "historic brick walls", "industrial architecture"],
     included: ["gated courtyard", "room for outdoor events and markets"],
     popularFor: ["outdoor events", "markets", "brand activations", "productions"],

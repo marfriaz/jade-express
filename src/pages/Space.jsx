@@ -8,8 +8,13 @@ import NotFound from "./NotFound.jsx";
 
 // The rows of the "details" table: an explicit `details` list when a space has one, otherwise its
 // basics plus what's included (or its features).
+// Turns **bold** markers in a description into <strong>.
+function withBold(text) {
+  return text.split("**").map((part, i) => (i % 2 ? <strong key={i}>{part}</strong> : part));
+}
+
 function detailsOf(space) {
-  if (space.details?.length) return space.details.filter((d) => d.value);
+  if (Array.isArray(space.details)) return space.details.filter((d) => d.value);
   const rows = (space.basics || []).filter((b) => b.value);
   const extra = space.included?.length ? space.included : space.features;
   if (extra?.length) rows.push({ label: space.included?.length ? "included" : "features", value: extra.join(", ") });
@@ -54,7 +59,9 @@ export default function Space() {
             {space.placeholder && <span className="photo-note">photos coming soon</span>}
           </div>
           <div className="space-top__text" ref={ctaRef}>
-            {space.summary && <p className="statement">{space.summary}</p>}
+            {(space.intro || space.summary) && (
+              <p className="statement">{withBold(space.intro || space.summary)}</p>
+            )}
             {space.description?.map((p) => (
               <p key={p.slice(0, 24)} className="body-text">
                 {p}
