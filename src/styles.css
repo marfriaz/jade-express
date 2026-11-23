@@ -1849,3 +1849,13 @@ html {
     display: none;
   }
 }
+
+/* a section that follows the space intro directly (e.g. the photos when there is no details table) */
+.space-hero + .section {
+  padding-top: 40px;
+}
+@media (min-width: 900px) {
+  .space-hero + .section {
+    padding-top: 56px;
+  }
+}
