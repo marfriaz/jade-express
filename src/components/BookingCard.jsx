@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function BookingCard({ space }) {
   const navigate = useNavigate();
@@ -30,15 +30,9 @@ export default function BookingCard({ space }) {
           <input name="guests" type="number" min="1" placeholder="how many people?" />
         </label>
         <button type="submit" className="btn btn--primary btn--block">
-          check availability
+          inquire
         </button>
       </form>
-      <Link
-        to={`/contact?type=visit&space=${space.slug}`}
-        className="btn btn--block"
-      >
-        book a visit
-      </Link>
     </aside>
   );
 }

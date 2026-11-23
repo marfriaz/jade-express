@@ -63,10 +63,7 @@ export default function Space() {
               <span className="hero-cta__amount">{space.price || "request a quote"}</span>
             </div>
             <Link to={`/contact?space=${space.slug}`} className="btn btn--primary">
-              check availability
-            </Link>
-            <Link to={`/contact?type=visit&space=${space.slug}`} className="btn">
-              book a visit
+              inquire
             </Link>
           </div>
         </div>
@@ -177,15 +174,12 @@ export default function Space() {
             <div className="stack">
               <h2 className="h2 h2--lg">want to see {space.name.replace(/^The /, "the ")} in person?</h2>
               <p className="light-muted lead">
-                book a visit, or tell us about your project and we'll check availability.
+                tell us about your project and we'll check availability or set up a visit.
               </p>
             </div>
             <div className="btn-row">
-              <Link to={`/contact?type=visit&space=${space.slug}`} className="btn btn--light">
-                book a visit
-              </Link>
-              <Link to={`/contact?space=${space.slug}`} className="btn btn--ghost-light">
-                send an inquiry
+              <Link to={`/contact?space=${space.slug}`} className="btn btn--light">
+                inquire
               </Link>
             </div>
           </div>
