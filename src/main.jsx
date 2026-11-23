@@ -1,13 +1,18 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "./styles.css";
 
-createRoot(document.getElementById("root")).render(
+const root = document.getElementById("root");
+const app = (
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
 );
+
+// Pages are pre-rendered at build time; attach to that markup when it's there.
+if (root.hasChildNodes()) hydrateRoot(root, app);
+else createRoot(root).render(app);

@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import site from "../data/site.js";
 import PrivacyPolicy from "./PrivacyPolicy.jsx";
+import { seoFor, applySeo } from "../seo.js";
 
 const links = [
   { to: "/workspaces", label: "Workspaces" },
@@ -17,6 +18,11 @@ export default function Layout() {
 
   useEffect(() => {
     setOpen(false);
+  }, [pathname]);
+
+  // Page title, description and share preview for the current page (not visible on the page).
+  useEffect(() => {
+    applySeo(seoFor(pathname));
   }, [pathname]);
 
   // On every page change, jump straight to the top (or to the #section). The site's CSS uses smooth
