@@ -126,7 +126,6 @@ const allSpaces = [
       { label: "setting", value: "gated courtyard" },
       { label: "capacity", value: "" },
       { label: "hours", value: "" },
-      { label: "parking", value: "gated on-site parking available" },
       { label: "power", value: "" },
     ],
     features: ["gated", "historic brick walls", "industrial architecture"],
