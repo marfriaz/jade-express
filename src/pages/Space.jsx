@@ -55,8 +55,6 @@ export default function Space() {
             <img src={cover.src} alt={cover.alt} />
             {space.placeholder && <span className="photo-note">photos coming soon</span>}
           </div>
-        </div>
-        <div className="container">
           <div className="hero-cta" ref={ctaRef}>
             <div className="hero-cta__price">
               <span className="muted small-strong">{space.price ? "starting at" : "pricing"}</span>
