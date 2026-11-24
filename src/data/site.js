@@ -37,6 +37,7 @@ const site = {
   formEndpoint: "",
 
   hero: {
+    eyebrow: "Los Angeles Arts District",
     title: "make room for\nsomething new",
     text: "a place to work, make things, bring people together, or all of the above.",
   },

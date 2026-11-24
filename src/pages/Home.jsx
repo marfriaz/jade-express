@@ -22,7 +22,10 @@ export default function Home() {
         <div className="hero__shade" />
         <div className="container hero__content">
           <div className="hero__grid">
-            <h1 className="hero__title">{site.hero.title}</h1>
+            <div className="hero__lead">
+              {site.hero.eyebrow && <span className="hero__eyebrow">{site.hero.eyebrow}</span>}
+              <h1 className="hero__title">{site.hero.title}</h1>
+            </div>
             <div className="stack">
               <p className="hero__text">{site.hero.text}</p>
               <div className="btn-row">
@@ -37,17 +40,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <div className="container facts-wrap">
-        <div className="facts">
-          {site.facts.map((f) => (
-            <div key={f.title} className="fact">
-              <span className="fact__title">{f.title}</span>
-              <span className="fact__text">{f.text}</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
       <section className="band band--pad band--tight">
         <div className="container stack stack--xl">
@@ -68,7 +60,10 @@ export default function Home() {
       <section className="section section--tight">
         <div className="container stack stack--xl">
           <div className="section__head">
-            <h2 className="h2 h2--xl">featured spaces</h2>
+            <div className="stack">
+              <h2 className="h2 h2--xl">featured spaces</h2>
+              <p className="featured__note">spaces ranging from 1,100 to 15,000+ sq ft, with gated on-site parking available.</p>
+            </div>
             <Link to="/spaces" className="text-link">
               view all spaces &rarr;
             </Link>
