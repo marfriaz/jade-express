@@ -1942,3 +1942,21 @@ html {
     padding-top: 40px;
   }
 }
+
+/* spaces filters: fit all three in one row on mobile, no side scroll */
+@media (max-width: 899px) {
+  .tabs--fit {
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+  .tabs--fit .tab {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0 8px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}

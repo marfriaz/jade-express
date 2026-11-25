@@ -28,7 +28,7 @@ export default function Spaces() {
           </p>
         </div>
 
-        <div className="tabs" role="group" aria-label="Filter spaces">
+        <div className="tabs tabs--fit" role="group" aria-label="Filter spaces">
           {filters.map((f) => (
             <button
               key={f.key || "all"}

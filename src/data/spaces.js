@@ -195,7 +195,7 @@ const allSpaces = [
     slug: "studio-1a",
     name: "studio 1A",
     featured: false,
-    uses: ["workspace"],
+    uses: ["workspace", "events"],
     sqft: "2,700",
     location: "arts district, Los Angeles",
     summary:
