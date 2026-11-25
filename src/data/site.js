@@ -56,8 +56,8 @@ const site = {
       text: "studios, offices, creative spaces to call your own.",
       cta: "explore workspaces",
       to: "/workspaces",
-      image: "/images/suite-2g/10-sm.jpg",
-      alt: "Open studio with large windows and wood floors",
+      image: "/images/home/set-up-shop.jpg",
+      alt: "Open studio with timber ceilings, glass partition walls and dark wood floors",
     },
     {
       title: "plan something.",
