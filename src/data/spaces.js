@@ -1,7 +1,14 @@
 // All of your spaces live here. To add one: drop its photos in public/images/<slug>/
 // (01.jpg, 02.jpg, ... plus 01-sm.jpg, 02-sm.jpg small versions) and add an entry below.
 //
-// Fields you leave out (empty strings, null or empty lists) simply don't show up on the page.
+// Each space page is built by one shared template (src/pages/Space.jsx) from these fields:
+//   summary  one shared description used on the home page + spaces listing cards
+//   intro    the (architecture-first) description at the top of the space's own page
+//   specs    the details sheet. Only fields with a value are shown, always in the order of specFields below.
+//   preview  photo numbers (1-based positions in `images`) for the curated preview gallery on the space
+//            page, in order. 2, 3, 4, 6 or 7 numbers give a complete grid. Every photo stays reachable
+//            through "view all photos".
+//   related  slugs of up to three other spaces shown in "other spaces".
 
 // Builds the photo list for a folder with `count` photos.
 // `areas` optionally maps a photo number to a gallery tab name, like { 1: "entry" }.
@@ -46,16 +53,37 @@ const loftAreas = {
   ...range(3, 5, "soundproof rooms"),
   ...range(6, 7, "main floor"),
   8: "hidden room",
-  9: "kitchen + bar",
+  9: "kitchen",
   ...range(10, 13, "main floor"),
-  ...range(14, 15, "projection"),
+  ...range(14, 15, "screening room"),
   16: "main floor",
-  ...range(17, 18, "projection"),
+  ...range(17, 18, "screening room"),
   ...range(19, 25, "main floor"),
-  26: "kitchen + bar",
+  26: "kitchen",
   27: "main floor",
   ...range(28, 30, "entry"),
 };
+
+// The details sheet: master field order and labels. Spaces fill in `specs` using these keys.
+export const specFields = [
+  ["size", "size"],
+  ["floor", "floor"],
+  ["ceiling", "ceiling height"],
+  ["layout", "layout"],
+  ["access", "access"],
+  ["amenities", "amenities"],
+  ["restrooms", "restrooms"],
+  ["climate", "climate control"],
+  ["power", "power"],
+  ["parking", "parking"],
+  ["availability", "availability"],
+];
+
+export function specRowsOf(space) {
+  return specFields
+    .map(([key, label]) => ({ label, value: (space.specs?.[key] || "").trim() }))
+    .filter((r) => r.value);
+}
 
 const allSpaces = [
   {
@@ -67,46 +95,23 @@ const allSpaces = [
     location: "arts district, Los Angeles",
     summary:
       "a private loft with its own entrance and freight elevator, exposed brick, timber beams, and original wood floors. connected open spaces, soundproof rooms, built-in projection, and a hidden room behind a bookshelf.",
-    description: [],
-    basics: [
-      { label: "size", value: "7,000 sq ft" },
-      { label: "floor", value: "second floor" },
-      { label: "capacity", value: "" }, // e.g. "150 standing"
-      { label: "hours", value: "" },
-      { label: "parking", value: "gated on-site parking available" },
-      { label: "power", value: "" },
-    ],
-    features: [
-      "private entrance",
-      "freight elevator",
-      "kitchen + bar",
-      "soundproof rooms",
-      "built-in projection",
-    ],
-    included: [
-      "private entrance",
-      "freight elevator",
-      "kitchen and bar area",
-      "soundproof rooms",
-      "hidden room behind a bookshelf",
-      "built-in projection",
-    ],
-    details: [
-      { label: "size", value: "7,000 sq ft" },
-      { label: "floor", value: "second floor" },
-      { label: "access", value: "private entrance, freight elevator" },
-      { label: "facilities", value: "kitchen" },
-      { label: "features", value: "soundproof rooms, hidden room behind a bookshelf" },
-      { label: "parking", value: "on-site parking available" },
-    ],
+    intro:
+      "a second-floor loft with its own entrance and private freight elevator. exposed brick, timber beams, and original wood floors run through connected open areas, soundproof rooms, a screening room with a projection screen, and a hidden room behind a bookshelf.",
+    specs: {
+      size: "7,000 sq ft",
+      floor: "second floor",
+      layout:
+        "connected open areas, soundproof rooms, a screening room, and a hidden room behind a bookshelf",
+      access: "private entrance and private freight elevator",
+      amenities:
+        "kitchen area with refrigerator, island, and kegerator (no stovetop; keg not provided), projection screen (projector not provided), and lounge furniture",
+      restrooms: "1 private restroom",
+      climate: "heating and air conditioning",
+      parking: "gated on-site parking available",
+    },
+    preview: [23, 16, 9, 8, 15, 3, 21],
+    related: ["the-courtyard", "the-studio", "studio-1a"],
     popularFor: ["creative work", "productions", "gatherings"],
-    price: "", // e.g. "$150 / hr". Empty shows "request a quote".
-    faq: [
-      {
-        q: "how does load-in work?",
-        a: "the loft has a private entrance and a freight elevator to the second floor. add truck access, load-in hours and dock details here.",
-      },
-    ],
     cover: 11,
     images: photos("loft", 30, "the loft", loftAreas),
   },
@@ -120,20 +125,22 @@ const allSpaces = [
     location: "arts district, Los Angeles",
     summary:
       "an expansive, gated outdoor courtyard framed by historic brick buildings and industrial architecture. its open layout offers ample room for large-scale installations, with the option to pair it with adjoining indoor spaces.",
-    description: [],
-    basics: [
-      { label: "size", value: "15,000+ sq ft" },
-      { label: "setting", value: "gated courtyard" },
-      { label: "capacity", value: "" },
-      { label: "hours", value: "" },
-      { label: "power", value: "" },
-    ],
-    details: [], // no details table on this page
-    features: ["gated", "historic brick walls", "industrial architecture"],
-    included: ["gated courtyard", "room for outdoor events and markets"],
+    intro:
+      "an expansive, gated outdoor courtyard framed by historic brick buildings and industrial architecture. the open layout leaves room for large-scale installations, and adjoining indoor spaces can be booked alongside it.",
+    specs: {
+      size: "15,000+ sq ft",
+      layout: "open-air courtyard with a paved asphalt surface",
+      access: "gated, street-level vehicle and loading access",
+      amenities: "adjoining indoor spaces can be rented separately",
+      restrooms: "available when booked with the studio; portable restrooms may be required",
+      power: "available upon request; additional charges may apply for high-power-use productions and events",
+      parking: "subject to rental configuration and availability",
+      availability: "saturdays and sundays",
+    },
+    // positions in `images` below: 2 aerial, 3 deck + tables, 4 brick door, 8 open lot, 9 patio seating, 6 awning facade
+    preview: [2, 3, 4, 8, 9, 6],
+    related: ["the-studio", "the-loft", "studio-1a"],
     popularFor: ["outdoor events", "markets", "brand activations", "productions"],
-    price: "",
-    faq: [],
     cover: 1,
     // Best 7 of the 17 courtyard photos (the rest are near-duplicates), keeping their original numbers.
     images: [
@@ -166,18 +173,21 @@ const allSpaces = [
     location: "arts district, Los Angeles",
     summary:
       "an open industrial space with high ceilings, concrete floors, large windows, and natural light. a flexible floor plan with direct access to the outdoor courtyard.",
-    description: [],
-    basics: [
-      { label: "size", value: "5,000 sq ft" },
-      { label: "capacity", value: "" },
-      { label: "hours", value: "" },
-      { label: "parking", value: "gated on-site parking available" },
-    ],
-    features: ["high ceilings", "flexible layout", "natural light"],
-    included: [],
+    intro:
+      "an open industrial space with high ceilings, concrete floors, large windows, and natural light. the floor plan is flexible, and the studio opens directly onto the courtyard, which is booked separately.",
+    specs: {
+      size: "5,000 sq ft",
+      floor: "ground floor",
+      layout: "open floor plan",
+      access:
+        "street-level access, loading dock, and direct connection to the courtyard (booked separately)",
+      restrooms: "available",
+      climate: "heating and air conditioning",
+      parking: "gated on-site parking available",
+    },
+    preview: [3, 4, 5, 8, 10, 11],
+    related: ["the-courtyard", "the-loft", "studio-1a"],
     popularFor: ["creative work", "photo + video", "gatherings", "celebrations"],
-    price: "",
-    faq: [],
     cover: 2,
     images: photos("the-studio", 11, "the studio", {
       ...range(1, 4, "studio"),
@@ -188,9 +198,8 @@ const allSpaces = [
     }),
   },
 
-  // Leasable studio and office suites. Details come from the building's LoopNet listing.
-  // Rates are the listed asking rates (modified gross, term negotiable); delete a
-  // "lease rate" line below if you would rather not publish it.
+  // Leasable studio and office suites. Specs follow the leasing brochure (LoopNet where it adds detail).
+  // Rates are deliberately not published on the site.
   {
     slug: "studio-1a",
     name: "studio 1A",
@@ -200,39 +209,22 @@ const allSpaces = [
     location: "arts district, Los Angeles",
     summary:
       "a ground-floor studio with 18-foot ceilings, concrete floors, and direct access from the gated parking area. the layout includes four private offices, a conference room, a kitchen, and a private restroom.",
-    description: [],
-    basics: [
-      { label: "size", value: "2,700 sq ft" },
-      { label: "floor", value: "ground floor" },
-      { label: "ceilings", value: "about 18 ft" },
-      { label: "layout", value: "mostly open floor plan" },
-      { label: "private offices", value: "4" },
-      { label: "conference rooms", value: "1" },
-      { label: "lease rate", value: "$30.00 / sq ft / yr, modified gross" },
-      { label: "parking", value: "gated on-site parking available" },
-      { label: "restrooms", value: "private" },
-    ],
-    features: ["18-ft ceilings", "direct gated parking access", "private offices", "conference room"],
-    included: [
-      "private offices",
-      "conference room",
-      "kitchen and break area",
-      "private restrooms",
-      "storage rooms",
-      "air conditioning",
-      "exposed ceiling",
-      "recessed lighting",
-      "wi-fi",
-      "plug and play",
-    ],
+    intro:
+      "a ground-floor studio with roughly 18-foot ceilings, concrete floors, and large windows that bring in natural light. it opens directly onto the gated parking area, with private offices and a conference room alongside the open workspace.",
+    specs: {
+      size: "2,700 sq ft",
+      floor: "ground floor",
+      ceiling: "approximately 18 ft",
+      layout: "open workspace, 4 private offices, 1 conference room, and storage rooms",
+      access: "direct access from the gated parking area",
+      amenities: "kitchen and break area",
+      restrooms: "private",
+      climate: "heating and air conditioning",
+      parking: "gated on-site parking available",
+    },
+    preview: [12, 5, 7, 16, 1, 9],
+    related: ["the-studio", "studio-2g", "studio-2d"],
     popularFor: ["creative teams", "offices", "studios"],
-    price: "",
-    faq: [
-      {
-        q: "what are the lease terms?",
-        a: "terms are negotiable. the listed rate is modified gross, plus about $0.25 / sq ft / month in common area charges. the suite is available now.",
-      },
-    ],
     cover: 8,
     images: photos("unit-4", 16, "studio 1A"),
   },
@@ -249,34 +241,18 @@ const allSpaces = [
     location: "arts district, Los Angeles",
     summary:
       "a ground-floor suite with street-facing windows, high ceilings and updated interiors. ideal for boutique creative, design, or consulting teams.",
-    description: [
-      "ground-floor creative office suite featuring high ceilings, street-facing windows, updated interior improvements, and a flexible workspace configuration. ideal for boutique creative, design, consulting, or professional office users.",
-    ],
-    basics: [
-      { label: "size", value: "1,100 sq ft" },
-      { label: "floor", value: "ground floor" },
-      { label: "layout", value: "mostly open floor plan" },
-      { label: "lease rate", value: "$33.00 / sq ft / yr, modified gross" },
-      { label: "parking", value: "gated on-site parking available" },
-      { label: "restrooms", value: "shared" },
-    ],
-    features: ["street-facing windows", "high ceilings", "green-screen capable"],
-    included: [
-      "updated interior and flooring",
-      "hardwood floors",
-      "air conditioning",
-      "recessed lighting",
-      "wi-fi",
-      "plug and play",
-    ],
+    intro:
+      "a ground-floor suite with street-facing windows, high ceilings, and refinished interiors, entered through the building's interior.",
+    specs: {
+      size: "1,100 sq ft",
+      floor: "ground floor",
+      restrooms: "shared",
+      climate: "heating and air conditioning",
+      parking: "gated on-site parking available",
+    },
+    preview: [1],
+    related: ["studio-1a", "studio-2h", "studio-2d"],
     popularFor: ["boutique creative", "design", "consulting"],
-    price: "",
-    faq: [
-      {
-        q: "what are the lease terms?",
-        a: "terms are negotiable. the listed rate is modified gross, plus about $0.27 / sq ft / month in common area charges. the suite is available now.",
-      },
-    ],
     cover: 1,
     images: [{ src: "/images/placeholder.svg", alt: "Photo coming soon", area: null }],
   },
@@ -289,35 +265,21 @@ const allSpaces = [
     location: "arts district, Los Angeles",
     summary:
       "a second-floor studio with exposed timber beams, large windows, and hardwood floors. the layout includes an open workspace, a private office, a conference room, a kitchenette, and dual entrances.",
-    description: [],
-    basics: [
-      { label: "size", value: "2,400 sq ft" },
-      { label: "floor", value: "second floor" },
-      { label: "layout", value: "mostly open floor plan" },
-      { label: "lease rate", value: "$33.00 / sq ft / yr, modified gross" },
-      { label: "parking", value: "gated on-site parking available" },
-      { label: "restrooms", value: "shared" },
-    ],
-    features: ["exposed timber ceiling", "large windows", "dual entrances", "kitchenette"],
-    included: [
-      "conference room",
-      "private office",
-      "kitchenette",
-      "HVAC",
-      "hardwood floors",
-      "exposed ceiling",
-      "recessed lighting",
-      "wi-fi",
-      "plug and play",
-    ],
+    intro:
+      "a second-floor studio with exposed timber beams, large windows, and hardwood floors, laid out as an open workspace with entrances at either end.",
+    specs: {
+      size: "2,400 sq ft",
+      floor: "second floor",
+      layout: "open workspace, 1 private office, and 1 conference room",
+      access: "dual entrances and shared elevator",
+      amenities: "kitchenette",
+      restrooms: "shared",
+      climate: "heating and air conditioning",
+      parking: "gated on-site parking available",
+    },
+    preview: [6, 5, 1, 9, 4, 10],
+    related: ["studio-2g", "studio-1a", "studio-2h"],
     popularFor: ["creative teams", "offices", "studios"],
-    price: "",
-    faq: [
-      {
-        q: "what are the lease terms?",
-        a: "terms are negotiable. the listed rate is modified gross, plus about $0.27 / sq ft / month in common area charges. the suite is available now.",
-      },
-    ],
     cover: 7,
     images: photos("unit-3", 12, "studio 2D"),
   },
@@ -330,39 +292,22 @@ const allSpaces = [
     location: "arts district, Los Angeles",
     summary:
       "a second-floor studio with exposed timber beams and large industrial windows. the layout includes multiple private offices, a conference room, a media room, open workspace, and a large kitchen and gathering area.",
-    description: [],
-    basics: [
-      { label: "size", value: "4,800 sq ft" },
-      { label: "floor", value: "second floor" },
-      { label: "layout", value: "mostly open floor plan" },
-      { label: "private offices", value: "7" },
-      { label: "conference rooms", value: "1" },
-      { label: "lease rate", value: "$39.00 / sq ft / yr, modified gross" },
-      { label: "parking", value: "gated on-site parking available" },
-      { label: "restrooms", value: "shared" },
-    ],
-    features: ["7 private offices", "large conference room", "kitchen and gathering area", "high-speed internet ready"],
-    included: [
-      "private offices",
-      "large conference room",
-      "collaborative workspace",
-      "kitchen and gathering area",
-      "utility and storage",
-      "air conditioning",
-      "hardwood floors",
-      "exposed ceiling",
-      "recessed lighting",
-      "wi-fi",
-      "plug and play",
-    ],
+    intro:
+      "a second-floor studio with exposed timber beams, hardwood floors, and large industrial windows. a large suite that combines private offices, open workspace, and a kitchen and gathering area.",
+    specs: {
+      size: "4,800 sq ft",
+      floor: "second floor",
+      layout:
+        "open workspace, 7 private offices, 1 large conference room, a media room, and utility and storage rooms",
+      access: "shared elevator",
+      amenities: "kitchen and gathering area",
+      restrooms: "shared",
+      climate: "heating and air conditioning",
+      parking: "gated on-site parking available",
+    },
+    preview: [9, 10, 6, 8, 5, 3, 12],
+    related: ["studio-2d", "studio-1a", "the-loft"],
     popularFor: ["growing teams", "creative offices", "studios"],
-    price: "",
-    faq: [
-      {
-        q: "what are the lease terms?",
-        a: "terms are negotiable. the listed rate is modified gross, plus about $0.32 / sq ft / month in common area charges. the suite is available now.",
-      },
-    ],
     cover: 7,
     images: photos("suite-2g", 15, "studio 2G"),
   },
@@ -375,34 +320,21 @@ const allSpaces = [
     location: "arts district, Los Angeles",
     summary:
       "a second-floor studio with exposed timber beams and large windows. the layout includes an open workspace, a separate office, a kitchenette, and a private restroom.",
-    description: [],
-    basics: [
-      { label: "size", value: "1,100 sq ft" },
-      { label: "floor", value: "second floor" },
-      { label: "layout", value: "mostly open floor plan" },
-      { label: "private offices", value: "1" },
-      { label: "lease rate", value: "$36.00 / sq ft / yr, modified gross" },
-      { label: "parking", value: "gated on-site parking available" },
-      { label: "restrooms", value: "private" },
-    ],
-    features: ["private restroom", "kitchenette", "tall windows", "quiet and self-contained"],
-    included: [
-      "private restroom",
-      "kitchenette",
-      "air conditioning",
-      "exposed ceiling",
-      "hardwood floors",
-      "recessed lighting",
-      "wi-fi",
-    ],
+    intro:
+      "a second-floor studio with exposed timber beams, hardwood floors, and large windows. a quiet, self-contained suite with its own restroom and kitchenette.",
+    specs: {
+      size: "1,100 sq ft",
+      floor: "second floor",
+      layout: "workspace with 1 private office",
+      access: "shared elevator",
+      amenities: "kitchenette",
+      restrooms: "private",
+      climate: "heating and air conditioning",
+      parking: "gated on-site parking available",
+    },
+    preview: [1, 2],
+    related: ["studio-2d", "studio-1a", "studio-2g"],
     popularFor: ["small teams", "studios", "independent practices"],
-    price: "",
-    faq: [
-      {
-        q: "what are the lease terms?",
-        a: "terms are negotiable. the listed rate is modified gross, plus about $0.30 / sq ft / month in common area charges. the suite is available now.",
-      },
-    ],
     cover: 2,
     images: photos("unit-5", 2, "studio 2H"),
   },

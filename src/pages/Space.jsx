@@ -1,50 +1,69 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getSpace, coverOf, spaces } from "../data/spaces.js";
+import { getSpace, coverOf, specRowsOf, spaces } from "../data/spaces.js";
 import Gallery from "../components/Gallery.jsx";
-import SpaceCard from "../components/SpaceCard.jsx";
+import RelatedSpaces from "../components/RelatedSpaces.jsx";
 import StickyBar from "../components/StickyBar.jsx";
 import NotFound from "./NotFound.jsx";
 
-// The rows of the "details" table: an explicit `details` list when a space has one, otherwise its
-// basics plus what's included (or its features).
-// Turns **bold** markers in a description into <strong>.
-function withBold(text) {
-  return text.split("**").map((part, i) => (i % 2 ? <strong key={i}>{part}</strong> : part));
-}
-
-function detailsOf(space) {
-  if (Array.isArray(space.details)) return space.details.filter((d) => d.value);
-  const rows = (space.basics || []).filter((b) => b.value);
-  const extra = space.included?.length ? space.included : space.features;
-  if (extra?.length) rows.push({ label: space.included?.length ? "included" : "features", value: extra.join(", ") });
-  return rows;
+// Splits the details rows into two columns of about equal height (by how much text each row holds),
+// keeping the master field order. Short sheets stay in one column.
+function balance(rows) {
+  if (rows.length < 4) return [rows];
+  const weight = (r) => 1 + Math.floor(r.value.length / 44);
+  const total = rows.reduce((n, r) => n + weight(r), 0);
+  let best = 1;
+  let bestGap = Infinity;
+  let run = 0;
+  for (let i = 0; i < rows.length - 1; i++) {
+    run += weight(rows[i]);
+    const gap = Math.abs(total - 2 * run);
+    if (gap < bestGap) {
+      bestGap = gap;
+      best = i + 1;
+    }
+  }
+  return [rows.slice(0, best), rows.slice(best)];
 }
 
 export default function Space() {
   const { slug } = useParams();
   const space = getSpace(slug);
-  const ctaRef = useRef(null);
-  const [showBar, setShowBar] = useState(false);
+  const introRef = useRef(null);
+  const [introGone, setIntroGone] = useState(false);
+  const [footerIn, setFooterIn] = useState(false);
 
-  // Phones and tablets: slide the fixed "inquire" bar up once the intro has scrolled out of view.
+  // Phones and tablets: slide the fixed "inquire" bar up once the intro has scrolled out of view,
+  // and tuck it away again when the footer arrives.
   useEffect(() => {
-    const el = ctaRef.current;
-    if (!el || typeof IntersectionObserver === "undefined") return undefined;
-    const io = new IntersectionObserver(([entry]) => {
-      setShowBar(!entry.isIntersecting && entry.boundingClientRect.top < 0);
-    });
-    io.observe(el);
-    return () => io.disconnect();
+    if (typeof IntersectionObserver === "undefined") return undefined;
+    const watchers = [];
+    const intro = introRef.current;
+    if (intro) {
+      const io = new IntersectionObserver(([e]) =>
+        setIntroGone(!e.isIntersecting && e.boundingClientRect.top < 0)
+      );
+      io.observe(intro);
+      watchers.push(io);
+    }
+    const footer = document.querySelector("footer");
+    if (footer) {
+      const io = new IntersectionObserver(([e]) => setFooterIn(e.isIntersecting));
+      io.observe(footer);
+      watchers.push(io);
+    }
+    return () => watchers.forEach((io) => io.disconnect());
   }, [slug]);
 
   if (!space) return <NotFound />;
 
   const cover = coverOf(space);
-  const rows = detailsOf(space);
-  const half = Math.ceil(rows.length / 2);
-  const columns = [rows.slice(0, half), rows.slice(half)].filter((c) => c.length > 0);
-  const others = spaces.filter((s) => s.slug !== space.slug).slice(0, 3);
+  const columns = balance(specRowsOf(space));
+  const related = (space.related || [])
+    .map((s) => spaces.find((x) => x.slug === s))
+    .filter((s) => s && s.slug !== space.slug)
+    .slice(0, 3);
+  const short = space.name.replace(/^The /, "the ");
 
   return (
     <>
@@ -58,17 +77,12 @@ export default function Space() {
             <img src={cover.src} alt={cover.alt} />
             {space.placeholder && <span className="photo-note">photos coming soon</span>}
           </div>
-          <div className="space-top__text" ref={ctaRef}>
+          <div className="space-top__text" ref={introRef}>
             {(space.intro || space.summary) && (
-              <p className="statement">{withBold(space.intro || space.summary)}</p>
+              <p className="space-intro">{space.intro || space.summary}</p>
             )}
-            {space.description?.map((p) => (
-              <p key={p.slice(0, 24)} className="body-text">
-                {p}
-              </p>
-            ))}
             <Link to={`/contact?space=${space.slug}`} className="text-link space-top__cta">
-              inquire about {space.name.replace(/^The /, "the ")}
+              inquire about {short}
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
@@ -77,49 +91,33 @@ export default function Space() {
         </div>
       </section>
 
-      {columns.length > 0 && (
+      {columns[0].length > 0 && (
         <section className="section section--tight details-section">
           <div className="container">
             <div className="details">
-            <h2 className="h2">details.</h2>
-            <div className="details__grid">
-              {columns.map((col, i) => (
-                <dl key={i} className="details__col">
-                  {col.map((r) => (
-                    <div key={r.label} className="details__row">
-                      <dt>{r.label}</dt>
-                      <dd>{r.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-              ))}
-            </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {!space.placeholder && <Gallery title="photos." images={space.images} limit={space.slug === "the-courtyard" ? space.images.length : undefined} />}
-
-      {others.length > 0 && (
-        <section className="section">
-          <div className="container stack stack--xl">
-            <div className="section__head">
-              <h2 className="h2">other spaces</h2>
-              <Link to="/spaces" className="text-link">
-                see all {spaces.length} spaces
-              </Link>
-            </div>
-            <div className="cards">
-              {others.map((s) => (
-                <SpaceCard key={s.slug} space={s} />
-              ))}
+              <h2 className="h2">details.</h2>
+              <div className="details__grid">
+                {columns.map((col, i) => (
+                  <dl key={i} className="details__col">
+                    {col.map((r) => (
+                      <div key={r.label} className="details__row">
+                        <dt>{r.label}</dt>
+                        <dd>{r.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                ))}
+              </div>
             </div>
           </div>
         </section>
       )}
 
-      <StickyBar space={space} visible={showBar} />
+      {!space.placeholder && <Gallery title="photos." images={space.images} preview={space.preview} />}
+
+      <RelatedSpaces spaces={related} />
+
+      <StickyBar space={space} visible={introGone && !footerIn} />
     </>
   );
 }

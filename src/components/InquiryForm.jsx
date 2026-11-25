@@ -16,7 +16,10 @@ export default function InquiryForm({ dark = false }) {
 
   const type = params.get("type");
   const defaultInterest = type === "visit" ? "Booking a visit" : "";
-  const defaultSpace = params.get("space") || "";
+  // `?space=` carries a space's slug (e.g. "the-loft"); the form's options are the space names.
+  const spaceParam = params.get("space") || "";
+  const defaultSpace =
+    spaces.find((s) => s.slug === spaceParam || s.name === spaceParam)?.name || "";
   const defaultDate = params.get("date") || "";
   const defaultGuests = params.get("guests") || "";
 
