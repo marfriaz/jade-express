@@ -2,7 +2,7 @@
 // Used by the build (scripts/prerender.mjs) and by the live site (Layout) so titles
 // and share previews are right both for crawlers and when visitors navigate.
 import site from "./data/site.js";
-import { spaces, coverOf } from "./data/spaces.js";
+import { spaces } from "./data/spaces.js";
 
 export const ORIGIN = "https://wilsonandbay.com";
 const BRAND = "Wilson & Bay";
@@ -66,7 +66,7 @@ function organization() {
     description: pages["/"].description,
     email: site.email,
     foundingDate: "1995",
-    image: ORIGIN + coverOf(spaces[0]).src,
+    image: ORIGIN + "/og/home.jpg",
     address: {
       "@type": "PostalAddress",
       streetAddress: street,
@@ -96,7 +96,7 @@ export function seoFor(pathname) {
   const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
   let title = pages[path]?.title;
   let description = pages[path]?.description;
-  let image = ORIGIN + coverOf(spaces[0]).src;
+  let image = ORIGIN + "/og/home.jpg"; // 1200x630 share images live in public/og/
   const graph = [];
 
   if (path === "/") {
@@ -113,7 +113,7 @@ export function seoFor(pathname) {
       const label = titleCase(space.name);
       title = `${label}${space.sqft ? `, ${space.sqft} sq ft` : ""} | Arts District LA | ${BRAND}`;
       description = trim(sentences(space.summary));
-      image = ORIGIN + coverOf(space).src;
+      image = `${ORIGIN}/og/${space.slug}.jpg`;
       graph.push(
         {
           "@type": "Place",
@@ -166,6 +166,9 @@ export function headHtml(seo) {
     m("property", "og:description", seo.description),
     m("property", "og:url", seo.canonical),
     m("property", "og:image", seo.image),
+    m("property", "og:image:width", "1200"),
+    m("property", "og:image:height", "630"),
+    m("property", "og:image:alt", seo.title),
     m("name", "twitter:card", "summary_large_image"),
     m("name", "twitter:title", seo.title),
     m("name", "twitter:description", seo.description),
