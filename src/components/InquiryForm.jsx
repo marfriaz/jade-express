@@ -13,6 +13,29 @@ const interests = [
 export default function InquiryForm({ dark = false }) {
   const [params] = useSearchParams();
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error | mailto
+  const [draft, setDraft] = useState(""); // the email text, kept so it can be copied if no mail app opens
+  const [copied, setCopied] = useState(false);
+
+  async function copyDraft() {
+    try {
+      await navigator.clipboard.writeText(draft);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = draft;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+      } catch {
+        /* nothing more to try */
+      }
+      ta.remove();
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   const type = params.get("type");
   const defaultInterest = type === "visit" ? "Booking a visit" : "";
@@ -59,11 +82,13 @@ export default function InquiryForm({ dark = false }) {
       "",
       String(data.get("message") || ""),
     ].filter((l, i, arr) => l !== "" || i === arr.length - 2);
+    const subject = `Inquiry for ${data.get("space") || "Wilson & Bay"} - ${data.get("first_name")} ${data.get("last_name")}`;
+    const body = lines.join("\n");
+    setDraft(`To: ${site.email}\nSubject: ${subject}\n\n${body}`);
+    setCopied(false);
     window.location.href =
-      `mailto:${site.email}?subject=${encodeURIComponent(
-        `Inquiry for ${data.get("space") || "Wilson & Bay"} - ${data.get("first_name")} ${data.get("last_name")}`
-      )}` +
-      `&body=${encodeURIComponent(lines.join("\n"))}`;
+      `mailto:${site.email}?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(body)}`;
     setStatus("mailto");
   }
 
@@ -144,7 +169,14 @@ export default function InquiryForm({ dark = false }) {
       <p className="form__status" role="status" aria-live="polite">
         {status === "sent" && "Thanks! We got your message and will be in touch."}
         {status === "error" && "Something went wrong. Please try again, or email us directly."}
-        {status === "mailto" && "Opening your email app. If nothing opens, email us directly."}
+        {status === "mailto" && (
+          <>
+            Opening your email app. If nothing opens, email us directly.{" "}
+            <button type="button" className="form__copy" onClick={copyDraft}>
+              {copied ? "copied" : "copy"}
+            </button>
+          </>
+        )}
       </p>
     </form>
   );

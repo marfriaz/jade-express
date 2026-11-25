@@ -2272,3 +2272,17 @@ html {
 .space-intro {
   max-width: none;
 }
+
+/* "copy" next to the "opening your email app" message */
+.form__copy {
+  padding: 0 0 1px;
+  border: 0;
+  border-bottom: 1.5px solid currentColor;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
