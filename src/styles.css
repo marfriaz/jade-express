@@ -2293,3 +2293,32 @@ html {
   text-transform: uppercase;
   cursor: pointer;
 }
+
+/* iOS Safari: the date field has its own intrinsic width and look, which pushed it past the form's edge */
+.form__row {
+  grid-template-columns: minmax(0, 1fr);
+}
+@media (min-width: 600px) {
+  .form__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.form label {
+  min-width: 0;
+}
+.form input[type="date"] {
+  display: block;
+  -webkit-appearance: none;
+  appearance: none;
+  min-width: 0;
+  max-width: 100%;
+  height: 52px;
+  text-align: left;
+}
+.form input[type="date"]::-webkit-date-and-time-value {
+  min-height: 1.4em;
+  text-align: left;
+}
+.form input[type="date"]::-webkit-datetime-edit {
+  padding: 0;
+}
