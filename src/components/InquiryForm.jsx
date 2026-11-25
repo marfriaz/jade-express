@@ -171,7 +171,7 @@ export default function InquiryForm({ dark = false }) {
         {status === "error" && "Something went wrong. Please try again, or email us directly."}
         {status === "mailto" && (
           <>
-            Opening your email app. If nothing opens, email us directly.{" "}
+            <span>Opening your email app. If nothing opens, email us directly.</span>
             <button type="button" className="form__copy" onClick={copyDraft}>
               {copied ? "copied" : "copy"}
             </button>

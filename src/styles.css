@@ -2273,15 +2273,22 @@ html {
   max-width: none;
 }
 
-/* "copy" next to the "opening your email app" message */
+/* "copy" next to the "opening your email app" message: a small outlined button */
+.form__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
 .form__copy {
-  padding: 0 0 1px;
-  border: 0;
-  border-bottom: 1.5px solid currentColor;
-  background: none;
+  flex: none;
+  height: 30px;
+  padding: 0 12px;
+  border: 1.5px solid currentColor;
+  border-radius: 0;
+  background: transparent;
   color: inherit;
-  font: inherit;
-  font-weight: 700;
+  font: 700 11px/1 "Manrope", system-ui, sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
