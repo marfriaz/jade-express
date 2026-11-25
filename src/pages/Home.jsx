@@ -64,16 +64,16 @@ export default function Home() {
               <h2 className="h2 h2--xl">featured spaces</h2>
               <p className="featured__note">spaces ranging from 1,100 to 15,000+ sq ft, with gated on-site parking available.</p>
             </div>
-            <Link to="/spaces" className="text-link">
+            <Link to="/spaces" className="text-link featured__top-link">
               view all spaces &rarr;
             </Link>
           </div>
           <div className="cards">
             {featured.map((s) => (
-              <SpaceCard key={s.slug} space={s} showTags={false} />
+              <SpaceCard key={s.slug} space={s} showTags={false} text={s.homeSummary} />
             ))}
           </div>
-          <div className="center">
+          <div className="center featured__cta">
             <Link to="/spaces" className="btn btn--primary btn--wide">
               view all spaces
             </Link>

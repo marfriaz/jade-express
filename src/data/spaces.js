@@ -67,6 +67,9 @@ const allSpaces = [
     location: "arts district, Los Angeles",
     summary:
       "a private loft with its own entrance and freight elevator, featuring exposed brick, timber beams, and original wood floors. the space flows through several connected areas, with soundproof rooms and a hidden room behind a bookshelf.",
+    // Shown on the home page's featured cards.
+    homeSummary:
+      "a private loft with its own entrance and freight elevator, exposed brick, timber beams, and original wood floors. connected open spaces, soundproof rooms, built-in projection, and a hidden room behind a bookshelf.",
     description: [],
     basics: [
       { label: "size", value: "7,000 sq ft" },
@@ -120,6 +123,9 @@ const allSpaces = [
     location: "arts district, Los Angeles",
     summary:
       "15,000+ sq ft gated outdoor courtyard surrounded by brick buildings and industrial architecture, with an open layout for markets, brand activations, productions, and gatherings.",
+    // Shown on the home page's featured cards.
+    homeSummary:
+      "an expansive, gated outdoor courtyard framed by historic brick buildings and industrial architecture. its open layout offers ample room for large-scale installations, with the option to pair it with adjoining indoor spaces.",
     description: [],
     basics: [
       { label: "size", value: "15,000+ sq ft" },
@@ -166,6 +172,9 @@ const allSpaces = [
     location: "arts district, Los Angeles",
     summary:
       "an open industrial space with high ceilings, concrete floors, and natural light. its flexible floor plan can accommodate creative work, productions, and gatherings.",
+    // Shown on the home page's featured cards.
+    homeSummary:
+      "an open industrial space with high ceilings, concrete floors, large windows, and natural light. a flexible floor plan with direct access to the outdoor courtyard.",
     description: [],
     basics: [
       { label: "size", value: "5,000 sq ft" },
