@@ -335,7 +335,7 @@ const allSpaces = [
     preview: [1, 2],
     related: ["studio-2d", "studio-1a", "studio-2g"],
     popularFor: ["small teams", "studios", "independent practices"],
-    cover: 2,
+    cover: 1,
     images: photos("unit-5", 2, "studio 2H"),
   },
 

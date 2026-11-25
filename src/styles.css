@@ -2256,3 +2256,19 @@ html {
   padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
   font-size: 12.5px;
 }
+
+/* space page: smaller title, taller hero, intro runs the full content width */
+.space-top .h1--xl {
+  font-size: clamp(44px, 9vw, 88px);
+}
+.space-top__photo img {
+  height: 320px;
+}
+@media (min-width: 900px) {
+  .space-top__photo img {
+    height: 600px;
+  }
+}
+.space-intro {
+  max-width: none;
+}
