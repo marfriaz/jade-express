@@ -1917,3 +1917,28 @@ html {
     display: none;
   }
 }
+
+/* Spaces page: availability note under the listings */
+.spaces-more {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 8px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.spaces-more .h2 {
+  font-size: clamp(26px, 3.4vw, 34px);
+}
+.spaces-more p {
+  max-width: 560px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+@media (min-width: 900px) {
+  .spaces-more {
+    margin-top: 16px;
+    padding-top: 40px;
+  }
+}

@@ -70,7 +70,7 @@ export default function Home() {
           </div>
           <div className="cards">
             {featured.map((s) => (
-              <SpaceCard key={s.slug} space={s} showTags={false} text={s.homeSummary} />
+              <SpaceCard key={s.slug} space={s} showTags={false} />
             ))}
           </div>
           <div className="center featured__cta">
@@ -89,7 +89,7 @@ export default function Home() {
               <p className="light-muted lead">{site.life.text}</p>
             </div>
             <Link to="/gallery" className="text-link text-link--caps">
-              Explore the gallery &raquo;
+              Explore the gallery &rarr;
             </Link>
           </div>
           <div className="justified">

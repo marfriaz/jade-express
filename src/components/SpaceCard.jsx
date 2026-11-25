@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { coverOf } from "../data/spaces.js";
 
-export default function SpaceCard({ space, showTags = true, text }) {
+export default function SpaceCard({ space, showTags = true }) {
   const cover = coverOf(space);
-  const blurb = text ?? space.summary;
   return (
     <Link to={`/spaces/${space.slug}`} className="card">
       <img
@@ -16,7 +15,7 @@ export default function SpaceCard({ space, showTags = true, text }) {
         <h3 className="h3">{space.name}</h3>
         {space.sqft && <span className="muted small-strong">{space.sqft} sq ft</span>}
       </div>
-      {blurb && <p className="card__text">{blurb}</p>}
+      {space.summary && <p className="card__text">{space.summary}</p>}
       {showTags && space.popularFor?.length > 0 && (
         <div className="chips">
           {space.popularFor.slice(0, 3).map((u) => (
@@ -26,7 +25,7 @@ export default function SpaceCard({ space, showTags = true, text }) {
           ))}
         </div>
       )}
-      <span className="text-link">explore {space.name.toLowerCase()} &raquo;</span>
+      <span className="text-link">explore {space.name.toLowerCase()} &rarr;</span>
     </Link>
   );
 }

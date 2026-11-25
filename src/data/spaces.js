@@ -66,9 +66,6 @@ const allSpaces = [
     sqft: "7,000",
     location: "arts district, Los Angeles",
     summary:
-      "a private loft with its own entrance and freight elevator, featuring exposed brick, timber beams, and original wood floors. the space flows through several connected areas, with soundproof rooms and a hidden room behind a bookshelf.",
-    // Shown on the home page's featured cards.
-    homeSummary:
       "a private loft with its own entrance and freight elevator, exposed brick, timber beams, and original wood floors. connected open spaces, soundproof rooms, built-in projection, and a hidden room behind a bookshelf.",
     description: [],
     basics: [
@@ -122,9 +119,6 @@ const allSpaces = [
     sqft: "15,000+",
     location: "arts district, Los Angeles",
     summary:
-      "15,000+ sq ft gated outdoor courtyard surrounded by brick buildings and industrial architecture, with an open layout for markets, brand activations, productions, and gatherings.",
-    // Shown on the home page's featured cards.
-    homeSummary:
       "an expansive, gated outdoor courtyard framed by historic brick buildings and industrial architecture. its open layout offers ample room for large-scale installations, with the option to pair it with adjoining indoor spaces.",
     description: [],
     basics: [
@@ -171,9 +165,6 @@ const allSpaces = [
     sqft: "5,000",
     location: "arts district, Los Angeles",
     summary:
-      "an open industrial space with high ceilings, concrete floors, and natural light. its flexible floor plan can accommodate creative work, productions, and gatherings.",
-    // Shown on the home page's featured cards.
-    homeSummary:
       "an open industrial space with high ceilings, concrete floors, large windows, and natural light. a flexible floor plan with direct access to the outdoor courtyard.",
     description: [],
     basics: [
@@ -208,7 +199,7 @@ const allSpaces = [
     sqft: "2,700",
     location: "arts district, Los Angeles",
     summary:
-      "a ground-floor studio with 18-foot ceilings, concrete floors, and glass-enclosed rooms. the open layout offers flexibility for creative teams, offices, and production work.",
+      "a ground-floor studio with 18-foot ceilings, concrete floors, and direct access from the gated parking area. the layout includes four private offices, a conference room, a kitchen, and a private restroom.",
     description: [],
     basics: [
       { label: "size", value: "2,700 sq ft" },
@@ -297,7 +288,7 @@ const allSpaces = [
     sqft: "2,400",
     location: "arts district, Los Angeles",
     summary:
-      "exposed timber ceilings, large windows, hardwood floors, and a mix of open workspace and enclosed rooms. a flexible layout for creative offices and studios.",
+      "a second-floor studio with exposed timber beams, large windows, and hardwood floors. the layout includes an open workspace, a private office, a conference room, a kitchenette, and dual entrances.",
     description: [],
     basics: [
       { label: "size", value: "2,400 sq ft" },
@@ -338,7 +329,7 @@ const allSpaces = [
     sqft: "4,800",
     location: "arts district, Los Angeles",
     summary:
-      "seven private offices, a large conference room, collaborative workspace, and a kitchenette, with exposed timber ceilings and large industrial windows.",
+      "a second-floor studio with exposed timber beams and large industrial windows. the layout includes multiple private offices, a conference room, a media room, open workspace, and a large kitchen and gathering area.",
     description: [],
     basics: [
       { label: "size", value: "4,800 sq ft" },
@@ -383,7 +374,7 @@ const allSpaces = [
     sqft: "1,100",
     location: "arts district, Los Angeles",
     summary:
-      "a second-floor studio with tall windows, timber ceilings, a private restroom, and a kitchenette. suited for a small team or independent business.",
+      "a second-floor studio with exposed timber beams and large windows. the layout includes an open workspace, a separate office, a kitchenette, and a private restroom.",
     description: [],
     basics: [
       { label: "size", value: "1,100 sq ft" },

@@ -24,7 +24,7 @@ export default function Spaces() {
         <div className="stack">
           <h1 className="h1">spaces.</h1>
           <p className="lead muted">
-            studios, offices, and event spaces on the wilson &amp; bay campus. showing what&rsquo;s currently available.
+            explore our creative offices, studios, and spaces for events and productions in the arts district.
           </p>
         </div>
 
@@ -48,9 +48,13 @@ export default function Spaces() {
           ))}
         </div>
 
-        <div className="center">
-          <Link to="/contact?type=visit" className="btn btn--primary btn--wide">
-            book a visit
+        <div className="spaces-more">
+          <h2 className="h2">looking for something else?</h2>
+          <p className="muted">
+            additional spaces may be available. get in touch for current leasing and rental availability.
+          </p>
+          <Link to="/contact" className="text-link">
+            get in touch &rarr;
           </Link>
         </div>
       </div>
