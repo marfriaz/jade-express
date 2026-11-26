@@ -125,7 +125,7 @@ const site = {
       { title: "historic character", text: "high ceilings, original details" },
     ],
     order: ["studio-1a", "studio-2d", "studio-2g", "studio-2h", "the-loft", "the-studio"],
-    note: "availability is subject to change. additional spaces may be available — contact us for current leasing opportunities.",
+    note: "availability is subject to change. contact us for current leasing opportunities.",
     link: "schedule a tour",
     cta: {
       title: "come take a look.",

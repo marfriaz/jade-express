@@ -2668,8 +2668,8 @@ html {
   .section-cta {
     display: flex;
     justify-content: center;
-    margin-top: 12px;
-    padding-top: 28px;
+    margin-top: 10px;
+    padding-top: 22px;
     border-top: 1px solid var(--line);
   }
   .section-cta__btn {
@@ -2712,7 +2712,11 @@ html {
     padding-top: var(--m-section-top);
   }
   .page-spaces .container {
-    gap: 28px;
+    gap: 22px;
+  }
+  .page-note {
+    font-size: 13px;
+    line-height: 1.5;
   }
   .possible .container {
     gap: 18px;
