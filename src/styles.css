@@ -2544,3 +2544,9 @@ html {
     height: 52px;
   }
 }
+
+/* landing pages: intro and closing copy run the full content width */
+.page-open__lead,
+.cta-band__text {
+  max-width: none;
+}
