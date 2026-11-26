@@ -2627,3 +2627,11 @@ html {
     aspect-ratio: auto;
   }
 }
+
+/* events: the single wide hero image is 2:1 on desktop (may run below the fold) */
+@media (min-width: 900px) {
+  .page-open__media:not(.page-open__media--pair) img {
+    height: auto;
+    aspect-ratio: 2 / 1;
+  }
+}
