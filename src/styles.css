@@ -2608,3 +2608,7 @@ html {
     height: 380px;
   }
 }
+
+.highlights__grid strong {
+  text-wrap: balance;
+}

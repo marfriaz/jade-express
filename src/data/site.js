@@ -112,7 +112,7 @@ const site = {
   workspacesPage: {
     title: "workspaces.",
     eyebrow: "Los Angeles Arts District",
-    lead: "studios, offices, and creative spaces for businesses, teams, and independent practices.",
+    lead: "studios, offices, and creative spaces for lease in the arts district of downtown los angeles.",
     // Opening photos: two suites with contrasting architecture (studio 2D and studio 1A).
     images: [
       { src: "/images/unit-3/06.jpg", alt: "Studio 2D with a long exposed timber ceiling and wood floors", pos: "50% 55%" },
@@ -120,9 +120,9 @@ const site = {
     ],
     highlights: [
       { title: "flexible leases", text: "short- and long-term options" },
-      { title: "1,100-7,000 sq ft", text: "multiple layouts and configurations" },
+      { title: "1,100-7,000 sq\u00a0ft", text: "multiple layouts and configurations" },
       { title: "gated parking", text: "available on-site" },
-      { title: "arts district", text: "downtown los angeles" },
+      { title: "industrial architecture", text: "high ceilings and original details" },
     ],
     order: ["studio-1a", "studio-2d", "studio-2g", "studio-2h", "the-loft", "the-studio"],
     note: "availability is subject to change. additional spaces may be available — contact us for current leasing opportunities.",
@@ -139,18 +139,18 @@ const site = {
     eyebrow: "Los Angeles Arts District",
     lead: "indoor and outdoor spaces available for short-term rentals, from photo and film productions to events, brand activations, and creative projects.",
     // A past Wilson & Bay event in the loft.
-    image: { src: "/images/gallery/manic-pixie/04.jpg", alt: "An aisle of vendor tents and shoppers at a pop-up market in the courtyard, with the building behind", pos: "50% 45%" },
+    image: { src: "/images/events/daytime-staged-loft.jpg", alt: "The loft staged in daylight, with exposed brick, timber beams, pendant lamps and lounge furniture", pos: "50% 55%" },
     link: "inquire about a rental",
     possibilities: [
       { label: "photo & film", src: "/images/gallery/free-people/02.jpg", alt: "A photo shoot with crew in the studio", pos: "50% 45%" },
       { label: "markets & brand activations", src: "/images/gallery/manic-pixie/01.jpg", alt: "A branded banner and vendor tents at a pop-up market under a steel gantry", pos: "50% 50%" },
-      { label: "private events", src: "/images/events/20.jpg", alt: "Friends talking on a leather sofa in front of exposed brick in the loft", pos: "50% 50%" },
+      { label: "private events", src: "/images/events/private-events.jpg", alt: "Guests gathered around a food spread at an evening event in the loft", pos: "50% 55%" },
       { label: "music & cultural events", src: "/images/gallery/manic-pixie/02.jpg", alt: "A live musical performance on the loading dock in the courtyard", pos: "50% 50%" },
     ],
     order: ["the-loft", "the-courtyard", "the-studio", "studio-1a"],
     combo: {
       title: "indoor + outdoor.",
-      text: "the studio opens directly onto the courtyard, with the option to book both spaces together for projects requiring indoor and outdoor areas.",
+      text: "the studio opens directly onto the courtyard. both spaces can be booked together for a combined indoor and outdoor footprint of 20,000+ sq ft.",
       note: "spaces are booked separately and are subject to availability.",
       link: "inquire about combined rentals",
       image: { src: "/images/the-studio/04.jpg", alt: "The studio's open doors looking out onto the courtyard", pos: "50% 50%" },
