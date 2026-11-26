@@ -38,7 +38,9 @@ export default function InquiryForm({ dark = false }) {
   }
 
   const type = params.get("type");
-  const defaultInterest = type === "visit" ? "Booking a visit" : "";
+  // ?type= preselects "what are you interested in?" (workspace / events from the landing pages).
+  const defaultInterest =
+    { visit: "booking a visit", workspace: "a workspace or studio", events: "an event or production" }[type] || "";
   // `?space=` carries a space's slug (e.g. "the-loft"); the form's options are the space names.
   const spaceParam = params.get("space") || "";
   const defaultSpace =

@@ -107,46 +107,55 @@ const site = {
   peerspaceUrl: "https://www.peerspace.com/pages/listings/66281ae02de482ca77c71015",
 
   // Content for the Workspaces and Events & Productions pages.
+  // Space cards on both pages come from src/data/spaces.js (same approved descriptions everywhere);
+  // `order` is the list of space slugs shown, in that order.
   workspacesPage: {
     title: "workspaces.",
-    lead: "studios, offices, and creative suites to lease for your business, team, or independent practice. move-in-ready, with room to make it your own.",
-    image: "/images/suite-2g/10.jpg",
-    alt: "Open studio with large windows and wood floors",
-    details: [
-      { label: "leasing", text: "longer-term leases (modified gross, with negotiable terms). move in now." },
-      { label: "sizes", text: "move-in-ready suites from 1,100 to 4,800 sq ft, with private offices, conference rooms and kitchens." },
-      { label: "building", text: "a historic industrial warehouse with exposed structure, 14 to 18 ft ceilings and an oversized freight elevator. suited to office, showroom, production, design and media." },
-      { label: "parking", text: "gated on-site parking, 16 surface spaces, plus a freight elevator." },
-      { label: "location", text: "the arts district in downtown Los Angeles, five minutes from little tokyo and close to the 10, 5, 101 and 110 freeways." },
+    eyebrow: "Los Angeles Arts District",
+    lead: "studios, offices, and creative spaces available for short- and long-term leases in the arts district of downtown los angeles.",
+    // Opening photos: two suites with contrasting architecture (studio 2D and studio 1A).
+    images: [
+      { src: "/images/unit-3/07.jpg", alt: "Studio 2D with exposed timber ceiling, large windows and wood floors", pos: "50% 60%" },
+      { src: "/images/unit-4/08.jpg", alt: "Studio 1A with high ceilings, concrete floors and glass partitions", pos: "50% 55%" },
     ],
-    steps: [
-      { title: "book a visit", text: "come see the suites in person. tell us what you do and how much room you need." },
-      { title: "pick your space", text: "we'll walk you through what's available, from compact offices to large studios." },
-      { title: "talk terms", text: "we'll go over lease terms with you and answer any questions." },
+    highlights: [
+      { title: "flexible lease terms", text: "short- and long-term options" },
+      { title: "1,100–7,000 sq ft", text: "a range of sizes and configurations" },
+      { title: "gated parking", text: "on-site parking available" },
+      { title: "arts district", text: "downtown los angeles" },
     ],
-    cta: { title: "want to see a suite in person?", text: "book a visit and we'll show you what's available." },
+    order: ["studio-1a", "studio-2d", "studio-2g", "studio-2h", "the-loft", "the-studio"],
+    note: "availability is subject to change. additional spaces may be available — contact us for current leasing opportunities.",
+    cta: {
+      title: "come take a look.",
+      text: "tell us what you're looking for and we'll help you find the right space.",
+      button: "schedule a tour",
+    },
   },
 
   eventsPage: {
     title: "events & productions.",
-    lead: "rent a space by the day or hour for your event, shoot, or pop-up. pick a space, tell us your plans, and we'll confirm availability.",
-    image: "/images/home/plan-something.jpg",
-    alt: "Friends gathered around a lounge area at an evening event",
-    popularFor: [
-      "photo & video shoots",
-      "pop-up markets",
-      "weddings & receptions",
-      "birthdays & baby showers",
-      "workshops & paint-and-sips",
-      "parties & dance nights",
-      "brand activations",
+    eyebrow: "Los Angeles Arts District",
+    lead: "indoor and outdoor spaces available for short-term rentals, from photo and film productions to events, brand activations, and creative projects.",
+    // A past Wilson & Bay event in the loft.
+    image: { src: "/images/events/01.jpg", alt: "The loft set up for an evening event, with warm uplighting on the brick walls", pos: "50% 55%" },
+    possibilities: [
+      { label: "photo & film", src: "/images/gallery/free-people/02.jpg", alt: "A photo shoot with crew in the studio", pos: "50% 45%" },
+      { label: "markets & brand activations", src: "/images/gallery/manic-pixie/03.jpg", alt: "Vendor racks and tents at a pop-up market in the courtyard", pos: "50% 50%" },
+      { label: "private gatherings", src: "/images/events/20.jpg", alt: "Friends talking on a leather sofa in front of exposed brick in the loft", pos: "50% 50%" },
+      { label: "creative projects", src: "/images/gallery/manic-pixie/02.jpg", alt: "A live musical performance on the loading dock in the courtyard", pos: "50% 50%" },
     ],
-    steps: [
-      { title: "choose a space", text: "the loft, the courtyard, or the studio, indoors or out. each has its own look and size." },
-      { title: "tell us your plans", text: "share your date, guest count, and what you're putting together." },
-      { title: "we confirm", text: "we'll check availability and get back to you with next steps." },
-    ],
-    cta: { title: "have an event in mind?", text: "tell us the date and what you're planning and we'll be in touch." },
+    order: ["the-loft", "the-courtyard", "the-studio", "studio-1a"],
+    combo: {
+      title: "indoor + outdoor.",
+      text: "select spaces can be booked together, including the studio and adjoining courtyard, for projects that require both indoor and outdoor areas.",
+      note: "each space is booked separately and is subject to availability.",
+    },
+    cta: {
+      title: "what do you have in mind?",
+      text: "tell us about your project, preferred dates, and space requirements.",
+      button: "inquire about a rental",
+    },
   },
 
   leasing: {

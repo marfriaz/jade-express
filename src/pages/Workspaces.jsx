@@ -1,55 +1,61 @@
 import { Link } from "react-router-dom";
 import site from "../data/site.js";
-import { spaces } from "../data/spaces.js";
+import { getSpace } from "../data/spaces.js";
 import SpaceCard from "../components/SpaceCard.jsx";
+import CtaBand from "../components/CtaBand.jsx";
 
 export default function Workspaces() {
   const page = site.workspacesPage;
-  const list = spaces.filter((s) => s.uses.includes("workspace") && !s.placeholder);
+  const list = page.order.map(getSpace).filter((s) => s && !s.placeholder);
 
   return (
     <>
-      <section className="section section--page">
-        <div className="container stack stack--xl">
+      <section className="section section--page page-open">
+        <div className="container stack stack--lg">
           <div className="stack">
+            <span className="page-eyebrow">{page.eyebrow}</span>
             <h1 className="h1">{page.title}</h1>
-            <p className="lead muted">{page.lead}</p>
+            <p className="lead muted page-open__lead">{page.lead}</p>
           </div>
-        </div>
-      </section>
-
-      <section className="band band--pad band--tight">
-        <div className="container stack stack--xl">
-          <div className="stack">
-            <span className="label label--light">leasing</span>
-            <h2 className="h2">what to know.</h2>
-          </div>
-          <dl className="facts-list">
-            {page.details.map((f) => (
-              <div key={f.label} className="facts-list__row">
-                <dt className="label">{f.label}</dt>
-                <dd>{f.text}</dd>
-              </div>
+          <div className="open-pair">
+            {page.images.map((img) => (
+              <img key={img.src} src={img.src} alt={img.alt} style={{ objectPosition: img.pos }} />
             ))}
-          </dl>
+          </div>
         </div>
       </section>
 
-      <section className="section section--tight">
+      <section className="band highlights">
+        <div className="container">
+          <ul className="highlights__grid">
+            {page.highlights.map((h) => (
+              <li key={h.title}>
+                <strong>{h.title}</strong>
+                <span>{h.text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section section--tight page-spaces">
         <div className="container stack stack--xl">
           <div className="section__head section__head--end">
-            <h2 className="h2 h2--xl">available spaces</h2>
-            <Link to="/spaces?use=workspace" className="text-link text-link--caps">
-              see all in spaces &rarr;
+            <h2 className="h2 h2--xl">available workspaces</h2>
+            <Link to="/spaces" className="text-link text-link--caps">
+              view all spaces &rarr;
             </Link>
           </div>
           <div className="cards">
             {list.map((s) => (
-              <SpaceCard key={s.slug} space={s} />
+              <SpaceCard key={s.slug} space={s} showTags={false} />
             ))}
           </div>
+          <p className="page-note">{page.note}</p>
         </div>
       </section>
+
+      <CtaBand {...page.cta} to="/contact?type=workspace" />
     </>
   );
 }

@@ -2322,3 +2322,225 @@ html {
 .form input[type="date"]::-webkit-datetime-edit {
   padding: 0;
 }
+
+/* ================= workspaces + events landing pages ================= */
+.page-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+@media (min-width: 900px) {
+  .page-eyebrow {
+    font-size: 13px;
+  }
+}
+.page-open__lead {
+  max-width: 44rem;
+  margin: 0;
+}
+.page-open .stack--lg {
+  gap: 24px;
+}
+@media (min-width: 900px) {
+  .page-open .stack--lg {
+    gap: 40px;
+  }
+}
+
+/* workspaces: two contrasting suites side by side, kept short */
+.open-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.open-pair img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+@media (min-width: 900px) {
+  .open-pair {
+    gap: 16px;
+  }
+  .open-pair img {
+    aspect-ratio: auto;
+    height: 380px;
+  }
+}
+
+/* events: one wide lifestyle image */
+.open-wide img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+@media (min-width: 900px) {
+  .open-wide img {
+    height: 540px;
+  }
+}
+
+/* workspaces: leasing highlights on olive */
+.highlights {
+  margin-top: 40px;
+  padding: 36px 0;
+}
+@media (min-width: 900px) {
+  .highlights {
+    margin-top: 72px;
+    padding: 56px 0;
+  }
+}
+.highlights__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 20px;
+}
+@media (min-width: 900px) {
+  .highlights__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
+.highlights__grid li {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.highlights__grid strong {
+  font-size: clamp(19px, 2.4vw, 26px);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+.highlights__grid span {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--olive-text);
+}
+
+.page-spaces {
+  padding-top: 48px;
+}
+@media (min-width: 900px) {
+  .page-spaces {
+    padding-top: 72px;
+  }
+}
+.page-note {
+  margin: 0;
+  max-width: 44rem;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* events: "make it yours." */
+.possible__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 10px;
+}
+@media (min-width: 900px) {
+  .possible__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+.possible__grid li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.possible__grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.possible__grid span {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+}
+@media (min-width: 900px) {
+  .possible__grid span {
+    font-size: 15px;
+  }
+}
+
+/* events: two-by-two space cards with larger photos */
+@media (min-width: 700px) {
+  .cards--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 24px;
+  }
+}
+@media (min-width: 1000px) {
+  .cards--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cards--two .card__img {
+    height: 380px;
+  }
+}
+
+/* events: indoor + outdoor callout */
+.combo {
+  display: grid;
+  gap: 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 900px) {
+  .combo {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 48px;
+    padding-top: 40px;
+  }
+}
+.combo .lead {
+  margin: 0;
+}
+
+/* closing conversion band */
+.cta-band {
+  margin-top: 56px;
+  padding: 56px 0;
+  background: var(--olive);
+  color: var(--bg);
+}
+@media (min-width: 900px) {
+  .cta-band {
+    margin-top: 96px;
+    padding: 88px 0;
+  }
+}
+.cta-band__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.cta-band__text {
+  margin: 0 0 8px;
+  max-width: 34rem;
+  color: var(--olive-text);
+}
+@media (max-width: 599px) {
+  .cta-band .btn {
+    width: 100%;
+    height: 52px;
+  }
+}
