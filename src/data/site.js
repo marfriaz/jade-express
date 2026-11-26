@@ -112,7 +112,7 @@ const site = {
   workspacesPage: {
     title: "workspaces.",
     eyebrow: "Los Angeles Arts District",
-    lead: "studios, offices, and creative spaces for lease in the arts district of downtown los angeles.",
+    lead: "studios, offices, and creative spaces for businesses, teams, and independent practices.",
     // Opening photos: two suites with contrasting architecture (studio 2D and studio 1A).
     images: [
       { src: "/images/unit-3/06.jpg", alt: "Studio 2D with a long exposed timber ceiling and wood floors", pos: "50% 55%" },
@@ -120,9 +120,9 @@ const site = {
     ],
     highlights: [
       { title: "flexible leases", text: "short- and long-term options" },
-      { title: "1,100-7,000 sq\u00a0ft", text: "multiple layouts and configurations" },
+      { title: "1,100–7,000 sq\u00a0ft", text: "varied layouts" },
       { title: "gated parking", text: "available on-site" },
-      { title: "industrial architecture", text: "high ceilings and original details" },
+      { title: "historic character", text: "high ceilings, original details" },
     ],
     order: ["studio-1a", "studio-2d", "studio-2g", "studio-2h", "the-loft", "the-studio"],
     note: "availability is subject to change. additional spaces may be available — contact us for current leasing opportunities.",
@@ -137,7 +137,7 @@ const site = {
   eventsPage: {
     title: "events & productions.",
     eyebrow: "Los Angeles Arts District",
-    lead: "indoor and outdoor spaces available for short-term rentals, from photo and film productions to events, brand activations, and creative projects.",
+    lead: "indoor and outdoor spaces for events, photo and film productions, brand activations, and creative projects.",
     // A past Wilson & Bay event in the loft.
     image: { src: "/images/events/daytime-staged-loft.jpg", alt: "The loft staged in daylight, with exposed brick, timber beams, pendant lamps and lounge furniture", pos: "50% 50%" },
     link: "inquire about a rental",

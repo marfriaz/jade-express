@@ -44,8 +44,8 @@ export default function Workspaces() {
       <section className="section section--tight page-spaces">
         <div className="container stack stack--xl">
           <div className="section__head section__head--end">
-            <h2 className="h2 h2--xl">available workspaces</h2>
-            <Link to="/spaces" className="text-link text-link--caps">
+            <h2 className="h2 h2--xl h2-sec">available workspaces</h2>
+            <Link to="/spaces" className="text-link text-link--caps link--desktop">
               view all spaces &rarr;
             </Link>
           </div>
@@ -54,6 +54,9 @@ export default function Workspaces() {
               <SpaceCard key={s.slug} space={s} showTags={false} />
             ))}
           </div>
+          <Link to="/spaces" className="text-link text-link--caps link--mobile">
+            view all spaces &rarr;
+          </Link>
           <p className="page-note">{page.note}</p>
         </div>
       </section>

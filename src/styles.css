@@ -2635,3 +2635,107 @@ html {
     aspect-ratio: 2 / 1;
   }
 }
+
+/* nav: a slimmer keyboard focus ring; the active page is marked by the underline only */
+.nav a:focus-visible,
+.mobile-nav a:focus-visible {
+  outline-width: 2px;
+  outline-offset: 2px;
+}
+.nav a:focus:not(:focus-visible),
+.mobile-nav a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ================= mobile tokens for the landing pages (reuse these site-wide) ================= */
+:root {
+  --m-hero-lead-cta: 12px; /* intro copy to CTA (was 16) */
+  --m-hero-cta-media: 18px; /* CTA to photography (was 24) */
+  --m-hero-bottom: 28px; /* below the photography (was 40) */
+  --m-section-top: 36px; /* between content sections (was 48) */
+  --m-h2-xl: 33px; /* secondary headings, ~18% under the old 40px */
+  --m-h2-lg: 25px; /* ~17% under 30px */
+  --m-h2-md: 30px; /* ~17% under 36px */
+}
+.link--mobile {
+  display: none;
+}
+@media (max-width: 899px) {
+  .link--desktop {
+    display: none;
+  }
+  .link--mobile {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-top: -6px;
+  }
+
+  /* hero */
+  .page-open {
+    padding-bottom: var(--m-hero-bottom);
+  }
+  .page-open__head {
+    gap: 10px;
+  }
+  .page-open__cta {
+    margin-top: calc(var(--m-hero-lead-cta) - 10px);
+  }
+  .page-open__media {
+    margin-top: var(--m-hero-cta-media);
+  }
+  .page-open + .highlights {
+    margin-top: 0;
+  }
+  .page-open + .possible {
+    padding-top: 0;
+  }
+
+  /* secondary headings sit clearly below the page title */
+  .h2-sec.h2--xl {
+    font-size: var(--m-h2-xl);
+  }
+  .h2-sec.h2--lg {
+    font-size: var(--m-h2-lg);
+  }
+  .h2-sec.h2--md {
+    font-size: var(--m-h2-md);
+  }
+
+  /* section rhythm */
+  .page-spaces {
+    padding-top: var(--m-section-top);
+  }
+  .page-spaces .container {
+    gap: 28px;
+  }
+  .possible .container {
+    gap: 18px;
+  }
+  .combo {
+    padding-top: 24px;
+    gap: 16px;
+  }
+  .cta-band {
+    margin-top: 40px;
+    padding: 44px 0;
+  }
+
+  /* workspaces highlights: compact */
+  .highlights {
+    padding: 22px 0;
+  }
+  .highlights__grid {
+    gap: 18px 16px;
+  }
+  .highlights__grid li {
+    gap: 3px;
+  }
+  .highlights__grid strong {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .highlights__grid span {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+}

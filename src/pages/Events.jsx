@@ -29,8 +29,8 @@ export default function Events() {
       <section className="section section--tight possible">
         <div className="container stack stack--lg">
           <div className="section__head section__head--end">
-            <h2 className="h2 h2--lg">make it yours.</h2>
-            <Link to="/gallery" className="text-link text-link--caps">
+            <h2 className="h2 h2--lg h2-sec">make it yours.</h2>
+            <Link to="/gallery" className="text-link text-link--caps link--desktop">
               explore the gallery &rarr;
             </Link>
           </div>
@@ -42,14 +42,17 @@ export default function Events() {
               </li>
             ))}
           </ul>
+          <Link to="/gallery" className="text-link text-link--caps link--mobile">
+            explore the gallery &rarr;
+          </Link>
         </div>
       </section>
 
       <section className="section section--tight page-spaces">
         <div className="container stack stack--xl">
           <div className="section__head section__head--end">
-            <h2 className="h2 h2--xl">explore the spaces</h2>
-            <Link to="/spaces" className="text-link text-link--caps">
+            <h2 className="h2 h2--xl h2-sec">explore the spaces</h2>
+            <Link to="/spaces" className="text-link text-link--caps link--desktop">
               view all spaces &rarr;
             </Link>
           </div>
@@ -58,6 +61,9 @@ export default function Events() {
               <SpaceCard key={s.slug} space={s} showTags={false} />
             ))}
           </div>
+          <Link to="/spaces" className="text-link text-link--caps link--mobile">
+            view all spaces &rarr;
+          </Link>
 
           <div className="combo">
             <img
@@ -68,7 +74,7 @@ export default function Events() {
               style={{ objectPosition: page.combo.image.pos }}
             />
             <div className="combo__text stack">
-              <h2 className="h2 h2--lg">{page.combo.title}</h2>
+              <h2 className="h2 h2--lg h2-sec">{page.combo.title}</h2>
               <p className="lead">{page.combo.text}</p>
               <p className="page-note">{page.combo.note}</p>
               <Link to="/contact?type=events" className="text-link text-link--caps">

@@ -5,7 +5,7 @@ export default function CtaBand({ title, text, button, to }) {
   return (
     <section className="cta-band">
       <div className="container cta-band__inner">
-        <h2 className="h2 h2--md">{title}</h2>
+        <h2 className="h2 h2--md h2-sec">{title}</h2>
         <p className="lead cta-band__text">{text}</p>
         <Link to={to} className="btn btn--light">
           {button} &rarr;

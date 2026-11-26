@@ -18,6 +18,10 @@ export default function Layout() {
 
   useEffect(() => {
     setOpen(false);
+    // After a keyboard navigation the clicked nav link keeps focus (and its focus ring) on the new page;
+    // let go of it so only the active-page underline remains. Tab still continues from the same spot.
+    const a = document.activeElement;
+    if (a && a.closest && a.closest(".nav, .mobile-nav")) a.blur();
   }, [pathname]);
 
   // Page title, description and share preview for the current page (not visible on the page).
