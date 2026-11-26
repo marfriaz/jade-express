@@ -2550,3 +2550,7 @@ html {
 .cta-band__text {
   max-width: none;
 }
+
+.page-note {
+  max-width: none;
+}
