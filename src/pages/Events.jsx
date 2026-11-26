@@ -11,8 +11,8 @@ export default function Events() {
   return (
     <>
       <section className="section section--page page-open">
-        <div className="container stack stack--lg">
-          <div className="stack">
+        <div className="container">
+          <div className="page-open__head">
             <span className="page-eyebrow">{page.eyebrow}</span>
             <h1 className="h1">{page.title}</h1>
             <p className="lead muted page-open__lead">{page.lead}</p>
@@ -20,7 +20,7 @@ export default function Events() {
               {page.link} &rarr;
             </Link>
           </div>
-          <div className="open-wide">
+          <div className="page-open__media">
             <img src={page.image.src} alt={page.image.alt} style={{ objectPosition: page.image.pos }} />
           </div>
         </div>

@@ -11,8 +11,8 @@ export default function Workspaces() {
   return (
     <>
       <section className="section section--page page-open">
-        <div className="container stack stack--lg">
-          <div className="stack">
+        <div className="container">
+          <div className="page-open__head">
             <span className="page-eyebrow">{page.eyebrow}</span>
             <h1 className="h1">{page.title}</h1>
             <p className="lead muted page-open__lead">{page.lead}</p>
@@ -20,7 +20,7 @@ export default function Workspaces() {
               {page.link} &rarr;
             </Link>
           </div>
-          <div className="open-pair">
+          <div className="page-open__media page-open__media--pair">
             {page.images.map((img) => (
               <img key={img.src} src={img.src} alt={img.alt} style={{ objectPosition: img.pos }} />
             ))}

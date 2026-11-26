@@ -139,7 +139,7 @@ const site = {
     eyebrow: "Los Angeles Arts District",
     lead: "indoor and outdoor spaces available for short-term rentals, from photo and film productions to events, brand activations, and creative projects.",
     // A past Wilson & Bay event in the loft.
-    image: { src: "/images/events/daytime-staged-loft.jpg", alt: "The loft staged in daylight, with exposed brick, timber beams, pendant lamps and lounge furniture", pos: "50% 55%" },
+    image: { src: "/images/events/daytime-staged-loft.jpg", alt: "The loft staged in daylight, with exposed brick, timber beams, pendant lamps and lounge furniture", pos: "50% 88%" },
     link: "inquire about a rental",
     possibilities: [
       { label: "photo & film", src: "/images/gallery/free-people/02.jpg", alt: "A photo shoot with crew in the studio", pos: "50% 45%" },

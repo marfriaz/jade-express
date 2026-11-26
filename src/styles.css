@@ -2336,53 +2336,6 @@ html {
     font-size: 13px;
   }
 }
-.page-open__lead {
-  max-width: 44rem;
-  margin: 0;
-}
-.page-open .stack--lg {
-  gap: 24px;
-}
-@media (min-width: 900px) {
-  .page-open .stack--lg {
-    gap: 40px;
-  }
-}
-
-/* workspaces: two contrasting suites side by side, kept short */
-.open-pair {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-}
-.open-pair img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-@media (min-width: 900px) {
-  .open-pair {
-    gap: 16px;
-  }
-  .open-pair img {
-    aspect-ratio: auto;
-    height: 380px;
-  }
-}
-
-/* events: one wide lifestyle image */
-.open-wide img {
-  display: block;
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-}
-@media (min-width: 900px) {
-  .open-wide img {
-    height: 540px;
-  }
-}
 
 /* workspaces: leasing highlights on olive */
 .highlights {
@@ -2545,8 +2498,7 @@ html {
   }
 }
 
-/* landing pages: intro and closing copy run the full content width */
-.page-open__lead,
+/* landing pages: closing copy runs the full content width */
 .cta-band__text {
   max-width: none;
 }
@@ -2556,11 +2508,6 @@ html {
 }
 
 /* ---- refinement pass ---- */
-/* intro CTA under the opening copy */
-.page-open__cta {
-  align-self: flex-start;
-  margin-top: 4px;
-}
 /* highlights: supporting text a little larger */
 .highlights__grid span {
   font-size: 16px;
@@ -2611,4 +2558,72 @@ html {
 
 .highlights__grid strong {
   text-wrap: balance;
+}
+
+
+/* ================= landing-page hero (workspaces + events share this) ================= */
+/* One template: eyebrow, title, intro, CTA, then the photography. Only the photo arrangement differs. */
+.page-open {
+  padding-top: 16px;
+  padding-bottom: 0;
+}
+.page-open__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.page-open__head .h1 {
+  margin: 0;
+}
+.page-open__lead {
+  max-width: none;
+  margin: 2px 0 0;
+}
+.page-open__cta {
+  margin-top: 6px;
+}
+.page-open__media {
+  margin-top: 24px;
+}
+@media (min-width: 900px) {
+  .page-open {
+    padding-top: 28px;
+  }
+  .page-open__head {
+    gap: 12px;
+  }
+  .page-open__media {
+    margin-top: 36px;
+  }
+}
+
+/* photography: same outer edges and the same height on both pages */
+.page-open__media {
+  --open-h: 260px;
+  display: grid;
+  gap: 8px;
+}
+.page-open__media img {
+  display: block;
+  width: 100%;
+  height: var(--open-h);
+  object-fit: cover;
+}
+.page-open__media--pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.page-open__media--pair img {
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+@media (min-width: 900px) {
+  .page-open__media {
+    --open-h: 460px;
+    gap: 16px;
+  }
+  .page-open__media--pair img {
+    height: var(--open-h);
+    aspect-ratio: auto;
+  }
 }
