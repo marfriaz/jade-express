@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import site from "../data/site.js";
 import { getSpace } from "../data/spaces.js";
 import SpaceCard from "../components/SpaceCard.jsx";
+import SectionCta from "../components/SectionCta.jsx";
 import CtaBand from "../components/CtaBand.jsx";
 
 export default function Workspaces() {
@@ -45,18 +46,14 @@ export default function Workspaces() {
         <div className="container stack stack--xl">
           <div className="section__head section__head--end">
             <h2 className="h2 h2--xl h2-sec">available workspaces</h2>
-            <Link to="/spaces" className="text-link text-link--caps link--desktop">
-              view all spaces &rarr;
-            </Link>
+            <SectionCta to="/spaces" placement="head">view all spaces</SectionCta>
           </div>
           <div className="cards">
             {list.map((s) => (
               <SpaceCard key={s.slug} space={s} showTags={false} />
             ))}
           </div>
-          <Link to="/spaces" className="text-link text-link--caps link--mobile">
-            view all spaces &rarr;
-          </Link>
+          <SectionCta to="/spaces">view all spaces</SectionCta>
           <p className="page-note">{page.note}</p>
         </div>
       </section>

@@ -2657,17 +2657,23 @@ html {
   --m-h2-lg: 25px; /* ~17% under 30px */
   --m-h2-md: 30px; /* ~17% under 36px */
 }
-.link--mobile {
+.section-cta {
   display: none;
 }
 @media (max-width: 899px) {
   .link--desktop {
     display: none;
   }
-  .link--mobile {
-    display: inline-flex;
-    align-self: flex-start;
-    margin-top: -6px;
+  /* section-level CTA: centered outlined button, set apart from the last card's text link */
+  .section-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .section-cta__btn {
+    min-width: 220px;
   }
 
   /* hero */

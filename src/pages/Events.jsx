@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import site from "../data/site.js";
 import { getSpace } from "../data/spaces.js";
 import SpaceCard from "../components/SpaceCard.jsx";
+import SectionCta from "../components/SectionCta.jsx";
 import CtaBand from "../components/CtaBand.jsx";
 
 export default function Events() {
@@ -30,9 +31,7 @@ export default function Events() {
         <div className="container stack stack--lg">
           <div className="section__head section__head--end">
             <h2 className="h2 h2--lg h2-sec">make it yours.</h2>
-            <Link to="/gallery" className="text-link text-link--caps link--desktop">
-              explore the gallery &rarr;
-            </Link>
+            <SectionCta to="/gallery" placement="head">explore the gallery</SectionCta>
           </div>
           <ul className="possible__grid">
             {page.possibilities.map((p) => (
@@ -42,9 +41,7 @@ export default function Events() {
               </li>
             ))}
           </ul>
-          <Link to="/gallery" className="text-link text-link--caps link--mobile">
-            explore the gallery &rarr;
-          </Link>
+          <SectionCta to="/gallery">explore the gallery</SectionCta>
         </div>
       </section>
 
@@ -52,18 +49,14 @@ export default function Events() {
         <div className="container stack stack--xl">
           <div className="section__head section__head--end">
             <h2 className="h2 h2--xl h2-sec">explore the spaces</h2>
-            <Link to="/spaces" className="text-link text-link--caps link--desktop">
-              view all spaces &rarr;
-            </Link>
+            <SectionCta to="/spaces" placement="head">view all spaces</SectionCta>
           </div>
           <div className="cards cards--two">
             {list.map((s) => (
               <SpaceCard key={s.slug} space={s} showTags={false} />
             ))}
           </div>
-          <Link to="/spaces" className="text-link text-link--caps link--mobile">
-            view all spaces &rarr;
-          </Link>
+          <SectionCta to="/spaces">view all spaces</SectionCta>
 
           <div className="combo">
             <img
