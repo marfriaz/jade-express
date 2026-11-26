@@ -112,20 +112,21 @@ const site = {
   workspacesPage: {
     title: "workspaces.",
     eyebrow: "Los Angeles Arts District",
-    lead: "studios, offices, and creative spaces available for short- and long-term leases in the arts district of downtown los angeles.",
+    lead: "studios, offices, and creative spaces for businesses, teams, and independent practices.",
     // Opening photos: two suites with contrasting architecture (studio 2D and studio 1A).
     images: [
-      { src: "/images/unit-3/07.jpg", alt: "Studio 2D with exposed timber ceiling, large windows and wood floors", pos: "50% 60%" },
-      { src: "/images/unit-4/08.jpg", alt: "Studio 1A with high ceilings, concrete floors and glass partitions", pos: "50% 55%" },
+      { src: "/images/unit-3/06.jpg", alt: "Studio 2D with a long exposed timber ceiling and wood floors", pos: "50% 55%" },
+      { src: "/images/unit-4/12.jpg", alt: "Studio 1A with tall windows, high ceilings and concrete floors", pos: "50% 55%" },
     ],
     highlights: [
-      { title: "flexible lease terms", text: "short- and long-term options" },
-      { title: "1,100–7,000 sq ft", text: "a range of sizes and configurations" },
-      { title: "gated parking", text: "on-site parking available" },
+      { title: "flexible leases", text: "short- and long-term options" },
+      { title: "1,100-7,000 sq ft", text: "multiple layouts and configurations" },
+      { title: "gated parking", text: "available on-site" },
       { title: "arts district", text: "downtown los angeles" },
     ],
     order: ["studio-1a", "studio-2d", "studio-2g", "studio-2h", "the-loft", "the-studio"],
     note: "availability is subject to change. additional spaces may be available — contact us for current leasing opportunities.",
+    link: "schedule a tour",
     cta: {
       title: "come take a look.",
       text: "tell us what you're looking for and we'll help you find the right space.",
@@ -138,18 +139,21 @@ const site = {
     eyebrow: "Los Angeles Arts District",
     lead: "indoor and outdoor spaces available for short-term rentals, from photo and film productions to events, brand activations, and creative projects.",
     // A past Wilson & Bay event in the loft.
-    image: { src: "/images/events/01.jpg", alt: "The loft set up for an evening event, with warm uplighting on the brick walls", pos: "50% 55%" },
+    image: { src: "/images/gallery/manic-pixie/04.jpg", alt: "An aisle of vendor tents and shoppers at a pop-up market in the courtyard, with the building behind", pos: "50% 45%" },
+    link: "inquire about a rental",
     possibilities: [
       { label: "photo & film", src: "/images/gallery/free-people/02.jpg", alt: "A photo shoot with crew in the studio", pos: "50% 45%" },
-      { label: "markets & brand activations", src: "/images/gallery/manic-pixie/03.jpg", alt: "Vendor racks and tents at a pop-up market in the courtyard", pos: "50% 50%" },
-      { label: "private gatherings", src: "/images/events/20.jpg", alt: "Friends talking on a leather sofa in front of exposed brick in the loft", pos: "50% 50%" },
-      { label: "creative projects", src: "/images/gallery/manic-pixie/02.jpg", alt: "A live musical performance on the loading dock in the courtyard", pos: "50% 50%" },
+      { label: "markets & brand activations", src: "/images/gallery/manic-pixie/01.jpg", alt: "A branded banner and vendor tents at a pop-up market under a steel gantry", pos: "50% 50%" },
+      { label: "private events", src: "/images/events/20.jpg", alt: "Friends talking on a leather sofa in front of exposed brick in the loft", pos: "50% 50%" },
+      { label: "music & cultural events", src: "/images/gallery/manic-pixie/02.jpg", alt: "A live musical performance on the loading dock in the courtyard", pos: "50% 50%" },
     ],
     order: ["the-loft", "the-courtyard", "the-studio", "studio-1a"],
     combo: {
       title: "indoor + outdoor.",
-      text: "select spaces can be booked together, including the studio and adjoining courtyard, for projects that require both indoor and outdoor areas.",
-      note: "each space is booked separately and is subject to availability.",
+      text: "the studio opens directly onto the courtyard, with the option to book both spaces together for projects requiring indoor and outdoor areas.",
+      note: "spaces are booked separately and are subject to availability.",
+      link: "inquire about combined rentals",
+      image: { src: "/images/the-studio/04.jpg", alt: "The studio's open doors looking out onto the courtyard", pos: "50% 50%" },
     },
     cta: {
       title: "what do you have in mind?",

@@ -16,6 +16,9 @@ export default function Workspaces() {
             <span className="page-eyebrow">{page.eyebrow}</span>
             <h1 className="h1">{page.title}</h1>
             <p className="lead muted page-open__lead">{page.lead}</p>
+            <Link to="/contact?type=workspace" className="text-link text-link--caps page-open__cta">
+              {page.link} &rarr;
+            </Link>
           </div>
           <div className="open-pair">
             {page.images.map((img) => (

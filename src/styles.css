@@ -2554,3 +2554,57 @@ html {
 .page-note {
   max-width: none;
 }
+
+/* ---- refinement pass ---- */
+/* intro CTA under the opening copy */
+.page-open__cta {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+/* highlights: supporting text a little larger */
+.highlights__grid span {
+  font-size: 16px;
+  line-height: 1.4;
+}
+/* "make it yours." captions */
+.possible__grid span {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+@media (min-width: 900px) {
+  .possible__grid span {
+    font-size: 18px;
+  }
+}
+/* indoor + outdoor: image and text side by side */
+.combo {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  padding-top: 28px;
+}
+.combo__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.combo__text {
+  gap: 14px;
+}
+.combo__text .text-link {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+@media (min-width: 900px) {
+  .combo {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+    padding-top: 48px;
+  }
+  .combo__img {
+    aspect-ratio: auto;
+    height: 380px;
+  }
+}

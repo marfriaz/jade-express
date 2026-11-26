@@ -16,6 +16,9 @@ export default function Events() {
             <span className="page-eyebrow">{page.eyebrow}</span>
             <h1 className="h1">{page.title}</h1>
             <p className="lead muted page-open__lead">{page.lead}</p>
+            <Link to="/contact?type=events" className="text-link text-link--caps page-open__cta">
+              {page.link} &rarr;
+            </Link>
           </div>
           <div className="open-wide">
             <img src={page.image.src} alt={page.image.alt} style={{ objectPosition: page.image.pos }} />
@@ -57,10 +60,20 @@ export default function Events() {
           </div>
 
           <div className="combo">
-            <h2 className="h2 h2--lg">{page.combo.title}</h2>
-            <div className="stack">
+            <img
+              className="combo__img"
+              src={page.combo.image.src}
+              alt={page.combo.image.alt}
+              loading="lazy"
+              style={{ objectPosition: page.combo.image.pos }}
+            />
+            <div className="combo__text stack">
+              <h2 className="h2 h2--lg">{page.combo.title}</h2>
               <p className="lead">{page.combo.text}</p>
               <p className="page-note">{page.combo.note}</p>
+              <Link to="/contact?type=events" className="text-link text-link--caps">
+                {page.combo.link} &rarr;
+              </Link>
             </div>
           </div>
         </div>

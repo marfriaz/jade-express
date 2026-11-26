@@ -94,7 +94,7 @@ const allSpaces = [
     sqft: "7,000",
     location: "arts district, Los Angeles",
     summary:
-      "a private loft with its own entrance and freight elevator, exposed brick, timber beams, and original wood floors. connected open spaces, soundproof rooms, built-in projection, and a hidden room behind a bookshelf.",
+      "a private loft with its own entrance and freight elevator, exposed brick, timber beams, and original wood floors. connected open spaces, soundproof rooms, a screening room with a projection screen, and a hidden room behind a bookshelf.",
     intro:
       "a second-floor loft with its own entrance and private freight elevator. exposed brick, timber beams, and original wood floors run through connected open areas, soundproof rooms, a screening room with a projection screen, and a hidden room behind a bookshelf.",
     specs: {
@@ -172,7 +172,7 @@ const allSpaces = [
     sqft: "5,000",
     location: "arts district, Los Angeles",
     summary:
-      "an open industrial space with high ceilings, concrete floors, large windows, and natural light. a flexible floor plan with direct access to the outdoor courtyard.",
+      "an open industrial space with high ceilings, concrete floors, large windows, and natural light. a flexible floor plan that opens directly onto the outdoor courtyard, which can be booked separately.",
     intro:
       "an open industrial space with high ceilings, concrete floors, large windows, and natural light. the floor plan is flexible, and the studio opens directly onto the courtyard, which is booked separately.",
     specs: {
